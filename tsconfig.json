@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        //"noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        //"sourceMap": true,
+        "outDir": "src/",
+        "allowJs": true,
+        "inlineSourceMap": true,
+        "noEmitHelpers": true,
+    },
+
+    "include": [
+        "tsSrc/**/*",
+        "tsLib/**/*"
+    ],
+
+    "exclude": [
+
+    ]
+}

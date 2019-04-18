@@ -1,0 +1,13 @@
+*.o
+*.obj
+*.sdf
+
+.vs
+.vscode
+.DS_Store
+
+/simulator
+/node_modules
+
+/frameworks/**/[Dd]ebug.*
+/frameworks/**/[Rr]elease.*
