@@ -45,7 +45,7 @@ function __values(o)
         "LayerGradient",
     ];
     classes.forEach(function (name) {
-        cc[name] = extend(cc[name]);
+        cc[name] = extend(cc[name], "cc." + name);
     });
 
     if (typeof ccui === 'object')
@@ -54,26 +54,37 @@ function __values(o)
             "Widget"
         ];
         uiClasses.forEach(function (name) {
-            ccui[name] = extend(ccui[name]);
+            ccui[name] = extend(ccui[name], "ccui." + name);
         });
     }
 
-    function extend(Base)
+    function extend(Base, className)
     {
         let ctor = Base.prototype.ctor;
         let Derive = function () {
             ctor && ctor.apply(this, arguments);
-            defineProperties(this);
-            
             return this;
         };
+
         __extends(Derive, Base);
+        defineProperties(Derive.prototype, className);
+
+        Object.defineProperty(Derive, 'className', { 
+            writable: false, 
+            value: className
+        });
+
         return Derive;
     }
         
-    function defineProperties(target)
+    function defineProperties(target, className)
     {
         Object.defineProperties(target, {
+            className: {
+                writable: false,
+                value: className
+            },
+
             x: {
                 get: function () {
                     return this.getPositionX();
