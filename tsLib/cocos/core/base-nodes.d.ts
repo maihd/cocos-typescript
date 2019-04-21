@@ -105,6 +105,12 @@ declare namespace cc
         //public grid:GridBase;
         //public shaderProgram:GLProgram;
 
+        //public get name() : string;
+        //public set name(v : string);
+        
+        public name : string;
+        public className : string;
+
         public actionManager: ActionManager;
         public anchorX: number;
         public anchorY: number;
@@ -1563,7 +1569,7 @@ declare namespace cc
          * @function
          * @param {Number} dt Delta time since last update
          */
-        public update(dt: number) : void;
+        protected update(dt: number) : void;
 
         /**
          * Update the displayed color of Node
