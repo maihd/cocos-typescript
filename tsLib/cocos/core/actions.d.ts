@@ -12,7 +12,7 @@ declare namespace cc {
      * @type {Number}
      * @default
      */
-    export const ACTION_TAG_INVALID:number;
+    export const ACTION_TAG_INVALID : number;
 
     /**
      * Base class for cc.Action objects.
@@ -25,14 +25,11 @@ declare namespace cc {
      * @property {Number}   tag             - The tag of the action, can be used to find the action.
      */
     export class Action extends Class {
-        public originalTarget:Node;
-        public target:Node;
-        public tag:number;
+        public originalTarget: Node;
+        public target: Node;
+        public tag: number;
 
-        /**
-         * Constructor function, override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function.
-         */
-        public ctor():void;
+        public constructor();
 
         /**
          * to copy object with deep copy.
@@ -40,27 +37,27 @@ declare namespace cc {
          *
          * @return {cc.Action}
          */
-        public clone():Action;
+        public clone() : Action;
 
         /**
          * return true if the action has finished.
          *
          * @return {Boolean}
          */
-        public isDone():boolean;
+        public isDone() : boolean;
 
         /**
          * called before the action start. It will also set the target.
          *
          * @param {cc.Node} target
          */
-        public startWithTarget(target:Node):void;
+        public startWithTarget(target: Node) : void;
 
         /**
          * called after the action has finished. It will set the 'target' to nil. <br />
          * IMPORTANT: You should never call "action stop" manually. Instead, use: "target.stopAction(action);"
          */
-        public stop():void;
+        public stop() : void;
 
         /**
          * called every frame with it's delta time. <br />
@@ -68,35 +65,35 @@ declare namespace cc {
          *
          * @param {Number} dt
          */
-        public step(dt:number):void;
+        public step(dt: number) : void;
 
         /**
          * Called once per frame. Time is the number of seconds of a frame interval.
          *
          * @param {Number}  dt
          */
-        public update(dt:number):void;
+        public update(dt: number) : void;
 
         /**
          * get the target.
          *
          * @return {cc.Node}
          */
-        public getTarget():Node;
+        public getTarget() : Node;
 
         /**
          * The action will modify the target properties.
          *
          * @param {cc.Node} target
          */
-        public setTarget(target:Node):void;
+        public setTarget(target: Node) : void;
 
         /**
          * get the original target.
          *
          * @return {cc.Node}
          */
-        public getOriginalTarget():Node;
+        public getOriginalTarget() : Node;
 
         /**
          * Set the original target, since target can be nil. <br/>
@@ -105,33 +102,33 @@ declare namespace cc {
          * The target is 'assigned', it is not 'retained'. <br/>
          * @param {cc.Node} originalTarget
          */
-        public setOriginalTarget(originalTarget:Node):void;
+        public setOriginalTarget(originalTarget: Node) : void;
 
         /**
          * get tag number.
          * @return {Number}
          */
-        public getTag():number;
+        public getTag() : number;
 
         /**
          * set tag number.
          * @param {Number} tag
          */
-        public setTag(tag:number):void;
+        public setTag(tag: number) : void;
 
         /**
          * Currently JavaScript Bindigns (JSB), in some cases, needs to use retain and release. This is a bug in JSB, <br/>
          * and the ugly workaround is to use retain/release. So, these 2 methods were added to be compatible with JSB. <br/>
          * This is a hack, and should be removed once JSB fixes the retain/release bug.
          */
-        public retain():void;
+        public retain() : void;
 
         /**
          * Currently JavaScript Bindigns (JSB), in some cases, needs to use retain and release. This is a bug in JSB, <br/>
          * and the ugly workaround is to use retain/release. So, these 2 methods were added to be compatible with JSB. <br/>
          * This is a hack, and should be removed once JSB fixes the retain/release bug.
          */
-        public release():void;
+        public release() : void;
     }
 
     /**
@@ -145,7 +142,7 @@ declare namespace cc {
      * // return {cc.Action}
      * var action = cc.action();
      */
-    export function action():Action;
+    export function action() : Action;
 
     /**
      * Base class actions that do have a finite time duration. <br/>
@@ -161,21 +158,21 @@ declare namespace cc {
         /**
          * Constructor function, override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function.
          */
-        public ctor():void;
+        public constructor();
 
         /**
          * get duration of the action. (seconds)
          *
          * @return {Number}
          */
-        public getDuration():number;
+        public getDuration() : number;
 
         /**
          * set duration of the action. (seconds)
          *
          * @param {Number} duration
          */
-        public setDuration(duration:number):void;
+        public setDuration(duration: number) : void;
 
         /**
          * Returns a reversed action. <br />
@@ -186,7 +183,7 @@ declare namespace cc {
          *
          * @return {Null}
          */
-        public reverse():void;
+        public reverse() : void;
 
         /**
          * to copy object with deep copy.
@@ -194,7 +191,7 @@ declare namespace cc {
          *
          * @return {cc.FiniteTimeAction}
          */
-        public clone():FiniteTimeAction;
+        public clone() : FiniteTimeAction;
     }
 
     /**
@@ -217,8 +214,8 @@ declare namespace cc {
          * @param {cc.ActionInterval} action
          * @param {Number} speed
          */
-        public ctor(action:ActionInterval, speed:number):void;
-        public ctor():void;
+        public constructor(action: ActionInterval, speed: number);
+        public constructor();
 
         /**
          * initializes the action.
@@ -227,7 +224,7 @@ declare namespace cc {
          * @param {Number} speed
          * @return {Boolean}
          */
-        public initWithAction(action:ActionInterval, speed:number):boolean;
+        public initWithAction(action: ActionInterval, speed: number) : boolean;
 
         /**
          * Gets the current running speed. <br />
@@ -235,14 +232,14 @@ declare namespace cc {
          *
          * @return {Number}
          */
-        public getSpeed():number;
+        public getSpeed() : number;
 
         /**
          * alter the speed of the inner function in runtime.
          *
          * @param {Number} speed
          */
-        public setSpeed(speed:number):void;
+        public setSpeed(speed: number) : void;
 
         /**
          * returns a reversed action. <br />
@@ -253,20 +250,20 @@ declare namespace cc {
          *
          * @return {cc.Speed}
          */
-        public reverse():Speed;
+        public reverse() : Speed;
 
         /**
          * Set inner Action.
          * @param {cc.ActionInterval} action
          */
-        public setInnerAction(action:ActionInterval):void;
+        public setInnerAction(action: ActionInterval) : void;
 
         /**
          * Get inner Action.
          *
          * @return {cc.ActionInterval}
          */
-        public getInnerAction():ActionInterval;
+        public getInnerAction() : ActionInterval;
     }
 
     /**
@@ -277,7 +274,7 @@ declare namespace cc {
      * @param {Number} speed
      * @return {cc.Speed}
      */
-    export function speed(action:ActionInterval, speed:number):Speed;
+    export function speed(action: ActionInterval, speed: number) : Speed;
 
     /**
      * cc.Follow is an action that "follows" a node.
@@ -316,10 +313,10 @@ declare namespace cc {
          * @param {cc.Node} followedNode
          * @param {cc.Rect} rect
          */
-        public ctor(followedNode:Node, rect:Rect):void;
-        public ctor():void;
+        public constructor(followedNode: Node, rect: Rect);
+        public constructor();
 
-        public initWithTarget(followedNode:Node, rect:Rect):boolean;
+        public initWithTarget(followedNode: Node, rect: Rect);
 
         /**
          * to copy object with deep copy.
@@ -327,21 +324,21 @@ declare namespace cc {
          *
          * @return {cc.Follow}
          */
-        public clone():Follow;
+        public clone() : Follow;
 
         /**
          * Get whether camera should be limited to certain area.
          *
          * @return {Boolean}
          */
-        public isBoundarySet():boolean;
+        public isBoundarySet() : boolean;
 
         /**
          * alter behavior - turn on/off boundary.
          *
          * @param {Boolean} value
          */
-        public setBoudarySet(value:boolean):void;
+        public setBoudarySet(value: boolean) : void;
     }
 
     /**
@@ -364,7 +361,7 @@ declare namespace cc {
      * var followAction = cc.follow(sprite);
      * this.runAction(followAction);
      */
-    export function follow(followedNode:Node, rect:Rect):Follow;
+    export function follow(followedNode: Node, rect: Rect) : Follow;
 
     // +--------------------------------------------------------------------------------
     // + File: cocos2d/core/base-nodes/CCActionCamera.js
@@ -378,14 +375,14 @@ declare namespace cc {
         /**
          * Constructor function, override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function.
          */
-        public ctor():void;
+        public constructor();
 
         /**
          * called before the action start. It will also set the target.
          *
          * @param {cc.Node} target
          */
-        public startWithTarget(target:Node):void;
+        public startWithTarget(target: Node) : void;
 
         /**
          * to copy object with deep copy.
@@ -393,7 +390,7 @@ declare namespace cc {
          *
          * @returns {cc.ActionCamera}
          */
-        public clone():ActionCamera;
+        public clone() : ActionCamera;
 
         /**
          * returns a reversed action. <br />
@@ -403,13 +400,13 @@ declare namespace cc {
          * - Will be rewritten
          *
          */
-        public reverse():ActionCamera;
+        public reverse() : ActionCamera;
     }
 
     export interface SphericalCoordinates {
-        newRadius:number;
-        zenith:number;
-        azimuth:number;
+        newRadius: number;
+        zenith: number;
+        azimuth: number;
     }
 
     /**
@@ -438,14 +435,14 @@ declare namespace cc {
          * @param {Number} angleX
          * @param {Number} deltaAngleX
          */
-        public ctor(t:number,
-                    radius:number,
-                    deltaRadius:number,
-                    angleZ:number,
-                    deltaAngleZ:number,
-                    angleX:number,
-                    deltaAngleX:number):void;
-        public ctor():void;
+        public constructor(t: number,
+                    radius: number,
+                    deltaRadius: number,
+                    angleZ: number,
+                    deltaAngleZ: number,
+                    angleX: number,
+                    deltaAngleX: number);
+        public constructor();
 
         /**
          * initializes a cc.OrbitCamera action with radius, delta-radius,  z, deltaZ, x, deltaX
@@ -458,27 +455,27 @@ declare namespace cc {
          * @param {Number} deltaAngleX
          * @return {Boolean}
          */
-        public initWithDuration(t:number,
-                                radius:number,
-                                deltaRadius:number,
-                                angleZ:number,
-                                deltaAngleZ:number,
-                                angleX:number,
-                                deltaAngleX:number):boolean;
-        public initWithDuration(d:number):boolean;
+        public initWithDuration(t: number,
+                                radius: number,
+                                deltaRadius: number,
+                                angleZ: number,
+                                deltaAngleZ: number,
+                                angleX: number,
+                                deltaAngleX: number) : boolean;
+        public initWithDuration(d: number) : boolean;
 
         /**
          * positions the camera according to spherical coordinates
          * @return {Object}
          */
-        public sphericalRadius():SphericalCoordinates;
+        public sphericalRadius() : SphericalCoordinates;
 
         /**
          * called before the action start. It will also set the target.
          *
          * @param {cc.Node} target
          */
-        public startWithTarget(target:Node):void;
+        public startWithTarget(target: Node) : void;
 
         /**
          * to copy object with deep copy.
@@ -486,7 +483,7 @@ declare namespace cc {
          *
          * @returns {cc.ActionCamera}
          */
-        public clone():ActionCamera;
+        public clone() : ActionCamera;
     }
 
     /**
@@ -501,13 +498,13 @@ declare namespace cc {
      * @param {Number} deltaAngleX
      * @return {cc.OrbitCamera}
      */
-    export function orbitCamera(t:number,
-                                radius:number,
-                                deltaRadius:number,
-                                angleZ:number,
-                                deltaAngleZ:number,
-                                angleX:number,
-                                deltaAngleX:number):OrbitCamera;
+    export function orbitCamera(t: number,
+                                radius: number,
+                                deltaRadius: number,
+                                angleZ: number,
+                                deltaAngleZ: number,
+                                angleX: number,
+                                deltaAngleX: number) : OrbitCamera;
 
 
     // +--------------------------------------------------------------------------------
@@ -527,19 +524,19 @@ declare namespace cc {
      * @param {Number} t
      * @return {cc.Point}
      */
-    export function cardinalSplineAt(p0:cc.Point,
-                                     p1:cc.Point,
-                                     p2:cc.Point,
-                                     p3:cc.Point,
-                                     tension:number,
-                                     t:number):cc.Point;
+    export function cardinalSplineAt(p0: Point,
+                                     p1: Point,
+                                     p2: Point,
+                                     p3: Point,
+                                     tension: number,
+                                     t: number) : cc.Point;
 
     /**
      * returns a new copy of the array reversed.
      *
      * @return {Array}
      */
-    export function reverseControlPoints (controlPoints:cc.Point[]):cc.Point[];
+    export function reverseControlPoints(controlPoints: Point[]) : Point[];
 
 
     /**
@@ -548,7 +545,7 @@ declare namespace cc {
      * @param controlPoints
      * @returns {Array}
      */
-    export function cloneControlPoints (controlPoints:cc.Point[]):cc.Point[];
+    export function cloneControlPoints(controlPoints: Point[]) : Point[];
 
     /**
      * returns a point from the array
@@ -557,14 +554,14 @@ declare namespace cc {
      * @param {Number} pos
      * @return {cc.Point}
      */
-    export function getControlPointAt(controlPoints:cc.Point[], pos:number):cc.Point;
+    export function getControlPointAt(controlPoints: Point[], position: number) : Point;
 
     /**
      * reverse the current control point array inline, without generating a new one <br />
      *
      * @param controlPoints
      */
-    export function reverseControlPointsInline(controlPoints:cc.Point[]):void;
+    export function reverseControlPointsInline(controlPoints: Point[]) : void;
 
 
     /**
@@ -596,8 +593,8 @@ declare namespace cc {
          * @param {Array} points array of control points
          * @param {Number} tension
          */
-        public ctor(duration:number, points:cc.Point[], tension:number):void;
-        public ctor():void;
+        public constructor(duration: number, points: Point[], tension: number);
+        public constructor();
 
         /**
          * initializes the action with a duration and an array of points
@@ -608,22 +605,22 @@ declare namespace cc {
          *
          * @return {Boolean}
          */
-        public initWithDuration(duration:number, points:cc.Point[], tension:number):boolean;
-        public initWithDuration(d:number):boolean;
+        public initWithDuration(duration: number, points: Point[], tension: number) : boolean;
+        public initWithDuration(d: number) : boolean;
 
         /**
          * returns a new clone of the action
          *
          * @returns {cc.CardinalSplineTo}
          */
-        public clone():CardinalSplineTo;
+        public clone() : CardinalSplineTo;
 
         /**
          * called before the action start. It will also set the target.
          *
          * @param {cc.Node} target
          */
-        public startWithTarget(target:Node):void;
+        public startWithTarget(target: Node) : void;
 
         /**
          * reverse a new cc.CardinalSplineTo. <br />
@@ -631,28 +628,28 @@ declare namespace cc {
          *
          * @return {cc.CardinalSplineTo}
          */
-        public reverse():CardinalSplineTo;
+        public reverse() : CardinalSplineTo;
 
         /**
          * update position of target
          *
          * @param {cc.Point} newPos
          */
-        public updatePosition(newPos:cc.Point):void;
+        public updatePosition(newPosition: Point) : void;
 
         /**
          * Points getter
          *
          * @return {Array}
          */
-        public getPoints():cc.Point[];
+        public getPoints() : Point[];
 
         /**
          * Points setter
          *
          * @param {Array} points
          */
-        public setPoints(points:cc.Point[]):void;
+        public setPoints(points: Point[]) : void;
     }
 
     /**
@@ -668,7 +665,7 @@ declare namespace cc {
      * //create a cc.CardinalSplineTo
      * var action1 = cc.cardinalSplineTo(3, array, 0);
      */
-    export function cardinalSplineTo(duration:number, points:cc.Point[], tension:number):CardinalSplineTo;
+    export function cardinalSplineTo(duration: number, points: Point[], tension: number) : CardinalSplineTo;
 
     /**
      * Cardinal Spline path. {@link http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Cardinal_spline}
@@ -692,22 +689,22 @@ declare namespace cc {
          * @param {Array} points
          * @param {Number} tension
          */
-        public ctor(duration:number, points:cc.Point[], tension:number):void;
-        public ctor():void;
+        public constructor(duration: number, points: Point[], tension: number);
+        public constructor();
 
         /**
          * reverse a new cc.CardinalSplineBy
          *
          * @return {cc.CardinalSplineBy}
          */
-        public reverse():CardinalSplineBy;
+        public reverse() : CardinalSplineBy;
 
         /**
          * returns a new clone of the action
          *
          * @returns {cc.CardinalSplineBy}
          */
-        public clone():CardinalSplineBy;
+        public clone() : CardinalSplineBy;
     }
 
     /**
@@ -720,7 +717,7 @@ declare namespace cc {
      *
      * @return {cc.CardinalSplineBy}
      */
-    export function cardinalSplineBy(duration:number, points:cc.Point[], tension:number):CardinalSplineBy;
+    export function cardinalSplineBy(duration: number, points: Point[], tension: number) : CardinalSplineBy;
 
     /**
      * An action that moves the target with a CatmullRom curve to a destination point.<br/>
@@ -744,14 +741,14 @@ declare namespace cc {
          * @param {Array} points
          * @param {number} [tension] Ignore, only here to suppress TypeScript compiler error for overloading method.
          */
-        public ctor(dt:number, points:cc.Point[], tension:number):void;
-        public ctor():void;
+        public constructor(dt: number, points: Point[], tension: number);
+        public constructor();
 
         /**
          * returns a new clone of the action
          * @returns {cc.CatmullRomTo}
          */
-        public clone():CatmullRomTo;
+        public clone() : CatmullRomTo;
     }
 
     /**
@@ -766,7 +763,7 @@ declare namespace cc {
      * @example
      * var action1 = cc.catmullRomTo(3, array);
      */
-    export function catmullRomTo(dt:number, points:cc.Point[], tension?:number):CatmullRomTo;
+    export function catmullRomTo(dt: number, points: Point[], tension?: number) : CatmullRomTo;
 
     /**
      * An action that moves the target with a CatmullRom curve by a certain distance.  <br/>
@@ -789,8 +786,8 @@ declare namespace cc {
          * @param {Number} dt
          * @param {Array} points
          */
-        public ctor(dt:number, points:cc.Point[]):void;
-        public ctor():void;
+        public constructor(dt: number, points: Point[]);
+        public constructor();
 
         /**
          * initializes the action with a duration and an array of points
@@ -799,14 +796,14 @@ declare namespace cc {
          * @param {Number} dt
          * @param {Array} points
          */
-        public initWithDuration(dt:number, points:cc.Point[]):boolean;
-        public initWithDuration(d:number):boolean;
+        public initWithDuration(dt: number, points: Point[]) : boolean;
+        public initWithDuration(d: number) : boolean;
 
         /**
          * returns a new clone of the action
          * @returns {cc.CatmullRomBy}
          */
-        public clone():CatmullRomBy;
+        public clone() : CatmullRomBy;
     }
 
     /**
@@ -818,7 +815,7 @@ declare namespace cc {
      * @example
      * var action1 = cc.catmullRomBy(3, array);
      */
-    export function catmullRomBy(dt:number, points:cc.Point[]):CatmullRomBy;
+    export function catmullRomBy(dt: number, points: Point[]) : CatmullRomBy;
 
     // +--------------------------------------------------------------------------------
     // + File: cocos2d/core/base-nodes/CCActionEase.js
@@ -842,8 +839,8 @@ declare namespace cc {
          * creates the action of ActionEase.
          * @param {cc.ActionInterval} action
          */
-        public ctor(action:ActionInterval):void;
-        public ctor():void;
+        public constructor(action:ActionInterval);
+        public constructor();
 
         /**
          * initializes the action
@@ -851,7 +848,7 @@ declare namespace cc {
          * @param {cc.ActionInterval} action
          * @return {Boolean}
          */
-        public initWithAction(action:ActionInterval):boolean;
+        public initWithAction(action: ActionInterval) : boolean;
 
         /**
          * to copy object with deep copy.
@@ -859,7 +856,7 @@ declare namespace cc {
          *
          * @returns {cc.ActionEase}
          */
-        public clone():ActionEase;
+        public clone(): ActionEase;
 
         /**
          * Create new action to original operation effect opposite. <br />
@@ -869,14 +866,14 @@ declare namespace cc {
          * - Will be rewritten
          * @return {cc.ActionEase}
          */
-        public reverse():ActionEase;
+        public reverse() : ActionEase;
 
         /**
          * Get inner Action.
          *
          * @return {cc.ActionInterval}
          */
-        public getInnerAction():ActionInterval;
+        public getInnerAction() : ActionInterval;
     }
 
     /**
@@ -888,7 +885,7 @@ declare namespace cc {
      * // example
      * var moveEase = cc.actionEase(action);
      */
-    export function actionEase(action:ActionInterval):ActionEase;
+    export function actionEase(action: ActionInterval) : ActionEase;
 
     /**
      * Base class for Easing actions with rate parameters
@@ -915,8 +912,8 @@ declare namespace cc {
          * @param {cc.ActionInterval} action
          * @param {Number} rate
          */
-        public ctor(action:ActionInterval, rate?:number):void;
-        public ctor():void;
+        public constructor(action: ActionInterval, rate?: number);
+        public constructor();
 
         /**
          * Initializes the action with the inner action and the rate parameter
@@ -924,7 +921,7 @@ declare namespace cc {
          * @param {Number} rate
          * @return {Boolean}
          */
-        public initWithAction(action:ActionInterval, rate?:number):boolean;
+        public initWithAction(action: ActionInterval, rate?: number) : boolean;
 
         /**
          * to copy object with deep copy.
@@ -932,18 +929,18 @@ declare namespace cc {
          *
          * @returns {cc.EaseRateAction}
          */
-        public clone():EaseRateAction;
+        public clone() : EaseRateAction;
 
         /**
          * set rate value for the actions
          * @param {Number} rate
          */
-        public setRate(rate:number):void;
+        public setRate(rate: number) : void;
 
         /** get rate value for the actions
          * @return {Number}
          */
-        public getRate():number;
+        public getRate() : number;
 
         /**
          * Create new action to original operation effect opposite. <br />
@@ -953,7 +950,7 @@ declare namespace cc {
          * - Will be rewritten
          * @return {cc.EaseRateAction}
          */
-        public reverse():EaseRateAction;
+        public reverse() : EaseRateAction;
     }
 
     /**
@@ -966,7 +963,7 @@ declare namespace cc {
      * // example
      * var moveEaseRateAction = cc.easeRateAction(action, 3.0);
      */
-    export function easeRateAction(action:ActionInterval, rate:number):EaseRateAction;
+    export function easeRateAction(action: ActionInterval, rate: number) : EaseRateAction;
 
     /**
      * cc.EaseIn action with a rate. From slow to fast.
@@ -987,7 +984,7 @@ declare namespace cc {
          * Create a cc.easeIn action. Opposite with the original motion trajectory.
          * @return {cc.EaseIn}
          */
-        public reverse():EaseIn;
+        public reverse() : EaseIn;
 
         /**
          * to copy object with deep copy.
@@ -995,7 +992,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseIn}
          */
-        public clone():EaseIn;
+        public clone() : EaseIn;
     }
 
     /**
@@ -1009,7 +1006,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeIn(3.0));
      */
-    export function easeIn(rate:number):EaseIn;
+    export function easeIn(rate: number) : EaseIn;
 
     /**
      * cc.EaseOut action with a rate. From fast to slow.
@@ -1030,7 +1027,7 @@ declare namespace cc {
          * Create a cc.easeIn action. Opposite with the original motion trajectory.
          * @return {cc.EaseOut}
          */
-        public reverse():EaseOut;
+        public reverse() : EaseOut;
 
         /**
          * to copy object with deep copy.
@@ -1038,7 +1035,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseOut}
          */
-        public clone():EaseOut;
+        public clone() : EaseOut;
     }
 
     /**
@@ -1052,7 +1049,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeOut(3.0));
      */
-    export function easeOut(rate:number):EaseOut;
+    export function easeOut(rate: number) : EaseOut;
 
     /**
      * cc.EaseInOut action with a rate. <br />
@@ -1075,13 +1072,13 @@ declare namespace cc {
          *
          * @returns {cc.EaseInOut}
          */
-        public clone():EaseInOut;
+        public clone() : EaseInOut;
 
         /**
          * Create a cc.EaseInOut action. Opposite with the original motion trajectory.
          * @return {cc.EaseInOut}
          */
-        public reverse():EaseInOut;
+        public reverse() : EaseInOut;
     }
 
     /**
@@ -1095,7 +1092,7 @@ declare namespace cc {
      * //The new usage
      * action.easing(cc.easeInOut(3.0));
      */
-    export function easeInOut(rate:number):EaseInOut;
+    export function easeInOut(rate: number) : EaseInOut;
 
     /**
      * cc.Ease Exponential In. Slow to Fast. <br />
@@ -1117,7 +1114,7 @@ declare namespace cc {
          * Create a cc.EaseExponentialOut action. Opposite with the original motion trajectory.
          * @return {cc.EaseExponentialOut}
          */
-        public reverse():EaseExponentialOut;
+        public reverse() : EaseExponentialOut;
 
         /**
          * to copy object with deep copy.
@@ -1125,7 +1122,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseExponentialIn}
          */
-        public clone():EaseExponentialIn;
+        public clone() : EaseExponentialIn;
     }
 
     //// TODO: What's this for? Does it alter the inteface?
@@ -1148,7 +1145,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeExponentialIn());
      */
-    export function easeExponentialIn():EaseExponentialIn;
+    export function easeExponentialIn() : EaseExponentialIn;
 
     /**
      * Ease Exponential Out. <br />
@@ -1170,7 +1167,7 @@ declare namespace cc {
          * Create a cc.EaseExponentialIn action. Opposite with the original motion trajectory.
          * @return {cc.EaseExponentialIn}
          */
-        public reverse():EaseExponentialIn;
+        public reverse() : EaseExponentialIn;
 
         /**
          * to copy object with deep copy.
@@ -1178,7 +1175,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseExponentialOut}
          */
-        public clone():EaseExponentialOut;
+        public clone() : EaseExponentialOut;
     }
 
     //cc._easeExponentialOutObj = {
@@ -1200,7 +1197,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeExponentialOut());
      */
-    export function easeExponentialOut():EaseExponentialOut;
+    export function easeExponentialOut() : EaseExponentialOut;
 
     /**
      * Ease Exponential InOut. <br />
@@ -1224,7 +1221,7 @@ declare namespace cc {
          * Create a cc.EaseExponentialInOut action. Opposite with the original motion trajectory.
          * @return {cc.EaseExponentialInOut}
          */
-        public reverse():EaseExponentialInOut;
+        public reverse() : EaseExponentialInOut;
 
         /**
          * to copy object with deep copy.
@@ -1232,7 +1229,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseExponentialInOut}
          */
-        public clone():EaseExponentialInOut;
+        public clone() : EaseExponentialInOut;
     }
 
     //cc._easeExponentialInOutObj = {
@@ -1261,7 +1258,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeExponentialInOut());
      */
-    export function easeExponentialInOut():EaseExponentialInOut;
+    export function easeExponentialInOut() : EaseExponentialInOut;
 
     /**
      * Ease Sine In. <br />
@@ -1283,7 +1280,7 @@ declare namespace cc {
          * Create a cc.EaseSineOut action. Opposite with the original motion trajectory.
          * @return {cc.EaseSineOut}
          */
-        public reverse():EaseSineOut;
+        public reverse() : EaseSineOut;
 
         /**
          * to copy object with deep copy.
@@ -1291,7 +1288,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseSineIn}
          */
-        public clone():EaseSineIn;
+        public clone() : EaseSineIn;
     }
 
     //cc._easeSineInObj = {
@@ -1313,7 +1310,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeSineIn());
      */
-    export function easeSineIn():EaseSineIn;
+    export function easeSineIn() : EaseSineIn;
 
     /**
      * Ease Sine Out. <br />
@@ -1335,7 +1332,7 @@ declare namespace cc {
          * Create a cc.EaseSineIn action. Opposite with the original motion trajectory.
          * @return {cc.EaseSineIn}
          */
-        public reverse():EaseSineIn;
+        public reverse() : EaseSineIn;
 
         /**
          * to copy object with deep copy.
@@ -1343,7 +1340,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseSineOut}
          */
-        public clone():EaseSineOut;
+        public clone() : EaseSineOut;
     }
 
     //cc._easeSineOutObj = {
@@ -1365,7 +1362,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeSineOut());
      */
-    export function easeSineOut():EaseSineOut;
+    export function easeSineOut() : EaseSineOut;
 
     /**
      * Ease Sine InOut. <br />
@@ -1389,13 +1386,13 @@ declare namespace cc {
          *
          * @returns {cc.EaseSineInOut}
          */
-        public clone():EaseSineInOut;
+        public clone() : EaseSineInOut;
 
         /**
          * Create a cc.EaseSineInOut action. Opposite with the original motion trajectory.
          * @return {cc.EaseSineInOut}
          */
-        public reverse():EaseSineInOut;
+        public reverse() : EaseSineInOut;
     }
 
     //cc._easeSineInOutObj = {
@@ -1436,20 +1433,20 @@ declare namespace cc {
          * @param {cc.ActionInterval} action
          * @param {Number} [period=0.3]
          */
-        public ctor(action:ActionInterval, period?:number):void;
-        public ctor():void;
+        public constructor(action: ActionInterval, period?: number);
+        public constructor();
 
         /**
          * get period of the wave in radians. default is 0.3
          * @return {Number}
          */
-        public getPeriod():number;
+        public getPeriod();
 
         /**
          * set period of the wave in radians.
          * @param {Number} period
          */
-        public setPeriod(period:number):void;
+        public setPeriod(period: number);
 
         /**
          * Initializes the action with the inner action and the period in radians (default is 0.3)
@@ -1457,15 +1454,15 @@ declare namespace cc {
          * @param {Number} [period=0.3]
          * @return {Boolean}
          */
-        public initWithAction(action:ActionInterval, period:number):boolean;
-        public initWithAction(action:ActionInterval):boolean;
+        public initWithAction(action: ActionInterval, period: number) : boolean;
+        public initWithAction(action: ActionInterval) : boolean;
 
         /**
          * Create a action. Opposite with the original motion trajectory. <br />
          * Will be overwrite.
          * @return {null}
          */
-        public reverse():EaseElastic;
+        public reverse() : EaseElastic;
 
         /**
          * to copy object with deep copy.
@@ -1473,7 +1470,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseElastic}
          */
-        public clone():EaseElastic;
+        public clone() : EaseElastic;
     }
 
     /**
@@ -1497,7 +1494,7 @@ declare namespace cc {
          * Create a action. Opposite with the original motion trajectory.
          * @return {cc.EaseElasticOut}
          */
-        public reverse():EaseElasticOut;
+        public reverse() : EaseElasticOut;
 
         /**
          * to copy object with deep copy.
@@ -1505,7 +1502,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseElasticIn}
          */
-        public clone():EaseElasticIn;
+        public clone() : EaseElasticIn;
     }
 
 
@@ -1533,7 +1530,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeElasticIn(3.0));
      */
-    export function easeElasticIn(period?:number):EaseElasticIn;
+    export function easeElasticIn(period?: number) : EaseElasticIn;
 
     /**
      * Ease Elastic Out action. <br />
@@ -1557,7 +1554,7 @@ declare namespace cc {
          * Create a action. Opposite with the original motion trajectory.
          * @return {cc.EaseElasticIn}
          */
-        public reverse():EaseElasticIn;
+        public reverse() : EaseElasticIn;
 
         /**
          * to copy object with deep copy.
@@ -1565,7 +1562,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseElasticOut}
          */
-        public clone():EaseElasticOut;
+        public clone() : EaseElasticOut;
     }
 
 ////default ease elastic out object (period = 0.3)
@@ -1588,7 +1585,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeElasticOut(3.0));
      */
-    export function easeElasticOut(period?:number):EaseElasticOut;
+    export function easeElasticOut(period?: number) : EaseElasticOut;
 
     /**
      * Ease Elastic InOut action. <br />
@@ -1611,7 +1608,7 @@ declare namespace cc {
          * Create a action. Opposite with the original motion trajectory.
          * @return {cc.EaseElasticInOut}
          */
-        public reverse():EaseElasticInOut;
+        public reverse() : EaseElasticInOut;
 
         /**
          * to copy object with deep copy.
@@ -1619,7 +1616,7 @@ declare namespace cc {
          *
          * @returns {cc.EaseElasticInOut}
          */
-        public clone():EaseElasticInOut;
+        public clone() : EaseElasticInOut;
     }
 
     /**
@@ -1633,7 +1630,7 @@ declare namespace cc {
      * // example
      * action.easing(cc.easeElasticInOut(3.0));
      */
-    export function easeElasticInOut(period?:number):EaseElasticInOut;
+    export function easeElasticInOut(period?: number) : EaseElasticInOut;
 
     /**
      * cc.EaseBounce abstract class.
@@ -1648,7 +1645,7 @@ declare namespace cc {
          * @param {Number} time1
          * @return {Number}
          */
-        public bounceTime(time1:number):number;
+        public bounceTime(time1: number) : number;
 
         /**
          * to copy object with deep copy.
@@ -1656,13 +1653,13 @@ declare namespace cc {
          *
          * @returns {cc.EaseBounce}
          */
-        public clone():EaseBounce;
+        public clone() : EaseBounce;
 
         /**
          * Create a action. Opposite with the original motion trajectory.
          * @return {cc.EaseBounce}
          */
-        public reverse():EaseBounce;
+        public reverse() : EaseBounce;
     }
 
     /**
