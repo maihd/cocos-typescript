@@ -13,7 +13,7 @@ define(["require", "exports", "./resource"], function (require, exports, resourc
         function HelloWorldLayer() {
             var _this = _super.call(this) || this;
             var size = cc.winSize;
-            var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
+            var helloLabel = new ccui.Text("Hello World", "Arial", 38);
             helloLabel.setPositionX(size.width / 2);
             helloLabel.setPositionY(size.height / 2 + 200);
             _this.addChild(helloLabel, 5);

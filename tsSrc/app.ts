@@ -6,7 +6,7 @@ class BaseLayer extends cc.Layer
 
 class HelloWorldLayer extends BaseLayer
 {
-    sprite : any;
+    sprite : cc.Sprite;
 
     constructor() 
     {
@@ -14,9 +14,9 @@ class HelloWorldLayer extends BaseLayer
 
         var size = cc.winSize;
 
-        var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
-        helloLabel.setPositionX(size.width / 2);
-        helloLabel.setPositionY(size.height / 2 + 200);
+        var helloLabel = new ccui.Text("Hello World", "Arial", 38);
+        helloLabel.x = size.width / 2;
+        helloLabel.y = size.height / 2 + 200;
         this.addChild(helloLabel, 5);
 
         this.sprite = new cc.Sprite(res.HelloWorld_png);

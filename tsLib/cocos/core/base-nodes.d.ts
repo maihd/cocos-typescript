@@ -2,11 +2,11 @@
 
 declare namespace cc 
 {
-// +--------------------------------------------------------------------------------
-// + File: cocos/core/base-nodes/CCNode.js
-// +--------------------------------------------------------------------------------
+    // +--------------------------------------------------------------------------------
+    // + File: cocos/core/base-nodes/CCNode.js
+    // +--------------------------------------------------------------------------------
 
-// Class Definitions
+    // Class Definitions
     /**
      * cc.Node is the root class of all node. Anything that gets drawn or contains things that get drawn is a cc.Node.
      * The most popular cc.Nodes are: cc.Scene, cc.Layer, cc.Sprite, cc.Menu.
@@ -108,8 +108,8 @@ declare namespace cc
         //public get name() : string;
         //public set name(v : string);
         
-        public name : string;
-        public className : string;
+        public name: string;
+        public className: string;
 
         public actionManager: ActionManager;
         public anchorX: number;
@@ -163,7 +163,7 @@ declare namespace cc
          * @param {number} [localZOrder]  Z order for drawing priority. Please refer to setZOrder(int)
          * @param {number|string} [tag]  An integer or a name to identify the node easily. Please refer to setTag(int) and setName(string)
          */
-        public addChild(child: Node, localZOrder?: number, tag?: number|string) : void;
+        public addChild(child: Node, localZOrder?: number, tag?: number | string) : void;
 
         /**
          * Adds a component to the node's component container.
@@ -1127,7 +1127,7 @@ declare namespace cc
          * @param {cc.Point} point The anchor point of node or The x axis anchor of node.
          * @param {Number} [y] The y axis anchor of node.
          */
-        public setAnchorPoint(point: Point|number, y?: number) : void;
+        public setAnchorPoint(point: Point | number, y?: number) : void;
 
 
         /**
@@ -1212,7 +1212,7 @@ declare namespace cc
          * @function
          * @param {String} name
          */
-        public setName(name:string) : void;
+        public setName(name: string) : void;
 
         /**
          * TODO: Update this with an explanation of this method's purpose/functionality.
@@ -1225,9 +1225,9 @@ declare namespace cc
          * The positions in pixels is calculated like the following:
          *   _position = _normalizedPosition * parent.getContentSize()
          *
-         * @param {cc.Point} pos
+         * @param {cc.Point} position
          */
-        public setNormalizedPosition(pos: Point) : void;
+        public setNormalizedPosition(position: Point) : void;
 
         /**
          *
@@ -1640,9 +1640,9 @@ declare namespace cc
      */
     export class AtlasNode extends Node 
     {
-        public texture:Texture2D;
-        public textureAtlas:TextureAtlas;
-        public quadsToDraw:number;
+        public texture: Texture2D;
+        public textureAtlas: TextureAtlas;
+        public quadsToDraw: number;
 
         /**
          * <p>Constructor function, override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function.</p>
@@ -1651,7 +1651,7 @@ declare namespace cc
          * @param {Number} tileHeight
          * @param {Number} itemsToRender
          */
-        public constructor(tile:string, tileWidth:number, tileHeight:number, itemsToRender:number);
+        public constructor(tile: string, tileWidth: number, tileHeight: number, itemsToRender: number);
         //public ctor(tile?:string, tileWidth?:number, tileHeight?:number, itemsToRender?:number):void;
 
         /**
@@ -1659,14 +1659,14 @@ declare namespace cc
          * Empty implementation, shall be overridden in subclasses
          * @function
          */
-        public updateAtlasValues():void;
+        public updateAtlasValues(): void;
 
         /**
          * Get node's blend function
          * @function
          * @return {cc.BlendFunc}
          */
-        public getBlendFunc():BlendFunc;
+        public getBlendFunc(): BlendFunc;
 
         /**
          * Set node's blend function
@@ -1675,35 +1675,35 @@ declare namespace cc
          * @param {Number | cc.BlendFunc} src
          * @param {Number} dst
          */
-        public setBlendFunc(src:BlendFunc|number, dst?:number):void;
+        public setBlendFunc(src: BlendFunc | number, dst?: number) : void;
 
         /**
          * Set the atlas texture
          * @function
          * @param {cc.TextureAtlas} value The texture
          */
-        public setTextureAtlas(value:TextureAtlas):void;
+        public setTextureAtlas(value: TextureAtlas) : void;
 
         /**
          * Get the atlas texture
          * @function
          * @return {cc.TextureAtlas}
          */
-        public getTextureAtlas():TextureAtlas;
+        public getTextureAtlas() : TextureAtlas;
 
         /**
          * Get the number of quads to be rendered
          * @function
          * @return {Number}
          */
-        public getQuadsToDraw():number;
+        public getQuadsToDraw() : number;
 
         /**
          * Set the number of quads to be rendered
          * @function
          * @param {Number} quadsToDraw
          */
-        public setQuadsToDraw(quadsToDraw:number):void;
+        public setQuadsToDraw(quadsToDraw: number) : void;
 
         /**
          * Initializes an cc.AtlasNode object with an atlas texture file name, the width, the height of each tile and the quantity of tiles to render
@@ -1714,7 +1714,7 @@ declare namespace cc
          * @param {Number} itemsToRender    The quantity of tiles to be rendered
          * @return {Boolean}
          */
-        public initWithTileFile(tile:string, tileWidth:number, tileHeight:number, itemsToRender:number):boolean;
+        public initWithTileFile(tile: string, tileWidth: number, tileHeight: number, itemsToRender: number) : boolean;
 
         /**
          * Initializes an CCAtlasNode with an atlas texture, the width, the height of each tile and the quantity of tiles to render
@@ -1725,20 +1725,20 @@ declare namespace cc
          * @param {Number} itemsToRender    The quantity of tiles to be rendered
          * @return {Boolean}
          */
-        public initWithTexture(texture:Texture2D, tileWidth:number, tileHeight:number, itemsToRender:number):boolean;
+        public initWithTexture(texture: Texture2D, tileWidth: number, tileHeight: number, itemsToRender: number) : boolean;
 
         /**
          * Get the current texture
          * @function
          * @return {cc.Texture2D}
          */
-        public getTexture():Texture2D;
+        public getTexture() : Texture2D;
 
         /**
          * Replace the current texture with a new one
          * @function
          * @param {cc.Texture2D} texture    The new texture
          */
-        public setTexture(texture:Texture2D):void;
+        public setTexture(texture: Texture2D) : void;
     }
 }

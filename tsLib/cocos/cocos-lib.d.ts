@@ -22,6 +22,9 @@
 /// <reference path="tilemap/tiled-map.d.ts" />
 /// <reference path="tilemap/xml-parser.d.ts" />
 
+/// <reference path="ui/ccui.Widget.d.ts" />
+/// <reference path="ui/ccui.Text.d.ts" />
+
 /// <reference path="clipping-nodes.d.ts" />
 /// <reference path="jsb.d.ts" />
 /// <reference path="kazmath.d.ts" />
