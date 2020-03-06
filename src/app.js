@@ -14,8 +14,8 @@ define(["require", "exports", "./resource"], function (require, exports, resourc
             var _this = _super.call(this) || this;
             var size = cc.winSize;
             var helloLabel = new ccui.Text("Hello World", "Arial", 38);
-            helloLabel.setPositionX(size.width / 2);
-            helloLabel.setPositionY(size.height / 2 + 200);
+            helloLabel.x = size.width / 2;
+            helloLabel.y = size.height / 2 + 200;
             _this.addChild(helloLabel, 5);
             _this.sprite = new cc.Sprite(resource_1.res.HelloWorld_png);
             _this.sprite.x = size.width * 0.5;
