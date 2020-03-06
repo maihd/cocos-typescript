@@ -1,3 +1,5 @@
+"use strict";
+
 function __extends(Derive, Base) 
 {
     for (let key in Base)
@@ -29,9 +31,7 @@ function __values(o)
     };
 };
 
-(function () {
-    "use strict";
-
+(function (global) {
     let classes = [
         "Node",
         "Scene",
@@ -45,21 +45,41 @@ function __values(o)
         "LayerGradient",
     ];
     classes.forEach(function (name) {
-        cc[name] = extend(cc[name], "cc." + name);
+        let result = extend(cc[name], "cc." + name);
+        cc[name] = result;
+
+        if (global)
+        {
+            global[name] = result;
+        }
     });
 
-    if (typeof ccui === 'object')
+    if (typeof ccui === "object")
     {
         let uiClasses = [
-            "Widget"
+            "Widget",
+            "Text",
+            "Button",
+            "Layout",
+            "CheckBox",
+            "ListView",
+            "ImageView",
         ];
         uiClasses.forEach(function (name) {
-            ccui[name] = extend(ccui[name], "ccui." + name);
+            let result = extend(ccui[name], "ccui." + name);
+            ccui[name] = result;
+            
+            if (global)
+            {
+                global["UI" + name] = result;
+            }
         });
     }
 
     function extend(Base, className)
     {
+        cc.log("create class name: " + className);
+
         let ctor = Base.prototype.ctor;
         let Derive = function () {
             ctor && ctor.apply(this, arguments);
@@ -67,22 +87,34 @@ function __values(o)
         };
 
         __extends(Derive, Base);
-        defineProperties(Derive.prototype, className);
-
-        Object.defineProperty(Derive, 'className', { 
+        Object.defineProperty(Derive, "className", { 
             writable: false, 
             value: className
         });
 
+        defineNodeProperties(Derive.prototype, className);
+
         return Derive;
     }
         
-    function defineProperties(target, className)
+    function defineNodeProperties(target, className)
     {
         Object.defineProperties(target, {
             className: {
                 writable: false,
                 value: className
+            },
+
+            width: {
+                get: function () {
+                    return this.getContentSize().width;
+                }
+            },
+
+            height: {
+                get: function () {
+                    return this.getContentSize().height;
+                }
             },
 
             x: {
@@ -102,6 +134,26 @@ function __values(o)
 
                 set: function (value) {
                     this.setPositionY(value);
+                }
+            },
+
+            position: {
+                get: function () {
+                    return this.getPosition();
+                },
+
+                set: function (value) {
+                    this.setPosition(value);
+                }
+            },
+
+            normalizedPosition: {
+                get: function () {
+                    return this.getNormalizedPosition();
+                },
+
+                set: function (value) {
+                    this.setNormalizedPosition(value);
                 }
             },
             
@@ -143,7 +195,7 @@ function __values(o)
                 set: function (value) {
                     this.setRotation(value);
                 }
-            }
+            },
         });
     }
-})();
+})(undefined);

@@ -4,10 +4,10 @@
         //"noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        //"sourceMap": true,
         "outDir": "src/",
         "allowJs": true,
-        "inlineSourceMap": true,
+        "sourceMap": false,
+        "inlineSourceMap": false,
         "noEmitHelpers": true,
     },
 

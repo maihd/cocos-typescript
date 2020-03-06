@@ -11,3 +11,5 @@
 
 /frameworks/**/[Dd]ebug.*
 /frameworks/**/[Rr]elease.*
+/frameworks/runtime-src/proj.win32/cocos-typescript.sdf
+/frameworks/runtime-src/proj.win32/cocos-typescript.opensdf

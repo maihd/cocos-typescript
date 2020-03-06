@@ -3399,7 +3399,7 @@ declare namespace cc {
      * var seq = cc.sequence(actArray);
      * todo: It should be use new
      */
-    export function sequence(tempArray:FiniteTimeAction[]):Sequence;
+    export function sequence(...actions: FiniteTimeAction | FiniteTimeAction[]) : Sequence;
 
     /**
      * Repeats an action a number of times.

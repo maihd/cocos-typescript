@@ -10,8 +10,8 @@
     "typescript": "^3.4.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "init": "tsc --init",
+    "start": "cocos-typescript",
     "build": "rm -rf src && tsc"
   },
   "author": "",

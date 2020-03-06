@@ -23,6 +23,15 @@ class HelloWorldLayer extends BaseLayer
         this.sprite.x = size.width * 0.5;
         this.sprite.y = size.height * 0.5;
         this.addChild(this.sprite, 0);
+
+        this.sprite.runAction(
+            cc.repeatForever(
+                cc.sequence(
+                    cc.moveBy(1.0, 100, 0),   
+                    cc.moveBy(1.0, -100, 0)
+                )
+            )
+        );
     }
 };
 
