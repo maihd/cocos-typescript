@@ -44,14 +44,14 @@ declare namespace cc {
      * @property {Boolean}                  clippingToBounds   - Indicate whether the scroll view clips its children
      */
     export class ScrollView extends Layer {
-        public minOffset: Point;
-        public maxOffset: Point;
-        public bounceable: boolean;
-        public viewSize: Size;
-        public container: Node;
-        public direction: number;
-        public delegate: ScrollViewDelegate;
-        public clippingToBounds: boolean;
+        minOffset: Point;
+        maxOffset: Point;
+        bounceable: boolean;
+        viewSize: Size;
+        container: Node;
+        direction: number;
+        delegate: ScrollViewDelegate;
+        clippingToBounds: boolean;
 
         /**
          * @contructor
@@ -59,9 +59,9 @@ declare namespace cc {
          * @param container
          * @returns {ScrollView}
          */
-        public constructor(size: Size, container?: Node);
+        constructor(size: Size, container?: Node);
 
-        public init() : boolean;
+        init() : boolean;
 
         /**
          * initialized whether success or fail
@@ -69,7 +69,7 @@ declare namespace cc {
          * @param {cc.Node} container
          * @return {Boolean}
          */
-        public initWithViewSize(size: Size, container?: Node) : boolean;
+        initWithViewSize(size: Size, container?: Node) : boolean;
 
         /**
          * Sets a new content offset. It ignores max/min offset. It just sets what's given. (just like UIKit's UIScrollView)
@@ -77,9 +77,9 @@ declare namespace cc {
          * @param {cc.Point} offset new offset
          * @param {Number} [animated=] If true, the view will scroll to the new offset
          */
-        public setContentOffset(offset: Point, animated?: number) : void;
+        setContentOffset(offset: Point, animated?: number) : void;
 
-        public getContentOffset() : Point;
+        getContentOffset() : Point;
 
         /**
          * Sets a new content offset. It ignores max/min offset. It just sets what's given. (just like UIKit's UIScrollView) 
@@ -88,7 +88,7 @@ declare namespace cc {
          * @param {cc.Point} offset new offset
          * @param {Number} dt animation duration
          */
-        public setContentOffsetInDuration(offset: Point, dt: number) : void;
+        setContentOffsetInDuration(offset: Point, dt: number) : void;
 
         /**
          * Sets a new scale and does that for a predefined duration.
@@ -96,9 +96,9 @@ declare namespace cc {
          * @param {Number} scale a new scale vale
          * @param {Boolean} [animated=null] if YES, scaling is animated
          */
-        public setZoomScale(scale: number, animated?: boolean) : void;
+        setZoomScale(scale: number, animated?: boolean) : void;
 
-        public getZoomScale() : Point;
+        getZoomScale() : Point;
 
         /**
          * Sets a new scale for container in a given duration.
@@ -106,44 +106,44 @@ declare namespace cc {
          * @param {Number} s a new scale value
          * @param {Number} dt animation duration
          */
-        public setZoomScaleInDuration(s: number, dt: number) : void;
+        setZoomScaleInDuration(s: number, dt: number) : void;
 
         /**
          * Returns the current container's minimum offset. You may want this while you animate scrolling by yourself
          * @return {cc.Point} Returns the current container's minimum offset.
          */
-        public minContainerOffset() : Point;
+        minContainerOffset() : Point;
 
         /**
          * Returns the current container's maximum offset. You may want this while you animate scrolling by yourself
          * @return {cc.Point} Returns the current container's maximum offset.
          */
-        public maxContainerOffset() : Point;
+        maxContainerOffset() : Point;
 
         /**
          * Determines if a given node's bounding box is in visible bounds
          * @param {cc.Node} node
          * @return {Boolean} YES if it is in visible bounds
          */
-        public isNodeVisible(node: Node) : boolean;
+        isNodeVisible(node: Node) : boolean;
 
         /**
          * Provided to make scroll view compatible with SWLayer's pause method
          */
-        //public pause(sender?:Class):void;
+        //pause(sender?:Class):void;
 
         /**
          * Provided to make scroll view compatible with SWLayer's resume method
          */
-        //public resume(sender?:Class):void;
+        //resume(sender?:Class):void;
 
-        public isDragging() : boolean;
+        isDragging() : boolean;
 
-        public isTouchMoved() : boolean;
+        isTouchMoved() : boolean;
 
-        public isBounceable() : boolean;
+        isBounceable() : boolean;
 
-        public setBounceable(bounceable: boolean) : void;
+        setBounceable(bounceable: boolean) : void;
 
         /**
          * 
@@ -152,47 +152,47 @@ declare namespace cc {
          * Hence, this scroll view will use a separate size property.
          * 
          */
-        public getViewSize() : Size;
+        getViewSize() : Size;
 
-        public setViewSize(size: Size) : void;
+        setViewSize(size: Size) : void;
 
-        public getContainer() : Node;
+        getContainer() : Node;
 
-        public setContainer(container: Node) : void;
+        setContainer(container: Node) : void;
 
         /**
          * direction allowed to scroll. CCScrollViewDirectionBoth by default.
          */
-        public getDirection() : number;
+        getDirection() : number;
 
-        public setDirection(direction: number) : void;
+        setDirection(direction: number) : void;
 
-        public getDelegate() : ScrollViewDelegate;
+        getDelegate() : ScrollViewDelegate;
 
-        public setDelegate(delegate: ScrollViewDelegate) : void;
+        setDelegate(delegate: ScrollViewDelegate) : void;
 
         /** override functions */
         // optional
-        public onTouchBegan(touch: Touch, event: Event) : boolean;
+        onTouchBegan(touch: Touch, event: Event) : boolean;
 
-        public onTouchMoved(touch: Touch, event: Event) : void;
+        onTouchMoved(touch: Touch, event: Event) : void;
 
-        public onTouchEnded(touch: Touch, event: Event) : void;
+        onTouchEnded(touch: Touch, event: Event) : void;
 
-        public onTouchCancelled(touch: Touch, event: Event) : void;
+        onTouchCancelled(touch: Touch, event: Event) : void;
 
-        public updateInset() : void;
+        updateInset() : void;
 
         /**
          * Determines whether it clips its children or not.
          */
-        public isClippingToBounds() : boolean;
+        isClippingToBounds() : boolean;
 
-        public setClippingToBounds(clippingToBounds: Size) : void;
+        setClippingToBounds(clippingToBounds: Size) : void;
 
-        public isTouchEnabled() : boolean;
+        isTouchEnabled() : boolean;
 
-        public setTouchEnabled(enabled: boolean) : void;
+        setTouchEnabled(enabled: boolean) : void;
     }
 
     // +--------------------------------------------------------------------------------
@@ -214,9 +214,9 @@ declare namespace cc {
      * @extends cc.SortableObject
      */
     export class SortedObject extends SortableObject {
-        public constructor();
-        public getObjectID() : number;
-        public setObjectID(objectID: number) : void;
+        constructor();
+        getObjectID() : number;
+        setObjectID(objectID: number) : void;
     }
 
     /**
@@ -225,7 +225,7 @@ declare namespace cc {
      * @extend cc.Class
      */
     export class ArrayForObjectSorting extends Class {
-        public constructor();
+        constructor();
 
         /**
          * Inserts a given object into array.
@@ -239,7 +239,7 @@ declare namespace cc {
          * @function
          * @param {Object} addObject    Object to insert
          */
-        public insertSortedObject(addObject: {}) : void;
+        insertSortedObject(addObject: {}) : void;
 
         /*!
          * Removes an object in array.
@@ -250,7 +250,7 @@ declare namespace cc {
          * @function
          * @param {Object} delObject    Object to remove
          */
-        public removeSortedObject(delObject: {}) : void;
+        removeSortedObject(delObject: {}) : void;
 
         /*!
          * Sets a new value of the key for the given object.
@@ -263,9 +263,9 @@ declare namespace cc {
          * @param {Number} tag          Tag to set
          * @param {Object} setObject    The object which would be set
          */
-        public setObjectID_ofSortedObject(tag: number, setObject: {}) : void;
+        setObjectID_ofSortedObject(tag: number, setObject: {}) : void;
 
-        public objectWithObjectID(tag: number) : {};
+        objectWithObjectID(tag: number) : {};
 
         /*!
          * Returns an object with given key and value.
@@ -277,7 +277,7 @@ declare namespace cc {
          * @param {Number} tag  Tag to locate object
          * @return {Object|null}
          */
-        public getObjectWithObjectID(tag: number) : {};
+        getObjectWithObjectID(tag: number) : {};
 
         /*!
          * Returns an index of the object with given key and value.
@@ -291,52 +291,25 @@ declare namespace cc {
          * @param {Number} idxObj   Id to locate object
          * @return {Number} index of an object found
          */
-        public indexOfSortedObject(idxObj: number) : number;
+        indexOfSortedObject(idxObj: number) : number;
 
         //implement array method
-        public count() : number;
+        count() : number;
 
-        public lastObject() : {};
+        lastObject() : {};
 
-        public objectAtIndex(index: number) : {};
+        objectAtIndex(index: number) : {};
 
-        public addObject(addObj: {}) : void;
+        addObject(addObj: {}) : void;
 
-        public removeObjectAtIndex(index: number) : void;
+        removeObjectAtIndex(index: number) : void;
 
-        public insertObject(addObj: {}, index: number) : void;
+        insertObject(addObj: {}, index: number) : void;
     }
 
     // +--------------------------------------------------------------------------------
     // + File: CCTableView.js
     // +--------------------------------------------------------------------------------
-
-    /****************************************************************************
-     Copyright (c) 2008-2010 Ricardo Quesada
-     Copyright (c) 2011-2012 cocos2d-x.org
-     Copyright (c) 2013-2014 Chukong Technologies Inc.
-     Copyright (c) 2010 Sangwoo Im
-
-     http://www.cocos2d-x.org
-
-     Permission is hereby granted, free of charge, to any person obtaining a copy
-     of this software and associated documentation files (the "Software"), to deal
-     in the Software without restriction, including without limitation the rights
-     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     copies of the Software, and to permit persons to whom the Software is
-     furnished to do so, subject to the following conditions:
-
-     The above copyright notice and this permission notice shall be included in
-     all copies or substantial portions of the Software.
-
-     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     THE SOFTWARE.
-     ****************************************************************************/
 
     /**
      * The constant value of the fill style from top to bottom for cc.TableView
@@ -361,23 +334,23 @@ declare namespace cc {
      * @property {Number}   objectId    - The index used internally by SWTableView and its subclasses
      */
     export class TableViewCell extends Node {
-        public objectId : number;
+        objectId : number;
 
         /**
          * The index used internally by SWTableView and its subclasses
          */
-        public getIdx() : number;
+        getIdx() : number;
 
-        public setIdx(index: number) : void;
+        setIdx(index: number) : void;
 
         /**
          * Cleans up any resources linked to this cell and resets <code>index</code> property.
          */
-        public reset() : void;
+        reset() : void;
 
-        public setObjectID(index: number) : void;
+        setObjectID(index: number) : void;
 
-        public getObjectID() : number;
+        getObjectID() : number;
     }
 
     /**
@@ -430,7 +403,7 @@ declare namespace cc {
          * @param {Number} index the index of a cell to get a size
          * @return {cc.Size} size of a cell at given index
          */
-        public tableCellSizeForIndex(table: TableView, index: number) : Size;
+        tableCellSizeForIndex(table: TableView, index: number) : Size;
 
         /**
          * cell height for a given table.
@@ -438,7 +411,7 @@ declare namespace cc {
          * @param {cc.TableView} table table to hold the instances of Class
          * @return {cc.Size} cell size
          */
-        public cellSizeForTable(table: TableView) : Size;
+        cellSizeForTable(table: TableView) : Size;
 
         /**
          * a cell instance at a given index
@@ -446,14 +419,14 @@ declare namespace cc {
          * @param index index to search for a cell
          * @return {cc.TableViewCell} cell found at index
          */
-        public tableCellAtIndex(table: TableView, index: number) : TableViewCell;
+        tableCellAtIndex(table: TableView, index: number) : TableViewCell;
 
         /**
          * Returns number of cells in a given table view.
          * @param {cc.TableView} table table to hold the instances of Class
          * @return {Number} number of cells
          */
-        public numberOfCellsInTableView(table: TableView) : number;
+        numberOfCellsInTableView(table: TableView) : number;
     }
 
     /**
@@ -469,9 +442,9 @@ declare namespace cc {
      *
      */
     export class TableView extends ScrollView {
-        public dataSource: TableViewDataSource;
-        public delegate: TableViewDelegate;
-        public verticalFillOrder: number;
+        dataSource: TableViewDataSource;
+        delegate: TableViewDelegate;
+        verticalFillOrder: number;
 
         /**
          * The
@@ -479,63 +452,63 @@ declare namespace cc {
          * @param size
          * @param container
          */
-        public constructor(dataSource: TableViewDataSource, size: Size, container: Node);
+        constructor(dataSource: TableViewDataSource, size: Size, container: Node);
 
         /**
          * data source
          */
-        public getDataSource() : TableViewDataSource;
+        getDataSource() : TableViewDataSource;
 
-        public setDataSource(source: TableViewDataSource) : void;
+        setDataSource(source: TableViewDataSource) : void;
 
         /**
          * delegate
          */
-        public getDelegate() : TableViewDelegate;
+        getDelegate() : TableViewDelegate;
 
-        public setDelegate(delegate: TableViewDelegate) : void;
+        setDelegate(delegate: TableViewDelegate) : void;
 
         /**
          * determines how cell is ordered and filled in the view.
          */
-        public setVerticalFillOrder(fillOrder: number) : void;
+        setVerticalFillOrder(fillOrder: number) : void;
 
-        public getVerticalFillOrder() : number;
+        getVerticalFillOrder() : number;
 
-        //public initWithViewSize(size:Size, container:Node):boolean;
+        //initWithViewSize(size:Size, container:Node):boolean;
 
         /**
          * Updates the content of the cell at a given index.
          *
          * @param index index to find a cell
          */
-        public updateCellAtIndex(index: number) : void;
+        updateCellAtIndex(index: number) : void;
 
         /**
          * Inserts a new cell at a given index
          *
          * @param index location to insert
          */
-        public insertCellAtIndex(index: number) : void;
+        insertCellAtIndex(index: number) : void;
 
         /**
          * Removes a cell at a given index
          *
          * @param index index to find a cell
          */
-        public removeCellAtIndex(index: number) : void;
+        removeCellAtIndex(index: number) : void;
 
         /**
          * reloads data from data source.  the view will be refreshed.
          */
-        public reloadData() : void;
+        reloadData() : void;
 
         /**
          * Dequeues a free cell if available. nil if not.
          *
          * @return {TableViewCell} free cell
          */
-        public dequeueCell() : TableViewCell;
+        dequeueCell() : TableViewCell;
 
         /**
          * Returns an existing cell at a given index. Returns nil if a cell is nonexistent at the moment of query.
@@ -543,11 +516,11 @@ declare namespace cc {
          * @param index index
          * @return {cc.TableViewCell} a cell at a given index
          */
-        public cellAtIndex(index: number) : TableViewCell;
+        cellAtIndex(index: number) : TableViewCell;
 
-        public scrollViewDidScroll(view: Node) : void;
+        scrollViewDidScroll(view: Node) : void;
 
-        public scrollViewDidZoom(view: Node) : void;
+        scrollViewDidZoom(view: Node) : void;
 
         //onTouchBegan(touch:Touch, event:Event):boolean;
         //

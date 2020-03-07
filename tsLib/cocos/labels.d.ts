@@ -38,9 +38,9 @@ declare namespace cc {
      */
     export class LabelAtlas extends AtlasNode implements Label {
 
-        //public opacity:number;
-        //public color:Color;
-        public string: string;
+        //opacity:number;
+        //color:Color;
+        string: string;
 
         /**
          * <p>
@@ -56,12 +56,12 @@ declare namespace cc {
          * @param {Number} [itemHeight=0]
          * @param {Number} [startCharMap=""]
          */
-        public constructor(strText: string,
+        constructor(strText: string,
                            charMapFile: string,
                            itemWidth?: number,
                            itemHeight?: number,
                            startCharMap?: number);
-        //public ctor(strText?:string, charMapFile?:string, itemWidth?:number, itemHeight?:number, startCharMap?:number):void;
+        //ctor(strText?:string, charMapFile?:string, itemWidth?:number, itemHeight?:number, startCharMap?:number):void;
 
 
         /**
@@ -79,7 +79,7 @@ declare namespace cc {
          * @param {Number} [startCharMap=""]
          * @return {Boolean} returns true on success
          */
-        public initWithString(strText: string,
+        initWithString(strText: string,
                               charMapFile: string | Texture2D,
                               itemWidth?: number,
                               itemHeight?: number,
@@ -89,20 +89,20 @@ declare namespace cc {
          * Return  texture is loaded.
          * @returns {boolean}
          */
-        public textureLoaded() : boolean;
+        textureLoaded() : boolean;
 
         /**
          * return the text of this label
          * @return {String}
          */
-        public getString() : string;
+        getString() : string;
 
         /**
          * set the display string
          * @function
          * @param {String} label
          */
-        public setString(label: string) : void;
+        setString(label: string) : void;
     }
 
     // +--------------------------------------------------------------------------------
@@ -165,9 +165,9 @@ declare namespace cc {
      * var label3 = new cc.LabelBMFont("This is a \n test case", "test.fnt", 200, cc.TEXT_ALIGNMENT_LEFT, cc.p(0,0));
      */
     export class LabelBMFont extends SpriteBatchNode implements Label {
-        public string: string;
-        public boundingWidth: number;
-        public textAlign: number;
+        string: string;
+        boundingWidth: number;
+        textAlign: number;
 
         /**
          * Constructor function, override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function. <br />
@@ -178,9 +178,9 @@ declare namespace cc {
          * @param {Number} [alignment=cc.TEXT_ALIGNMENT_LEFT]
          * @param {cc.Point} [imageOffset=cc.p(0,0)]
          */
-        //public ctor(fileImage?:string|Texture2D, capacity?:number);
-        public constructor(str: string, fntFile: string, width?: number, alignment?: number, imageOffset?: Point);
-        //public ctor(str?:string, fntFile?:string, width?:number, alignment?:number, imageOffset?:Point):void;
+        //ctor(fileImage?:string|Texture2D, capacity?:number);
+        constructor(str: string, fntFile: string, width?: number, alignment?: number, imageOffset?: Point);
+        //ctor(str?:string, fntFile?:string, width?:number, alignment?:number, imageOffset?:Point):void;
 
         /**
          * init a bitmap font atlas with an initial string and the FNT file
@@ -191,77 +191,77 @@ declare namespace cc {
          * @param {cc.Point} [imageOffset=cc.p(0,0)]
          * @return {Boolean}
          */
-        public initWithString(str: string, fntFile: string, width?: number, alignment?: number, imageOffset?: Point) : void;
+        initWithString(str: string, fntFile: string, width?: number, alignment?: number, imageOffset?: Point) : void;
 
         /**
          * return  texture is loaded
          * @returns {boolean}
          */
-        public textureLoaded() : boolean;
+        textureLoaded() : boolean;
 
         /**
          * updates the font chars based on the string to render
          */
-        public createFontChars() : void;
+        createFontChars() : void;
 
         /**
          * Update String. <br />
          * Only update this label display string.
          * @param {Boolean} fromUpdate
          */
-        public updateString(fromUpdate: boolean) : void;
+        updateString(fromUpdate: boolean) : void;
 
         /**
          * Gets the text of this label
          * @return {String}
          */
-        public getString() : string;
+        getString() : string;
 
         /**
          * Set the text
          * @param {String} newString
          * @param {Boolean|null} needUpdateLabel
          */
-        public setString(newString: string, needUpdateLabel?: boolean) : void;
+        setString(newString: string, needUpdateLabel?: boolean) : void;
 
         /**
          * Update Label. <br />
          * Update this Label display string and more...
          */
-        public updateLabel() : void;
+        updateLabel() : void;
 
         /**
          * Set text alignment.
          * @param {Number} alignment
          */
-        public setAlignment(alignment: number) : void;
+        setAlignment(alignment: number) : void;
 
         /**
          * Set the bounding width. <br />
          * max with display width. The exceeding string will be wrapping.
          * @param {Number} width
          */
-        public setBoundingWidth(width: number) : void;
+        setBoundingWidth(width: number) : void;
 
         /**
          * Set the param to change English word warp according to whether the space. <br />
          * default is false.
          * @param {Boolean}  breakWithoutSpace
          */
-        public setLineBreakWithoutSpace(breakWithoutSpace: boolean) : void;
+        setLineBreakWithoutSpace(breakWithoutSpace: boolean) : void;
 
         /**
          * set fnt file path. <br />
          * Change the fnt file path.
          * @param {String} fntFile
          */
-        public setFntFile(fntFile: string) : void;
+        setFntFile(fntFile: string) : void;
 
         /**
          * Return the fnt file path.
          * @return {String}
          */
-        public getFntFile() : string;
+        getFntFile() : string;
 
     }
 

@@ -620,7 +620,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
     //});
 
     export class Texture2D extends Class {
-        public isLoaded() : boolean;
+        isLoaded() : boolean;
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -646,14 +646,14 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
      */
     //cc.TextureAtlas = cc.Class.extend(/** @lends cc.TextureAtlas# */{  //WebGL only
     export class TextureAtlas extends Class {
-        //public get totalQuads(): number;
-        //public get capacity(): number;
-        //public get quads(): V3F_C4B_T2F_Quad[];
-        //public set quads(quads:V3F_C4B_T2F_Quad[]);
-        public totalQuads : number;
-        public capacity : number;
-        public quads : V3F_C4B_T2F_Quad[];
-        //public quads(quads:V3F_C4B_T2F_Quad[]);
+        //get totalQuads(): number;
+        //get capacity(): number;
+        //get quads(): V3F_C4B_T2F_Quad[];
+        //set quads(quads:V3F_C4B_T2F_Quad[]);
+        totalQuads : number;
+        capacity : number;
+        quads : V3F_C4B_T2F_Quad[];
+        //quads(quads:V3F_C4B_T2F_Quad[]);
 
         /**
          * Creates a TextureAtlas with an filename and with an initial capacity for Quads.
@@ -670,54 +670,54 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * var texture = cc.textureCache.addImage("hello.png");
          * var textureAtlas = new cc.TextureAtlas(texture, 3);
          */
-        public constructor(fileName: string, capacity: number);
-        public constructor(fileName: Texture2D, capacity: number);
+        constructor(fileName: string, capacity: number);
+        constructor(fileName: Texture2D, capacity: number);
 
         /**
          * Quantity of quads that are going to be drawn.
          * @return {Number}
          */
-        public getTotalQuads() : number;
+        getTotalQuads() : number;
 
         /**
          * Quantity of quads that can be stored with the current texture atlas size
          * @return {Number}
          */
-        public getCapacity() : number;
+        getCapacity() : number;
 
         /**
          * Texture of the texture atlas
          * @return {Image}
          */
-        public getTexture() : Image;
+        getTexture() : Image;
 
         /**
          * @param {Image} texture
          */
-        public setTexture(texture: Image) : void;
+        setTexture(texture: Image) : void;
 
         /**
          * specify if the array buffer of the VBO needs to be updated
          * @param {Boolean} dirty
          */
-        public setDirty(dirty: boolean) : void;
+        setDirty(dirty: boolean) : void;
 
         /**
          * whether or not the array buffer of the VBO needs to be updated
          * @returns {boolean}
          */
-        public isDirty() : boolean;
+        isDirty() : boolean;
 
         /**
          * Quads that are going to be rendered
          * @return {Array}
          */
-        public getQuads() : V3F_C4B_T2F_Quad[];
+        getQuads() : V3F_C4B_T2F_Quad[];
 
         /**
          * @param {Array} quads
          */
-        public setQuads(quads: V3F_C4B_T2F_Quad[]) : void;
+        setQuads(quads: V3F_C4B_T2F_Quad[]) : void;
 
         /**
          * Description
@@ -737,7 +737,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * var textureAtlas = new cc.TextureAtlas();
          * textureAtlas.initWithTexture("hello.png", 3);
          */
-        public initWithFile(file: string, capacity: number) : boolean;
+        initWithFile(file: string, capacity: number) : boolean;
 
         /**
          * Initializes a TextureAtlas with a previously initialized Texture2D object, and
@@ -753,7 +753,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * var textureAtlas = new cc.TextureAtlas();
          * textureAtlas.initWithTexture(texture, 3);
          */
-        public initWithTexture(texture: Image, capacity: number) : boolean;
+        initWithTexture(texture: Image, capacity: number) : boolean;
 
         /**
          * Updates a Quad (texture, vertex and color) at a certain index
@@ -761,7 +761,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * @param {cc.V3F_C4B_T2F_Quad} quad
          * @param {Number} index
          */
-        public updateQuad(quad: V3F_C4B_T2F_Quad, index: number) : void;
+        updateQuad(quad: V3F_C4B_T2F_Quad, index: number) : void;
 
         /**
          * Inserts a Quad (texture, vertex and color) at a certain index
@@ -769,7 +769,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * @param {cc.V3F_C4B_T2F_Quad} quad
          * @param {Number} index
          */
-        public insertQuad(quad: V3F_C4B_T2F_Quad, index: number) : void;
+        insertQuad(quad: V3F_C4B_T2F_Quad, index: number) : void;
 
         /**
          *
@@ -781,7 +781,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * @param {Number} index
          * @param {Number} amount
          */
-        public insertQuads(quads: V3F_C4B_T2F_Quad[], index: number, amount: number) : void;
+        insertQuads(quads: V3F_C4B_T2F_Quad[], index: number, amount: number) : void;
 
         /**
          * Removes the quad that is located at a certain index and inserts it at a new index
@@ -789,21 +789,21 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * @param {Number} fromIndex
          * @param {Number} newIndex
          */
-        public insertQuadFromIndex(fromIndex: number, newIndex: number) : void;
+        insertQuadFromIndex(fromIndex: number, newIndex: number) : void;
 
         /**
          * Removes a quad at a given index number.
          * The capacity remains the same, but the total number of quads to be drawn is reduced in 1
          * @param {Number} index
          */
-        public removeQuadAtIndex(index: number) : void;
+        removeQuadAtIndex(index: number) : void;
 
         /**
          * Removes a given number of quads at a given index
          * @param {Number} index
          * @param {Number} amount
          */
-        public removeQuadsAtIndex(index: number, amount: number) : void;
+        removeQuadsAtIndex(index: number, amount: number) : void;
 
         /**
          * Removes all Quads.
@@ -821,14 +821,14 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * @param {Number} newCapacity
          * @return {Boolean}
          */
-        public resizeCapacity(newCapacity: number) : boolean;
+        resizeCapacity(newCapacity: number) : boolean;
 
         /**
          * Used internally by CCParticleBatchNode                                    
          * don't use this unless you know what you're doing
          * @param {Number} amount
          */
-        public increaseTotalQuadsWith(amount: number) : void;
+        increaseTotalQuadsWith(amount: number) : void;
 
         /**
          * Moves an amount of quads from oldIndex at newIndex
@@ -836,7 +836,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * @param {Number} amount
          * @param {Number} newIndex
          */
-        public moveQuadsFromIndex(oldIndex: number, amount: number, newIndex: number) : void;
+        moveQuadsFromIndex(oldIndex: number, amount: number, newIndex: number) : void;
 
         /**
          * Ensures that after a realloc quads are still empty                                
@@ -844,13 +844,13 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
          * @param {Number} index
          * @param {Number} amount
          */
-        public fillWithEmptyQuadsFromIndex(index: number, amount: number) : void;
+        fillWithEmptyQuadsFromIndex(index: number, amount: number) : void;
 
         // TextureAtlas - Drawing
 
         /**
          * Draws all the Atlas's Quads
          */
-        public drawQuads() : void;
+        drawQuads() : void;
     }
 }

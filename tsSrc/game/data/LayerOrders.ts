@@ -1,0 +1,16 @@
+export enum LayerOrders {
+    BELOW_ALL,
+
+    BELOW_BACKGROUND,
+
+    BACKGROUND,
+    MAINGROUND,
+    FOREGROUND,
+
+    ABOVE_FOREGROUND,
+
+    POPUP,
+    POPUP_EXTRA,
+
+    ABOVE_ALL,
+}

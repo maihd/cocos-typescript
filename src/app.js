@@ -1,4 +1,4 @@
-define(["require", "exports", "./game/SplashScene"], function (require, exports, SplashScene_1) {
+define(["require", "exports", "./game/scenes/SplashScene"], function (require, exports, SplashScene_1) {
     "use strict";
     exports.__esModule = true;
     function startGame() {

@@ -367,8 +367,8 @@ declare namespace cc {
      * @see cc.p
      */
     export class Point {
-        public x: number;
-        public y: number;
+        x: number;
+        y: number;
 
         constructor(x: number, y: number);
     }
@@ -381,10 +381,10 @@ declare namespace cc {
      * @see cc.rect
      */
     export class Rect {
-        public x: number;
-        public y: number;
-        public width: number;
-        public height: number;
+        x: number;
+        y: number;
+        width: number;
+        height: number;
 
         constructor(x: number, y: number, width: number, height: number);
     }
@@ -397,8 +397,8 @@ declare namespace cc {
      * @see cc.size
      */
     export class Size {
-        public width: number;
-        public height: number;
+        width: number;
+        height: number;
 
         constructor(width: number, height: number);
     }

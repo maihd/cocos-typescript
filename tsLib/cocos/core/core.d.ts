@@ -200,7 +200,7 @@ declare namespace cc {
          *           cc.log("after draw event.");
          *       });
          */
-        public static EVENT_AFTER_DRAW : string;
+        static EVENT_AFTER_DRAW : string;
 
         /**
          * The event after update of cc.Director
@@ -211,7 +211,7 @@ declare namespace cc {
          *           cc.log("after update event.");
          *       });
          */
-        public static EVENT_AFTER_UPDATE : string;
+        static EVENT_AFTER_UPDATE : string;
 
         /**
          * The event after visit of cc.Director
@@ -222,7 +222,7 @@ declare namespace cc {
          *           cc.log("after visit event.");
          *       });
          */
-        public static EVENT_AFTER_VISIT : string;
+        static EVENT_AFTER_VISIT : string;
 
         /**
          * The event projection changed of cc.Director
@@ -233,7 +233,7 @@ declare namespace cc {
          *           cc.log("Projection changed.");
          *       });
          */
-        public static EVENT_PROJECTION_CHANGED : string;
+        static EVENT_PROJECTION_CHANGED : string;
 
         //Possible OpenGL projections used by director
         /**
@@ -241,31 +241,31 @@ declare namespace cc {
          * @constant
          * @type {Number}
          */
-        public static PROJECTION_2D : number;
+        static PROJECTION_2D : number;
 
         /**
          * Constant for 3D projection with a fovy=60, znear=0.5f and zfar=1500.
          * @constant
          * @type {Number}
          */
-        public static PROJECTION_3D : number;
+        static PROJECTION_3D : number;
 
         /**
          * Constant for custom projection, if cc.Director's projection set to it, it calls "updateProjection" on the projection delegate.
          * @constant
          * @type {Number}
          */
-        public static PROJECTION_CUSTOM : number;
+        static PROJECTION_CUSTOM : number;
 
         /**
          * Constant for default projection of cc.Director, default projection is 3D projection
          * @constant
          * @type {Number}
          */
-        public static PROJECTION_DEFAULT : number;
+        static PROJECTION_DEFAULT : number;
 
-        public sharedDirector : Director;
-        public firstUseDirector : boolean;
+        sharedDirector : Director;
+        firstUseDirector : boolean;
 
         //pubic static _getInstance = function () {
 
@@ -739,7 +739,7 @@ declare namespace cc {
          * @constant
          * @type Number
          */
-        public static PRIORITY_SYSTEM: number;
+        static PRIORITY_SYSTEM: number;
 
         constructor();
 

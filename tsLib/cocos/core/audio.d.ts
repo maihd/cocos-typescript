@@ -19,34 +19,34 @@ declare namespace cc {
      * Encapsulate DOM and webAudio
      */
     export class Audio extends Class {
-        public volume: number;
-        public loop: boolean;
-        public src: any;
+        volume: number;
+        loop: boolean;
+        src: any;
 
         // TODO: Figure out what type context is supposed to be
-        public constructor(context: any, volume: number, url: string);
+        constructor(context: any, volume: number, url: string);
 
         // TODO: Figure out what type buffer is supposed to be
-        public setBuffer(buffer: any) : void;
+        setBuffer(buffer: any) : void;
 
         // TODO: Figure out what type element is supposed to be
-        public setElement(element: any) : void;
+        setElement(element: any) : void;
 
-        public play(offset: number, loop: boolean) : void;
+        play(offset: number, loop: boolean) : void;
 
-        public getPlaying() : boolean;
+        getPlaying() : boolean;
 
-        public stop() : void;
+        stop() : void;
 
-        public pause() : void;
+        pause() : void;
 
-        public resume() : void;
+        resume() : void;
 
-        public setVolume(volume: number) : void;
+        setVolume(volume: number) : void;
 
-        public getVolume() : number;
+        getVolume() : number;
 
-        public cloneNode() : Audio;
+        cloneNode() : Audio;
     }
 
     /**

@@ -47,27 +47,27 @@ declare namespace cc {
          * Constructor of cc.Menu override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function.
          * @param {...cc.MenuItem|null} menuItems
          */
-        public constructor(...menuItems: MenuItem[]);
+        constructor(...menuItems: MenuItem[]);
 
         /**
          * initializes a cc.Menu with it's items
          * @param {Array} menuItems
          * @return {Boolean}
          */
-        public initWithItems(...menuItems: MenuItem[]) : boolean;
-        public initWithArray(menuItems: MenuItem[]) : boolean;
+        initWithItems(...menuItems: MenuItem[]) : boolean;
+        initWithArray(menuItems: MenuItem[]) : boolean;
 
         /**
          * return whether or not the menu will receive events
          * @return {Boolean}
          */
-        public isEnabled() : boolean;
+        isEnabled() : boolean;
 
         /**
          * set whether or not the menu will receive events
          * @param {Boolean} enabled
          */
-        public setEnabled(enabled: boolean) : void;
+        setEnabled(enabled: boolean) : void;
 
         /**
          * add a child for  cc.Menu
@@ -75,29 +75,29 @@ declare namespace cc {
          * @param {Number|Null} [zOrder=] zOrder for the child
          * @param {Number|Null} [tag=] tag for the child
          */
-        public addChild(child: MenuItem, zOrder?: number, tag?: number) : void;
+        addChild(child: MenuItem, zOrder?: number, tag?: number) : void;
 
         /**
          * align items vertically with default padding
          */
-        public alignItemsVertically() : void;
+        alignItemsVertically() : void;
 
         /**
          * align items vertically with specified padding
          * @param {Number} padding
          */
-        public alignItemsVerticallyWithPadding(padding: number) : void;
+        alignItemsVerticallyWithPadding(padding: number) : void;
 
         /**
          * align items horizontally with default padding
          */
-        public alignItemsHorizontally():void;
+        alignItemsHorizontally():void;
 
         /**
          * align items horizontally with specified padding
          * @param {Number} padding
          */
-        public alignItemsHorizontallyWithPadding(padding: number) : void;
+        alignItemsHorizontallyWithPadding(padding: number) : void;
 
         /**
          * align items in columns
@@ -107,7 +107,7 @@ declare namespace cc {
          *
          * menu.alignItemsInColumns(3,3)//this creates 2 columns, each have 3 items
          */
-        public alignItemsInColumns(...args: Number[]) : void;
+        alignItemsInColumns(...args: Number[]) : void;
 
         /**
          * align menu items in rows
@@ -118,7 +118,7 @@ declare namespace cc {
          *
          * menu.alignItemsInRows(4,4,4,4)//this creates 4 rows each have 4 items
          */
-        public alignItemsInRows(...args: Number[]) : void;
+        alignItemsInRows(...args: Number[]) : void;
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -133,32 +133,32 @@ declare namespace cc {
      * @param  {cc.Node} target
      */
     export class MenuItem extends Node {
-        public enabled: boolean;
+        enabled: boolean;
 
         /**
          * Constructor of cc.MenuItem
          * @param {function|String} callback
          * @param {cc.Node} target
          */
-        public constructor(callback: string | ccMenuItemCallback, target: Node);
+        constructor(callback: string | ccMenuItemCallback, target: Node);
 
         /**
          * return whether MenuItem is selected
          * @return {Boolean}
          */
-        public isSelected() : boolean;
+        isSelected() : boolean;
 
         /**
          * return whether MenuItem is Enabled
          * @return {Boolean}
          */
-        public isEnabled() : boolean;
+        isEnabled() : boolean;
 
         /**
          * set enable value of MenuItem
          * @param {Boolean} enable
          */
-        public setEnabled(enable: boolean) : void;
+        setEnabled(enable: boolean) : void;
 
         /**
          * initializes a cc.MenuItem with callback
@@ -166,35 +166,35 @@ declare namespace cc {
          * @param {cc.Node} target
          * @return {Boolean}
          */
-        public initWithCallback(callback: ccMenuItemCallback, target: Node) : boolean;
+        initWithCallback(callback: ccMenuItemCallback, target: Node) : boolean;
 
         /**
          * return rect value of cc.MenuItem
          * @return {cc.Rect}
          */
-        public rect() : Rect;
+        rect() : Rect;
 
         /**
          * set the cc.MenuItem selected same as setIsSelected(true)
          */
-        public selected() : void;
+        selected() : void;
 
         /**
          * set the cc.MenuItem unselected same as setIsSelected(false)
          */
-        public unselected() : void;
+        unselected() : void;
 
         /**
          * set the callback to the menu item
          * @param {function|String} callback
          * @param {cc.Node} target
          */
-        public setCallback(callback: ccMenuItemCallback, target: Node) : void;
+        setCallback(callback: ccMenuItemCallback, target: Node) : void;
 
         /**
          * call the selector with target
          */
-        public activate() : void;
+        activate() : void;
     }
 
     /**
@@ -216,9 +216,9 @@ declare namespace cc {
      * @property {cc.Color} disabledColor   - Color of label when it's disabled
      */
     export class MenuItemLabel extends MenuItem {
-        public string: string;
-        public disabledColor: Color;
-        public label: Node;
+        string: string;
+        disabledColor: Color;
+        label: Node;
 
         /**
          * Constructor of cc.MenuItemLabel
@@ -226,7 +226,7 @@ declare namespace cc {
          * @param {function|String} callback
          * @param {cc.Node} target
          */
-        public constructor(label: Node, callback?: string | ccMenuItemCallback, target?: Node);
+        constructor(label: Node, callback?: string | ccMenuItemCallback, target?: Node);
 
         /**
          * initializes a cc.MenuItemLabel with a label
@@ -235,43 +235,43 @@ declare namespace cc {
          * @param {cc.Node} target
          * @return {Boolean}
          */
-        public initWithLabel(label: Node, callback: string | ccMenuItemCallback, target: Node) : boolean;
+        initWithLabel(label: Node, callback: string | ccMenuItemCallback, target: Node) : boolean;
 
         /**
          * return the disable color for this cc.MenuItemLabel
          * @return {cc.Color}
          */
-        public getDisabledColor() : Color;
+        getDisabledColor() : Color;
 
         /**
          * set the disable color for this cc.MenuItemLabel
          * @param {cc.Color} color
          */
-        public setDisabledColor(color: Color) : void;
+        setDisabledColor(color: Color) : void;
 
         /**
          * return label of cc.MenuItemLabel
          * @return {cc.Node}
          */
-        public getLabel() : Node;
+        getLabel() : Node;
 
         /**
          * set a label for cc.MenuItemLabel
          * @param {cc.Node} label
          */
-        public setLabel(label: Node) : void;
+        setLabel(label: Node) : void;
 
         /**
          * set the string for  cc.MenuItemLabel
          * @param {String} label
          */
-        public setString(label: string) : void;
+        setString(label: string) : void;
 
         /**
          * return the string of cc.MenuItemLabel
          * @returns {*|string|_p.string|ret.string|q.string|String}
          */
-        public getString() : string;
+        getString() : string;
     }
 
 
@@ -301,7 +301,7 @@ declare namespace cc {
          * @param {function|String|Null} callback
          * @param {cc.Node|Null} target
          */
-        public constructor(value: string,
+        constructor(value: string,
                            charMapFile: string,
                            itemWidth: number,
                            itemHeight: number,
@@ -320,7 +320,7 @@ declare namespace cc {
          * @param {cc.Node|Null} target
          * @return {Boolean}
          */
-        public initWithString(value: string,
+        initWithString(value: string,
                               charMapFile: string,
                               itemWidth: number,
                               itemHeight: number,
@@ -343,8 +343,8 @@ declare namespace cc {
      * @property {String}   fontName    - Font name of font item
      */
     export class MenuItemFont extends MenuItemLabel {
-        public fontName : string;
-        public fontSize : number;
+        fontName : string;
+        fontSize : number;
 
         /**
          * Constructor of cc.MenuItemFont
@@ -352,7 +352,7 @@ declare namespace cc {
          * @param {function|String} callback
          * @param {cc.Node} target
          */
-        public constructor(value: string, callback?: string | ccMenuItemCallback, target?: Node);
+        constructor(value: string, callback?: string | ccMenuItemCallback, target?: Node);
 
         /**
          * initializes cc.MenuItemFont with  string
@@ -361,31 +361,31 @@ declare namespace cc {
          * @param {cc.Node} target
          * @return {Boolean}
          */
-        public initWithString(value: string, callback?: string | ccMenuItemCallback, target?: Node) : boolean;
+        initWithString(value: string, callback?: string | ccMenuItemCallback, target?: Node) : boolean;
 
         /**
          * set the font size for cc.MenuItemFont
          * @param {Number} size
          */
-        public setFontSize(size: number) : void;
+        setFontSize(size: number) : void;
 
         /**
          *return the font size of cc.MenuItemFont
          * @return {Number}
          */
-        public getFontSize() : number;
+        getFontSize() : number;
 
         /**
          * set the font name for cc.MenuItemFont
          * @param {String} name
          */
-        public setFontName(name: string) : void;
+        setFontName(name: string) : void;
 
         /**
          * return the font name for cc.MenuItemFont
          * @return {String}
          */
-        public getFontName() : string;
+        getFontName() : string;
     }
 
     /**
@@ -415,9 +415,9 @@ declare namespace cc {
      * @property {cc.Sprite}    disabledImage     - Sprite in disabled state
      */
     export class MenuItemSprite extends MenuItem {
-        public normalImage : Sprite;
-        public selectedImage : Sprite;
-        public disabledImage : Sprite;
+        normalImage : Sprite;
+        selectedImage : Sprite;
+        disabledImage : Sprite;
 
         /**
          * Constructor of cc.MenuItemSprite
@@ -427,7 +427,7 @@ declare namespace cc {
          * @param {String|function|cc.Node|Null} four callback function name in string or actual function, OR target Node
          * @param {String|function|Null} five callback function name in string or actual function
          */
-        public constructor(normalSprite: Sprite,
+        constructor(normalSprite: Sprite,
                            selectedSprite: Sprite,
                            three?: Node | ccMenuItemCallback,
                            four?: string | ccMenuItemCallback | Node,
@@ -442,7 +442,7 @@ declare namespace cc {
          * @param {cc.Node} target
          * @return {Boolean}
          */
-        public initWithNormalSprite(normalSprite: Sprite,
+        initWithNormalSprite(normalSprite: Sprite,
                                     selectedSprite: Sprite,
                                     disabledSprite: Sprite,
                                     callback: string | ccMenuItemCallback,
@@ -452,37 +452,37 @@ declare namespace cc {
          * return the normal status image(cc.Sprite)
          * @return {cc.Sprite}
          */
-        public getNormalImage() : Sprite;
+        getNormalImage() : Sprite;
 
         /**
          * set the normal status image(cc.Sprite)
          * @param {cc.Sprite} normalImage
          */
-        public setNormalImage(normalImage: Sprite) : void;
+        setNormalImage(normalImage: Sprite) : void;
 
         /**
          * return the selected status image(cc.Sprite) of cc.MenuItemSprite
          * @return {cc.Sprite}
          */
-        public getSelectedImage() : Sprite;
+        getSelectedImage() : Sprite;
 
         /**
          * set the selected status image(cc.Sprite)
          * @param {cc.Sprite} selectedImage
          */
-        public setSelectedImage(selectedImage: Sprite) : void;
+        setSelectedImage(selectedImage: Sprite) : void;
 
         /**
          * return the disabled status of cc.MenuItemSprite
          * @return {cc.Sprite}
          */
-        public getDisabledImage() : Sprite;
+        getDisabledImage() : Sprite;
 
         /**
          * set the disabled status image(cc.Sprite)
          * @param {cc.Sprite} disabledImage
          */
-        public setDisabledImage(disabledImage: Sprite) : void;
+        setDisabledImage(disabledImage: Sprite) : void;
     }
 
     /**
@@ -512,7 +512,7 @@ declare namespace cc {
          * @param {function|string|null} callback
          * @param {cc.Node|null} target
          */
-        public constructor(normalImage?: string,
+        constructor(normalImage?: string,
                            selectedImage?: string,
                            disabledImage?: string,
                            callback?: string | ccMenuItemCallback,
@@ -527,7 +527,7 @@ declare namespace cc {
          * @param {cc.Node|null} target
          * @returns {boolean}
          */
-        public initWithNormalImage(normalImage?: string,
+        initWithNormalImage(normalImage?: string,
                                    selectedImage?: string,
                                    disabledImage?: string,
                                    callback?: string | ccMenuItemCallback,
@@ -537,19 +537,19 @@ declare namespace cc {
          * sets the sprite frame for the normal image
          * @param {cc.SpriteFrame} frame
          */
-        public setNormalSpriteFrame(frame: SpriteFrame) : void;
+        setNormalSpriteFrame(frame: SpriteFrame) : void;
 
         /**
          * sets the sprite frame for the selected image
          * @param {cc.SpriteFrame} frame
          */
-        public setSelectedSpriteFrame(frame: SpriteFrame) : void;
+        setSelectedSpriteFrame(frame: SpriteFrame) : void;
 
         /**
          * sets the sprite frame for the disabled image
          * @param {cc.SpriteFrame} frame
          */
-        public setDisabledSpriteFrame(frame: SpriteFrame) : void;
+        setDisabledSpriteFrame(frame: SpriteFrame) : void;
 
     }
 
@@ -574,14 +574,14 @@ declare namespace cc {
      * //this is useful for constructing a toggler without a callback function (you wish to control the behavior from somewhere else)
      */
     export class MenuItemToggle extends MenuItem {
-        public selectedIndex : number;
-        public subItems : MenuItem[];
+        selectedIndex : number;
+        subItems : MenuItem[];
 
         /**
          * Constructor of cc.MenuItemToggle
          */
-        public constructor();
-        public constructor(...args: MenuItem[]);
+        constructor();
+        constructor(...args: MenuItem[]);
 
         /**
          * initializes a cc.MenuItemToggle with items
@@ -590,48 +590,48 @@ declare namespace cc {
          * @param {cc.Node} args[last] the first item in the args array is a target
          * @return {Boolean}
          */
-        public initWithItems(...args: MenuItem[]) : boolean;
+        initWithItems(...args: MenuItem[]) : boolean;
 
         /**
          * return the index of selected
          * @return {Number}
          */
-        public getSelectedIndex() : number;
+        getSelectedIndex() : number;
 
         /**
          * set the seleceted index for cc.MenuItemToggle
          * @param {Number} selectedIndex
          */
-        public setSelectedIndex(selectedIndex: number) : void;
+        setSelectedIndex(selectedIndex: number) : void;
 
         /**
          * similar to get children,return the sumItem array.
          * @return {Array}
          */
-        public getSubItems() : MenuItem[];
+        getSubItems() : MenuItem[];
 
         /**
          * set the subitem for cc.MenuItemToggle
          * @param {cc.MenuItem} subItems
          */
-        public setSubItems(...subItems: MenuItem[]) : void;
+        setSubItems(...subItems: MenuItem[]) : void;
 
         /**
          * add the subitem for cc.MenuItemToggle
          * @param {cc.MenuItem} item
          */
-        public addSubItem(item: MenuItem) : void;
+        addSubItem(item: MenuItem) : void;
 
         /**
          * returns the selected item   (deprecated in -x, please use getSelectedItem instead.)
          * @return {cc.MenuItem}
          */
-        public selectedItem() : MenuItem;
+        selectedItem() : MenuItem;
 
         /**
          * returns the selected item.
          * @return {cc.MenuItem}
          */
-        public getSelectedItem() : MenuItem;
+        getSelectedItem() : MenuItem;
     }
 }

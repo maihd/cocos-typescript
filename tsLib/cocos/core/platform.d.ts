@@ -49,9 +49,9 @@ declare namespace cc {
      * MIT Licensed.
      */
     export class Class {
-        public description() : string;
+        description() : string;
 
-        public static extend<T>(prototype : T) : any;
+        static extend<T>(prototype : T) : any;
     }
 
     // +---------------------------------------------------------------------------
@@ -929,10 +929,10 @@ declare namespace cc {
     }
     // OLD Color
     //export class Color {
-    //    public r: number;
-    //    public g: number;
-    //    public b: number;
-    //    public a: number;
+    //    r: number;
+    //    g: number;
+    //    b: number;
+    //    a: number;
     //
     //    /**
     //     * Color class, please use cc.color() to construct a color
@@ -967,26 +967,26 @@ declare namespace cc {
      * @class cc.FontDefinition
      */
     export class FontDefinition {
-        public fontName: string;
-        public fontSize: number;
-        public textAlign: any;
-        public verticalAlign: any;
-        public fillStyle: any;
-        public boundingWidth: number;
-        public boundingHeight: number;
+        fontName: string;
+        fontSize: number;
+        textAlign: any;
+        verticalAlign: any;
+        fillStyle: any;
+        boundingWidth: number;
+        boundingHeight: number;
 
-        public strokeEnabled: boolean;
-        public strokeStyle: any;
-        public lineWidth: number;
-        public lineHeight: number;
-        public fontStyle: any;
-        public fontWeight: any;
+        strokeEnabled: boolean;
+        strokeStyle: any;
+        lineWidth: number;
+        lineHeight: number;
+        fontStyle: any;
+        fontWeight: any;
 
-        public shadowEnabled: boolean;
-        public shadowOffsetX: number;
-        public shadowOffsetY: number;
-        public shadowBlur: any;
-        public shadowOpacity: number;
+        shadowEnabled: boolean;
+        shadowOffsetX: number;
+        shadowOffsetY: number;
+        shadowBlur: any;
+        shadowOpacity: number;
 
         /**
          * TODO: Define type for properties arg in c'tor. Figure out what the structure for props is and make a class (or more likely, an interface).
@@ -1193,8 +1193,8 @@ declare namespace cc {
      * @constructor
      */
     export class Quad2 {
-        public static readonly BYTES_PER_ELEMENT : number;
-        public constructor(tl: Vertex2F, tr: Vertex2F, bl: Vertex2F, br: Vertex2F, arrayBuffer: Quad2[], offset: number);
+        static readonly BYTES_PER_ELEMENT : number;
+        constructor(tl: Vertex2F, tr: Vertex2F, bl: Vertex2F, br: Vertex2F, arrayBuffer: Quad2[], offset: number);
     }
 
 
@@ -1208,7 +1208,7 @@ declare namespace cc {
      * @param {cc.Vertex3F} tr1
      */
     export class Quad3 {
-        public constructor(bl1: Vertex3F, br1: Vertex3F, tl1: Vertex3F, tr1: Vertex3F);
+        constructor(bl1: Vertex3F, br1: Vertex3F, tl1: Vertex3F, tr1: Vertex3F);
     }
 
     //redefine cc.V3F_C4B_T2F
@@ -1222,8 +1222,8 @@ declare namespace cc {
      * @constructor
      */
     export class V3F_C4B_T2F {
-        public static readonly BYTES_PER_ELEMENT : number;
-        public constructor (vertices: Vertex3F, colors: Color, texCoords: Tex2F, arrayBuffer: V3F_C4B_T2F[], offset: number);
+        static readonly BYTES_PER_ELEMENT : number;
+        constructor (vertices: Vertex3F, colors: Color, texCoords: Tex2F, arrayBuffer: V3F_C4B_T2F[], offset: number);
     }
 
     //redefine cc.V3F_C4B_T2F_Quad
@@ -1238,9 +1238,9 @@ declare namespace cc {
      * @constructor
      */
     export class V3F_C4B_T2F_Quad {
-        public static BYTES_PER_ELEMENT:number;
+        static BYTES_PER_ELEMENT:number;
 
-        public constructor(tl: V3F_C4B_T2F, bl: V3F_C4B_T2F, tr: V3F_C4B_T2F, br: V3F_C4B_T2F, arrayBuffer: V3F_C4B_T2F[], offset: number);
+        constructor(tl: V3F_C4B_T2F, bl: V3F_C4B_T2F, tr: V3F_C4B_T2F, br: V3F_C4B_T2F, arrayBuffer: V3F_C4B_T2F[], offset: number);
     }
 
     /**
@@ -1275,8 +1275,8 @@ declare namespace cc {
      */
         //cc.V2F_C4B_T2F = function (vertices, colors, texCoords, arrayBuffer, offset) {
     export class V2F_C4B_T2F {
-        public static readonly BYTES_PER_ELEMENT : number;
-        public constructor(vertices: Vertex2F, colors: Color, texCoords: Tex2F, arrayBuffer: V2F_C4B_T2F[], offset: number);
+        static readonly BYTES_PER_ELEMENT : number;
+        constructor(vertices: Vertex2F, colors: Color, texCoords: Tex2F, arrayBuffer: V2F_C4B_T2F[], offset: number);
     }
 
     //redefine cc.V2F_C4B_T2F_Triangle
@@ -1290,8 +1290,8 @@ declare namespace cc {
      * @constructor
      */
     export class V2F_C4B_T2F_Triangle {
-        public static readonly BYTES_PER_ELEMENT : number;
-        public constructor(a: V2F_C4B_T2F, b: V2F_C4B_T2F, c: V2F_C4B_T2F, arrayBuffer: V2F_C4B_T2F_Triangle[], offset: number);
+        static readonly BYTES_PER_ELEMENT : number;
+        constructor(a: V2F_C4B_T2F, b: V2F_C4B_T2F, c: V2F_C4B_T2F, arrayBuffer: V2F_C4B_T2F_Triangle[], offset: number);
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -1331,7 +1331,7 @@ declare namespace cc {
          * Constructor of cc.EGLView
          */
         //ctor: function () {
-        //public constructor();
+        //constructor();
 
         /**
          * 
@@ -1344,20 +1344,20 @@ declare namespace cc {
          * 
          * @param {String} densityDPI
          */
-        public setTargetDensityDPI(densityDPI: string) : void;
+        setTargetDensityDPI(densityDPI: string) : void;
 
         /**
          * Returns the current target-densitydpi value of cc.view.
          * @returns {String}
          */
-        public getTargetDensityDPI() : string;
+        getTargetDensityDPI() : string;
 
         /**
          * Sets whether resize canvas automatically when browser's size changed.
          * Useful only on web.
          * @param {Boolean} enabled Whether enable automatic resize with browser's resize event
          */
-        public resizeWithBrowserSize(enabled: boolean) : void;
+        resizeWithBrowserSize(enabled: boolean) : void;
 
         /**
          * Sets the callback function for cc.view's resize action,
@@ -1366,10 +1366,10 @@ declare namespace cc {
          * Useful only on web.
          * @param {Function|null} callback The callback function
          */
-        public setResizeCallback(callback?: () => void) : void;
+        setResizeCallback(callback?: () => void) : void;
 
         // TODO: Shouldn't this return a boolean?!?
-        public initialize() : void;
+        initialize() : void;
 
         /**
          * Sets whether the engine modify the "viewport" meta in your web page.
@@ -1378,7 +1378,7 @@ declare namespace cc {
          * Only useful on web
          * @param {Boolean} enabled Enable automatic modification to "viewport" meta
          */
-        public adjustViewPort(enabled: boolean) : void;
+        adjustViewPort(enabled: boolean) : void;
 
         /**
          * Retina support is enabled by default for Apple device but disabled for other devices,
@@ -1386,14 +1386,14 @@ declare namespace cc {
          * Only useful on web
          * @param {Boolean} enabled  Enable or disable retina display
          */
-        public enableRetina(enabled: boolean) : void;
+        enableRetina(enabled: boolean) : void;
 
         /**
          * Check whether retina display is enabled.
          * Only useful on web
          * @return {Boolean}
          */
-        public isRetinaEnabled() : boolean;
+        isRetinaEnabled() : boolean;
 
         /**
          * If enabled, the application will try automatically to enter full screen mode on mobile devices
@@ -1401,57 +1401,57 @@ declare namespace cc {
          * Only useful on web
          * @param {Boolean} enabled  Enable or disable auto full screen on mobile devices
          */
-        public enableAutoFullScreen(enabled: boolean) : void;
+        enableAutoFullScreen(enabled: boolean) : void;
 
         /**
          * Check whether auto full screen is enabled.
          * Only useful on web
          * @return {Boolean} Auto full screen enabled or not
          */
-        public isAutoFullScreenEnabled() : boolean;
+        isAutoFullScreenEnabled() : boolean;
 
         /**
          * Force destroying EGL view, subclass must implement this method.
          */
-        public end() : void;
+        end() : void;
 
         /**
          * Get whether render system is ready(no matter opengl or canvas),
          * this name is for the compatibility with cocos2d-x, subclass must implement this method.
          * @return {Boolean}
          */
-        public isOpenGLReady() : boolean;
+        isOpenGLReady() : boolean;
 
         /*
          * Set zoom factor for frame. This method is for debugging big resolution (e.g.new ipad) app on desktop.
          * @param {Number} zoomFactor
          */
-        public setFrameZoomFactor(zoomFactor: number) : void;
+        setFrameZoomFactor(zoomFactor: number) : void;
 
         /**
          * Exchanges the front and back buffers, subclass must implement this method.
          */
-        public swapBuffers() : void;
+        swapBuffers() : void;
 
         /**
          * Open or close IME keyboard , subclass must implement this method.
          * @param {Boolean} isOpen
          */
-        public setIMEKeyboardState(isOpen: boolean) : void;
+        setIMEKeyboardState(isOpen: boolean) : void;
 
         /**
          * Sets the resolution translate on EGLView
          * @param {Number} offsetLeft
          * @param {Number} offsetTop
          */
-        public setContentTranslateLeftTop(offsetLeft: number, offsetTop: number) : void;
+        setContentTranslateLeftTop(offsetLeft: number, offsetTop: number) : void;
 
         /**
          * Returns the resolution translate on EGLView
          * @return {cc.Size|Object}
          */
-        //public getContentTranslateLeftTop():any
-        public getContentTranslateLeftTop() : Size;
+        //getContentTranslateLeftTop():any
+        getContentTranslateLeftTop() : Size;
 
         /**
          * Returns the canvas size of the view.
@@ -1459,7 +1459,7 @@ declare namespace cc {
          * On web, it returns the size of the canvas element.
          * @return {cc.Size}
          */
-        public getCanvasSize() : Size;
+        getCanvasSize() : Size;
 
         /**
          * Returns the frame size of the view.
@@ -1467,7 +1467,7 @@ declare namespace cc {
          * On web, it returns the size of the canvas's outer DOM element.
          * @return {cc.Size}
          */
-        public getFrameSize() : Size;
+        getFrameSize() : Size;
 
         /**
          * On native, it sets the frame size of view.
@@ -1475,56 +1475,56 @@ declare namespace cc {
          * @param {Number} width
          * @param {Number} height
          */
-        public setFrameSize(width: number, height: number) : void;
+        setFrameSize(width: number, height: number) : void;
 
         /**
          * Empty function
          */
-        public centerWindow() : void;
+        centerWindow() : void;
 
         /**
          * Returns the visible area size of the view port.
          * @return {cc.Size}
          */
-        public getVisibleSize() : Size;
+        getVisibleSize() : Size;
 
         /**
          * Returns the visible area size of the view port.
          * @return {cc.Size}
          */
-        public getVisibleSizeInPixel() : Size;
+        getVisibleSizeInPixel() : Size;
 
         /**
          * Returns the visible origin of the view port.
          * @return {cc.Point}
          */
-        public getVisibleOrigin() : Point;
+        getVisibleOrigin() : Point;
 
         /**
          * Returns the visible origin of the view port.
          * @return {cc.Point}
          */
-        public getVisibleOriginInPixel() : Point;
+        getVisibleOriginInPixel() : Point;
 
         /**
          * Returns whether developer can set content's scale factor.
          * @return {Boolean}
          */
-        public canSetContentScaleFactor() : boolean;
+        canSetContentScaleFactor() : boolean;
 
         /**
          * Returns the current resolution policy
          * @see cc.ResolutionPolicy
          * @return {cc.ResolutionPolicy}
          */
-        public getResolutionPolicy() : ResolutionPolicy;
+        getResolutionPolicy() : ResolutionPolicy;
 
         /**
          * Sets the current resolution policy
          * @see cc.ResolutionPolicy
          * @param {cc.ResolutionPolicy|Number} resolutionPolicy
          */
-        public setResolutionPolicy(resolutionPolicy: number | ResolutionPolicy) : void;
+        setResolutionPolicy(resolutionPolicy: number | ResolutionPolicy) : void;
 
         /**
          * Sets the resolution policy with designed view size in points.
@@ -1539,14 +1539,14 @@ declare namespace cc {
          * @param {Number} height Design resolution height.
          * @param {cc.ResolutionPolicy|Number} resolutionPolicy The resolution policy desired
          */
-        public setDesignResolutionSize(width: number, height: number, resolutionPolicy: number | ResolutionPolicy) : void;
+        setDesignResolutionSize(width: number, height: number, resolutionPolicy: number | ResolutionPolicy) : void;
 
         /**
          * Returns the designed size for the view.
          * Default resolution size is the same as 'getFrameSize'.
          * @return {cc.Size}
          */
-        public getDesignResolutionSize() : Size;
+        getDesignResolutionSize() : Size;
 
         /**
          * Sets the document body to desired pixel resolution and fit the game content to it.
@@ -1562,7 +1562,7 @@ declare namespace cc {
          * @param {Number} height Design resolution height.
          * @param {cc.ResolutionPolicy|Number} resolutionPolicy The resolution policy desired
          */
-        public setRealPixelResolution(width: number, height: number, resolutionPolicy: number | ResolutionPolicy) : void;
+        setRealPixelResolution(width: number, height: number, resolutionPolicy: number | ResolutionPolicy) : void;
 
         /**
          * Sets view port rectangle with points.
@@ -1571,7 +1571,7 @@ declare namespace cc {
          * @param {Number} w width
          * @param {Number} h height
          */
-        public setViewPortInPoints(x: number, y: number, w: number, h: number) : void;
+        setViewPortInPoints(x: number, y: number, w: number, h: number) : void;
 
         /**
          * Sets Scissor rectangle with points.
@@ -1580,55 +1580,55 @@ declare namespace cc {
          * @param {Number} w
          * @param {Number} h
          */
-        public setScissorInPoints(x: number, y: number, w: number, h: number) : void;
+        setScissorInPoints(x: number, y: number, w: number, h: number) : void;
 
         /**
          * Returns whether GL_SCISSOR_TEST is enable
          * @return {Boolean}
          */
-        public isScissorEnabled() : boolean;
+        isScissorEnabled() : boolean;
 
         /**
          * Returns the current scissor rectangle
          * @return {cc.Rect}
          */
-        public getScissorRect() : Rect;
+        getScissorRect() : Rect;
 
         /**
          * Sets the name of the view
          * @param {String} viewName
          */
-        public setViewName(viewName: string) : void;
+        setViewName(viewName: string) : void;
 
         /**
          * Returns the name of the view
          * @return {String}
          */
-        public getViewName() : string;
+        getViewName() : string;
 
         /**
          * Returns the view port rectangle.
          * @return {cc.Rect}
          */
-        public getViewPortRect(rect: Rect) : Rect;
+        getViewPortRect(rect: Rect) : Rect;
 
         /**
          * Returns scale factor of the horizontal direction (X axis).
          * @return {Number}
          */
-        public getScaleX() : number;
+        getScaleX() : number;
 
         /**
          * Returns scale factor of the vertical direction (Y axis).
          * @return {Number}
          */
-        public getScaleY() : number;
+        getScaleY() : number;
 
         /**
          * Returns device pixel ratio for retina display.
          * @return {Number}
          */
-        public getDevicePixelRatio() : number;
+        getDevicePixelRatio() : number;
 
         /**
          * Returns the real location in view for a translation based on a related position
@@ -1638,7 +1638,7 @@ declare namespace cc {
          * @return {cc.Point}
          */
         // TODO: Figure out wtf this relatedPos object is
-        public convertToLocationInView(tx: number, ty: number, relatedPos: any) : Point;
+        convertToLocationInView(tx: number, ty: number, relatedPos: any) : Point;
     }
 
     /**
@@ -1653,20 +1653,20 @@ declare namespace cc {
          * Manipulation before appling the strategy
          * @param {cc.view} view The target view
          */
-        public preApply(view: View) : void;
+        preApply(view: View) : void;
 
         /**
          * Function to apply this strategy
          * @param {cc.view} view
          * @param {cc.Size} designedResolution
          */
-        public apply(view: View, designedResolution: Size) : void;
+        apply(view: View, designedResolution: Size) : void;
 
         /**
          * Manipulation after applying the strategy
          * @param {cc.view} view  The target view
          */
-        public postApply(view: View) : void;
+        postApply(view: View) : void;
     }
 
     /**
@@ -1681,7 +1681,7 @@ declare namespace cc {
          * Manipulation before applying the strategy
          * @param {cc.view} view The target view
          */
-        public preApply(view: View) : void;
+        preApply(view: View) : void;
 
         /**
          * Function to apply this strategy
@@ -1692,13 +1692,13 @@ declare namespace cc {
          * @return {object} scaleAndViewportRect
          */
         // TODO: Figure out what return value is
-        public apply(view: View, designedResolution: Size) : any;
+        apply(view: View, designedResolution: Size) : any;
 
         /**
          * Manipulation after applying the strategy
          * @param {cc.view} view The target view
          */
-        public postApply(view: View) : void;
+        postApply(view: View) : void;
     }
 
 // Container scale strategies
@@ -1707,7 +1707,7 @@ declare namespace cc {
      * @extends cc.ContainerStrategy
      */
     export class EqualToFrame extends ContainerStrategy {
-        public apply(view: View, designedResolution?: Size) : void;
+        apply(view: View, designedResolution?: Size) : void;
     }
 
     /**
@@ -1715,7 +1715,7 @@ declare namespace cc {
      * @extends cc.ContainerStrategy
      */
     export class ProportionalToFrame extends ContainerStrategy {
-        public apply(view: View, designedResolution: Size) : void;
+        apply(view: View, designedResolution: Size) : void;
     }
 
     /**
@@ -1723,8 +1723,8 @@ declare namespace cc {
      * @extends EqualToFrame
      */
     export class EqualToWindow extends EqualToFrame {
-        public preApply(view: View) : void;
-        public apply(view: View, designedResolution: Size) : any;
+        preApply(view: View) : void;
+        apply(view: View, designedResolution: Size) : any;
     }
 
     /**
@@ -1732,9 +1732,9 @@ declare namespace cc {
      * @extends ProportionalToFrame
      */
     export class ProportionalToWindow extends ProportionalToFrame {
-        public preApply(view: View) : void;
+        preApply(view: View) : void;
 
-        public apply(view: View, designedResolution: Size) : any;
+        apply(view: View, designedResolution: Size) : any;
     }
 
     /**
@@ -1742,7 +1742,7 @@ declare namespace cc {
      * @extends cc.ContainerStrategy
      */
     export class OriginalContainer extends ContainerStrategy {
-        public apply(view: View, designedResolution: Size) : any;
+        apply(view: View, designedResolution: Size) : any;
     }
 
 
@@ -1760,25 +1760,25 @@ declare namespace cc {
 
 // Content scale strategies
     export class ExactFit extends ContainerStrategy {
-        public apply(view: View, designedResolution: Size) : any;
+        apply(view: View, designedResolution: Size) : any;
     }
 
     export class ShowAll extends ContainerStrategy {
-        public apply(view: View, designedResolution: Size) : any;
+        apply(view: View, designedResolution: Size) : any;
     }
 
     export class NoBorder extends ContainerStrategy {
-        public apply(view: View, designedResolution: Size) : any;
+        apply(view: View, designedResolution: Size) : any;
     }
 
     export class FixedHeight extends ContainerStrategy {
-        public apply(view: View, designedResolution: Size) : any;
-        public postApply(view: View) : void;
+        apply(view: View, designedResolution: Size) : any;
+        postApply(view: View) : void;
     }
 
     export class FixedWidth extends ContainerStrategy {
-        public apply(view: View, designedResolution: Size) : any;
-        public postApply(view: View) : void;
+        apply(view: View, designedResolution: Size) : any;
+        postApply(view: View) : void;
     }
 
 //// Alias: Strategy to scale the content's size to container's size, non proportional
@@ -1813,7 +1813,7 @@ declare namespace cc {
          * The entire application is visible in the specified area without trying to preserve the original aspect ratio.
          * Distortion can occur, and the application may appear stretched or compressed.
          */
-        public static readonly EXACT_FIT : number;
+        static readonly EXACT_FIT : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1824,7 +1824,7 @@ declare namespace cc {
          * The entire application fills the specified area, without distortion but possibly with some cropping,
          * while maintaining the original aspect ratio of the application.
          */
-        public static readonly NO_BORDER : number;
+        static readonly NO_BORDER : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1835,7 +1835,7 @@ declare namespace cc {
          * The entire application is visible in the specified area without distortion while maintaining the original
          * aspect ratio of the application. Borders can appear on two sides of the application.
          */
-        public static readonly SHOW_ALL : number;
+        static readonly SHOW_ALL : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1848,7 +1848,7 @@ declare namespace cc {
          * no distortion will occur however you must make sure your application works on different
          * aspect ratios
          */
-        public static readonly FIXED_HEIGHT : number;
+        static readonly FIXED_HEIGHT : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1861,7 +1861,7 @@ declare namespace cc {
          * no distortion will occur however you must make sure your application works on different
          * aspect ratios
          */
-        public static readonly FIXED_WIDTH : number;
+        static readonly FIXED_WIDTH : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1871,20 +1871,20 @@ declare namespace cc {
          * @static
          * Unknow policy
          */
-        public static readonly UNKNOWN : number;
+        static readonly UNKNOWN : number;
 
         /**
          * Constructor of cc.ResolutionPolicy
          * @param {cc.ContainerStrategy} containerStg
          * @param {cc.ContentStrategy} contentStg
          */
-        public constructor(containerStg: ContainerStrategy, contentStg: ContainerStrategy);
+        constructor(containerStg: ContainerStrategy, contentStg: ContainerStrategy);
 
         /**
          * Manipulation before applying the resolution policy
          * @param {cc.view} view The target view
          */
-        public preApply(view: View) : void;
+        preApply(view: View) : void;
 
         /**
          * Function to apply this resolution policy
@@ -1894,24 +1894,24 @@ declare namespace cc {
          * @param {cc.Size} designedResolution The user defined design resolution
          * @return {object} An object contains the scale X/Y values and the viewport rect
          */
-        public apply(view: View, designedResolution: Size) : any;
+        apply(view: View, designedResolution: Size) : any;
 
         /**
          * Manipulation after appyling the strategy
          * @param {cc.view} view The target view
          */
-        public postApply(view: View) : void;
+        postApply(view: View) : void;
 
         /**
          * Setup the container's scale strategy
          * @param {cc.ContainerStrategy} containerStg
          */
-        public setContainerStrategy(containerStg: ContainerStrategy) : void;
+        setContainerStrategy(containerStg: ContainerStrategy) : void;
 
         /**
          * Setup the content's scale strategy
          * @param {cc.ContentStrategy} contentStg
          */
-        public setContentStrategy(contentStg: ContainerStrategy) : void;
+        setContentStrategy(contentStg: ContainerStrategy) : void;
     }
 }

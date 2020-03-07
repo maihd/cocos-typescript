@@ -27,7 +27,7 @@ declare namespace cc {
          * @function
          * @see cc.Layer#unbake
          */
-        public bake() : void;
+        bake() : void;
 
         /**
          * Cancel the layer to cache all of children to a bake sprite.
@@ -35,7 +35,7 @@ declare namespace cc {
          * @function
          * @see cc.Layer#bake
          */
-        public unbake() : void;
+        unbake() : void;
     }
 
     /**
@@ -74,20 +74,20 @@ declare namespace cc {
          * Returns the blend function
          * @return {cc.BlendFunc}
          */
-        public getBlendFunc() : BlendFunc;
+        getBlendFunc() : BlendFunc;
 
         /**
          * Sets the blend func, you can pass either a cc.BlendFunc object or source and destination value separately
          * @param {cc.BlendFunc} func
          */
-        public setBlendFunc(func: BlendFunc) : void;
+        setBlendFunc(func: BlendFunc) : void;
 
         /**
          * Sets the blend func, you can pass either a cc.BlendFunc object or source and destination value separately
          * @param {Number} src
          * @param {Number} [dst]
          */
-        public setBlendFunc(src: number, dst: number) : void;
+        setBlendFunc(src: number, dst: number) : void;
     }
 
     /**

@@ -79,28 +79,28 @@ declare namespace jsb {
          * @param {String} filename
          * @return {String}
          */
-        public fullPathForFilename(filename: string) : string;
+        fullPathForFilename(filename: string) : string;
 
         /**
          * @function getStringFromFile
          * @param {String} filename
          * @return {String}
          */
-        public getStringFromFile(filename: string) : string;
+        getStringFromFile(filename: string) : string;
 
         /**
          * @function removeFile
          * @param {String} filepath
          * @return {boolean}
          */
-        public removeFile(filepath: string) : boolean;
+        removeFile(filepath: string) : boolean;
 
         /**
          * @function isAbsolutePath
          * @param {String} path
          * @return {boolean}
          */
-        public isAbsolutePath(path: string) : boolean;
+        isAbsolutePath(path: string) : boolean;
 
         /**
          * @function renameFile
@@ -109,19 +109,19 @@ declare namespace jsb {
          * @param {String} [name] new name
          * @return {boolean}
          */
-        public renameFile(path: string, oldname: string, name?: string) : boolean;
+        renameFile(path: string, oldname: string, name?: string) : boolean;
 
         /**
          * @function loadFilenameLookupDictionaryFromFile
          * @param {String} filename
          */
-        public loadFilenameLookupDictionaryFromFile(filename: string) : void;
+        loadFilenameLookupDictionaryFromFile(filename: string) : void;
 
         /**
          * @function isPopupNotify
          * @return {boolean}
          */
-        public isPopupNotify() : boolean;
+        isPopupNotify() : boolean;
 
         /**
          * @function getValueVectorFromFile
@@ -129,13 +129,13 @@ declare namespace jsb {
          * @return {Array}
          * TODO: Figure out exactly what data type this is, not quite sure yet and this isn't in the C++ FileUtils API docs...
          */
-        public getValueVectorFromFile(arg0: string) : any[];
+        getValueVectorFromFile(arg0: string) : any[];
 
         /**
          * @function getSearchPaths
          * @return {Array}
          */
-        public getSearchPaths() : string[];
+        getSearchPaths() : string[];
 
         /**
          * @function writeToFile
@@ -143,34 +143,34 @@ declare namespace jsb {
          * @param {String} fullPath
          * @return {boolean}
          */
-        public writeToFile(dict: {}, fullPath: string) : boolean;
+        writeToFile(dict: {}, fullPath: string) : boolean;
 
         /**
          * @function getValueMapFromFile
          * @param {String} filename
          * @return {{}}
          */
-        public getValueMapFromFile(filename: string) : {};
+        getValueMapFromFile(filename: string) : {};
 
         /**
          * @function getFileSize
          * @param {String} filepath
          * @return {number}
          */
-        public getFileSize(filepath: string) : number;
+        getFileSize(filepath: string) : number;
 
         /**
          * @function removeDirectory
          * @param {String} dirPath
          * @return {boolean}
          */
-        public removeDirectory(dirPath: string) : boolean;
+        removeDirectory(dirPath: string) : boolean;
 
         /**
          * @function setSearchPaths
          * @param {Array} searchPaths
          */
-        public setSearchPaths(searchPaths: string[]) : void;
+        setSearchPaths(searchPaths: string[]) : void;
 
         /**
          * @function writeStringToFile
@@ -178,39 +178,39 @@ declare namespace jsb {
          * @param {String} fullPath
          * @return {boolean}
          */
-        public writeStringToFile(dataStr: string, fullPath: string) : boolean;
+        writeStringToFile(dataStr: string, fullPath: string) : boolean;
 
         /**
          * @function setSearchResolutionsOrder
          * @param {Array} searchResolutionsOrder
          */
-        public setSearchResolutionsOrder(searchResolutionsOrder: string[]) : void;
+        setSearchResolutionsOrder(searchResolutionsOrder: string[]) : void;
 
         /**
          * @function addSearchResolutionsOrder
          * @param {String} order
          * TODO: This does not match the C++ API, expected an optional bool argument here
          */
-        public addSearchResolutionsOrder(order: string) : void;
+        addSearchResolutionsOrder(order: string) : void;
 
         /**
          * @function addSearchPath
          * @param {String} path
          * TODO: This does not match the C++ API, expected an optional bool argument here
          */
-        public addSearchPath(path: string) : void;
+        addSearchPath(path: string) : void;
 
         /**
          * @function isFileExist
          * @param {String} filename
          * @return {boolean}
          */
-        public isFileExist(filename: string) : boolean;
+        isFileExist(filename: string) : boolean;
 
         /**
          * @function purgeCachedEntries
          */
-        public purgeCachedEntries() : void;
+        purgeCachedEntries() : void;
 
         /**
          * @function fullPathFromRelativeFile
@@ -218,27 +218,27 @@ declare namespace jsb {
          * @param {String} relativeFile
          * @return {String}
          */
-        public fullPathFromRelativeFile(filename: string, relativeFile: string) : string;
+        fullPathFromRelativeFile(filename: string, relativeFile: string) : string;
 
         /**
          * @function isDirectoryExist
          * @param {String} dirPath
          * @return {boolean}
          */
-        public isDirectoryExist(dirPath: string) : boolean;
+        isDirectoryExist(dirPath: string) : boolean;
 
         /**
          * @function getSearchResolutionsOrder
          * @return {Array}
          */
-        public getSearchResolutionsOrder() : string[];
+        getSearchResolutionsOrder() : string[];
 
         /**
          * @function createDirectory
          * @param {String} dirPath
          * @return {boolean}
          */
-        public createDirectory(dirPath: string) : boolean;
+        createDirectory(dirPath: string) : boolean;
 
         /**
          * @function createDirectories
@@ -246,13 +246,13 @@ declare namespace jsb {
          * @return {boolean}
          * TODO: This arguments list doesn't even make sense, I'd expect an array of strings. Look into this later on.
          */
-        public createDirectories(dirPath: string) : boolean;
+        createDirectories(dirPath: string) : boolean;
 
         /**
          * @function getWritablePath
          * @return {String}
          */
-        public getWritablePath() : string;
+        getWritablePath() : string;
     }
 
     /**
@@ -273,7 +273,7 @@ declare namespace jsb {
          * @param {number} [curle_code]
          * @param {number} [curlm_code]
          */
-        public constructor(
+        constructor(
             eventName: string,
             manager: AssetsManager,
             code: EventCode,
@@ -288,49 +288,49 @@ declare namespace jsb {
          * @function getAssetsManager
          * @return {AssetsManager}
          */
-        public getAssetsManager() : AssetsManager;
+        getAssetsManager() : AssetsManager;
 
         /**
          * @function getAssetId
          * @return {String}
          */
-        public getAssetId() : string;
+        getAssetId() : string;
 
         /**
          * @function getCURLECode
          * @return {int}
          */
-        public getCURLECode() : number;
+        getCURLECode() : number;
 
         /**
          * @function getMessage
          * @return {String}
          */
-        public getMessage() : string;
+        getMessage() : string;
 
         /**
          * @function getCURLMCode
          * @return {int}
          */
-        public getCURLMCode() : number;
+        getCURLMCode() : number;
 
         /**
          * @function getPercentByFile
          * @return {number}
          */
-        public getPercentByFile() : number;
+        getPercentByFile() : number;
 
         /**
          * @function getEventCode
          * @return {EventCode}
          */
-        public getEventCode() : EventCode;
+        getEventCode() : EventCode;
 
         /**
          * @function getPercent
          * @return {number}
          */
-        public getPercent() : number;
+        getPercent() : number;
 
     }
 
@@ -344,7 +344,7 @@ declare namespace jsb {
          * @param {function} callback
          * @return {boolean}
          */
-        public init(assetsmanager: AssetsManager, callback: (mgr: EventAssetsManager) => void) : boolean;
+        init(assetsmanager: AssetsManager, callback: (mgr: EventAssetsManager) => void) : boolean;
 
         /**
          * @function create
@@ -352,7 +352,7 @@ declare namespace jsb {
          * @param {function} callback
          * @return {EventListenerAssetsManager}
          */
-        public static create(assetsmanager: AssetsManager, callback: (mgr: EventAssetsManager) => void) : EventListenerAssetsManager;
+        static create(assetsmanager: AssetsManager, callback: (mgr: EventAssetsManager) => void) : EventListenerAssetsManager;
     }
 
     /**
@@ -368,47 +368,47 @@ declare namespace jsb {
          * @param {String} manifestUrl
          * @param {String} storagePath
          */
-        public constructor(manifestUrl: string, storagePath: string);
-        public constructor();
+        constructor(manifestUrl: string, storagePath: string);
+        constructor();
 
         /**
          * @function getState
          * @return {State}
          */
-        public getState() : State;
+        getState() : State;
 
         /**
          * @function checkUpdate
          */
-        public checkUpdate() : void;
+        checkUpdate() : void;
 
         /**
          * @function getStoragePath
          * @return {String}
          */
-        public getStoragePath() : string;
+        getStoragePath() : string;
 
         /**
          * @function update
          */
-        public update() : void;
+        update() : void;
 
         /**
          * @function getLocalManifest
          * @return {jsb.Manifest}
          */
-        public getLocalManifest() : Manifest;
+        getLocalManifest() : Manifest;
 
         /**
          * @function getRemoteManifest
          * @return {jsb.Manifest}
          */
-        public getRemoteManifest() : Manifest;
+        getRemoteManifest() : Manifest;
 
         /**
          * @function downloadFailedAssets
          */
-        public downloadFailedAssets() : void;
+        downloadFailedAssets() : void;
     }
 
     /**
@@ -419,37 +419,37 @@ declare namespace jsb {
          * @function getManifestFileUrl
          * @return {String}
          */
-        public getManifestFileUrl() : string;
+        getManifestFileUrl() : string;
 
         /**
          * @function isVersionLoaded
          * @return {boolean}
          */
-        public isVersionLoaded() : boolean;
+        isVersionLoaded() : boolean;
 
         /**
          * @function isLoaded
          * @return {boolean}
          */
-        public isLoaded() : boolean;
+        isLoaded() : boolean;
 
         /**
          * @function getPackageUrl
          * @return {String}
          */
-        public getPackageUrl() : string;
+        getPackageUrl() : string;
 
         /**
          * @function getVersion
          * @return {String}
          */
-        public getVersion() : string;
+        getVersion() : string;
 
         /**
          * @function getVersionFileUrl
          * @return {String}
          */
-        public getVersionFileUrl() : string;
+        getVersionFileUrl() : string;
     }
 
     // TODO: I don't know the best way to represent this, because I can't find a reference in the C++ docs. Just do this for now, fix it later on.

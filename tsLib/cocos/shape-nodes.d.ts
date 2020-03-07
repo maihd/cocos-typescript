@@ -44,47 +44,47 @@ declare namespace cc {
      * @extends cc.Node
      */
     export class DrawNode extends Node {
-        public static readonly TYPE_DOT : number;
-        public static readonly TYPE_SEGMENT : number;
-        public static readonly TYPE_POLY : number;
+        static readonly TYPE_DOT : number;
+        static readonly TYPE_SEGMENT : number;
+        static readonly TYPE_POLY : number;
 
         /**
          * Gets the blend func
          * @returns {Object}
          */
-        public getBlendFunc() : BlendFunc;
+        getBlendFunc() : BlendFunc;
 
         /**
          * Set the blend func
          * @param blendFunc
          * @param dst
          */
-        public setBlendFunc(blendFunc: BlendFunc) : void;
-        public setBlendFunc(src: number, dst: number) : void;
+        setBlendFunc(blendFunc: BlendFunc) : void;
+        setBlendFunc(src: number, dst: number) : void;
 
         /**
          * line width setter
          * @param {Number} width
          */
-        public setLineWidth(width: number) : void;
+        setLineWidth(width: number) : void;
 
         /**
          * line width getter
          * @returns {Number}
          */
-        public getLineWidth() : number;
+        getLineWidth() : number;
 
         /**
          * draw color setter
          * @param {cc.Color} color
          */
-        public setDrawColor(color: Color) : void;
+        setDrawColor(color: Color) : void;
 
         /**
          * draw color getter
          * @returns {cc.Color}
          */
-        public getDrawColor() : Color;
+        getDrawColor() : Color;
 
         /**
          * draws a rectangle given the origin and destination point measured in points.
@@ -94,7 +94,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} lineColor
          */
-        public drawRect(origin: Point, destination: Point, fillColor?: Color, lineWidth?: number, lineColor?: Color) : void;
+        drawRect(origin: Point, destination: Point, fillColor?: Color, lineWidth?: number, lineColor?: Color) : void;
 
         /**
          * draws a circle given the center, radius and number of segments.
@@ -107,7 +107,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCircle(center: Point, radius: number, angle: number, segments: number,
+        drawCircle(center: Point, radius: number, angle: number, segments: number,
                           drawLineToCenter?: boolean, lineWidth?: number, color?: Color) : void;
 
         /**
@@ -120,7 +120,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawQuadBezier(origin: Point, control: Point, destination: Point, segments: number,
+        drawQuadBezier(origin: Point, control: Point, destination: Point, segments: number,
                               lineWidth?: number, color?: Color) : void;
 
         /**
@@ -134,7 +134,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCubicBezier(origin: Point, control1: Point, control2: Point, destination : Point,
+        drawCubicBezier(origin: Point, control1: Point, control2: Point, destination : Point,
                                segments: number, lineWidth?: number, color?: Color) : void;
 
         /**
@@ -145,7 +145,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCatmullRom(points: Point[], segments: number, lineWidth?: number, color?: Color) : void;
+        drawCatmullRom(points: Point[], segments: number, lineWidth?: number, color?: Color) : void;
 
         /**
          * draw a cardinal spline path
@@ -156,7 +156,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCardinalSpline(config: Point[], tension: number, segments: number,
+        drawCardinalSpline(config: Point[], tension: number, segments: number,
                                   lineWidth?: number, color?: Color) : void;
 
         /**
@@ -165,7 +165,7 @@ declare namespace cc {
          * @param {Number} radius
          * @param {cc.Color} color
          */
-        public drawDot(pos: Point, radius: number, color?: Color) : void;
+        drawDot(pos: Point, radius: number, color?: Color) : void;
 
         /**
          * draws an array of points.
@@ -174,7 +174,7 @@ declare namespace cc {
          * @param {Number} radius
          * @param {cc.Color} color
          */
-        public drawDots(points: Point[], radius: number, color?: Color) : void;
+        drawDots(points: Point[], radius: number, color?: Color) : void;
 
         /**
          * draw a segment with a radius and color
@@ -183,7 +183,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawSegment(from: Point, to: Point, lineWidth?: number, color?: Color) : void;
+        drawSegment(from: Point, to: Point, lineWidth?: number, color?: Color) : void;
 
         /**
          * draw a polygon with a fill color and line color, copying the vertex list
@@ -192,11 +192,11 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawPoly(verts: Point[], fillColor?: Color, lineWidth?: number, color?: Color) : void;
+        drawPoly(verts: Point[], fillColor?: Color, lineWidth?: number, color?: Color) : void;
 
         /**
          * Clear the geometry in the node's buffer.
          */
-        public clear() : void;
+        clear() : void;
     }
 }
