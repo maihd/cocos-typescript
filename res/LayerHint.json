@@ -1,0 +1,519 @@
+{
+    "ID": "045e1db4-8828-4809-9efd-44e0618e4ce7",
+    "Version": "3.10.0.0",
+    "Name": "LayerHint",
+    "Content": {
+      "Content": {
+        "Animation": {
+          "Duration": 0,
+          "Speed": 1,
+          "Timelines": [],
+          "ctype": "TimelineActionData"
+        },
+        "AnimationList": [],
+        "ObjectData": {
+          "Tag": 66,
+          "Children": [
+            {
+              "FileData": {
+                "Type": "Normal",
+                "Path": "Main/bgBlank.png",
+                "Plist": ""
+              },
+              "BlendFunc": {
+                "Src": 770,
+                "Dst": 771
+              },
+              "AnchorPoint": {},
+              "Position": {
+                "X": 0,
+                "Y": 0
+              },
+              "Scale": {
+                "ScaleX": 1,
+                "ScaleY": 1
+              },
+              "CColor": {},
+              "IconVisible": false,
+              "PrePosition": {
+                "X": 0,
+                "Y": 0
+              },
+              "PreSize": {
+                "X": 1,
+                "Y": 1
+              },
+              "Tag": 73,
+              "ActionTag": -1741517426,
+              "Size": {
+                "X": 1280,
+                "Y": 720
+              },
+              "Name": "bg",
+              "ctype": "SpriteObjectData"
+            },
+            {
+              "ClipAble": false,
+              "BackColorAlpha": 102,
+              "SingleColor": {
+                "R": 150,
+                "G": 200
+              },
+              "FirstColor": {
+                "R": 150,
+                "G": 200
+              },
+              "EndColor": {},
+              "ColorVector": {
+                "ScaleY": 1
+              },
+              "Scale9Width": 1,
+              "Scale9Height": 1,
+              "TouchEnable": true,
+              "AnchorPoint": {
+                "ScaleY": 1
+              },
+              "Position": {
+                "X": 0,
+                "Y": 720
+              },
+              "Scale": {
+                "ScaleX": 1,
+                "ScaleY": 1
+              },
+              "CColor": {},
+              "IconVisible": false,
+              "PositionPercentYEnabled": true,
+              "PrePosition": {
+                "X": 0,
+                "Y": 1
+              },
+              "PreSize": {
+                "X": 0.1,
+                "Y": 0.1778
+              },
+              "RightMargin": 1152,
+              "BottomMargin": 592,
+              "Tag": 67,
+              "Children": [
+                {
+                  "FileData": {
+                    "Type": "Normal",
+                    "Path": "ItemLogo.json",
+                    "Plist": ""
+                  },
+                  "StretchWidthEnable": false,
+                  "StretchHeightEnable": false,
+                  "InnerActionSpeed": 1,
+                  "AnchorPoint": {},
+                  "Position": {
+                    "X": 64,
+                    "Y": 70.0032
+                  },
+                  "Scale": {
+                    "ScaleX": 1,
+                    "ScaleY": 1
+                  },
+                  "CColor": {},
+                  "IconVisible": true,
+                  "PositionPercentXEnabled": true,
+                  "PositionPercentYEnabled": true,
+                  "PrePosition": {
+                    "X": 0.5,
+                    "Y": 0.5469
+                  },
+                  "PreSize": {
+                    "X": 0,
+                    "Y": 0
+                  },
+                  "LeftMargin": 64,
+                  "RightMargin": 64,
+                  "TopMargin": 57.9968,
+                  "BottomMargin": 70.0032,
+                  "Tag": 68,
+                  "ActionTag": -719126301,
+                  "Size": {
+                    "X": 0,
+                    "Y": 0
+                  },
+                  "Name": "nLogo",
+                  "ctype": "ProjectNodeObjectData"
+                }
+              ],
+              "ActionTag": -646751314,
+              "Size": {
+                "X": 128,
+                "Y": 128
+              },
+              "Name": "btnLogo",
+              "ctype": "PanelObjectData"
+            },
+            {
+              "FontSize": 14,
+              "ButtonText": "",
+              "TextColor": {
+                "R": 65,
+                "G": 65,
+                "B": 70
+              },
+              "DisabledFileData": {
+                "Type": "Normal",
+                "Path": "Buttons/btnBack.png",
+                "Plist": ""
+              },
+              "PressedFileData": {
+                "Type": "Normal",
+                "Path": "Buttons/btnBack.png",
+                "Plist": ""
+              },
+              "NormalFileData": {
+                "Type": "Normal",
+                "Path": "Buttons/btnBack.png",
+                "Plist": ""
+              },
+              "Scale9OriginX": 15,
+              "Scale9OriginY": 11,
+              "Scale9Width": 78,
+              "Scale9Height": 46,
+              "OutlineColor": {
+                "G": 0,
+                "B": 0
+              },
+              "ShadowColor": {
+                "R": 110,
+                "G": 110,
+                "B": 110
+              },
+              "ShadowOffsetX": 2,
+              "ShadowOffsetY": -2,
+              "TouchEnable": true,
+              "AnchorPoint": {
+                "ScaleX": 0.5,
+                "ScaleY": 0.5
+              },
+              "Position": {
+                "X": 1192.999,
+                "Y": 659.9999
+              },
+              "Scale": {
+                "ScaleX": 1,
+                "ScaleY": 1
+              },
+              "CColor": {},
+              "IconVisible": false,
+              "PrePosition": {
+                "X": 0.932,
+                "Y": 0.9167
+              },
+              "PreSize": {
+                "X": 0.0844,
+                "Y": 0.0944
+              },
+              "LeftMargin": 1138.999,
+              "RightMargin": 33.001,
+              "TopMargin": 26.0001,
+              "BottomMargin": 625.9999,
+              "Tag": 78,
+              "ActionTag": -1717181885,
+              "Size": {
+                "X": 108,
+                "Y": 68
+              },
+              "Name": "btnBack",
+              "ctype": "ButtonObjectData"
+            },
+            {
+              "ClipAble": false,
+              "BackColorAlpha": 102,
+              "FileData": {
+                "Type": "Normal",
+                "Path": "Main/frame.png",
+                "Plist": ""
+              },
+              "SingleColor": {
+                "R": 150,
+                "G": 200
+              },
+              "FirstColor": {
+                "R": 150,
+                "G": 200
+              },
+              "EndColor": {},
+              "ColorVector": {
+                "ScaleY": 1
+              },
+              "Scale9OriginX": 304,
+              "Scale9OriginY": 140,
+              "Scale9Width": 314,
+              "Scale9Height": 145,
+              "TouchEnable": true,
+              "AnchorPoint": {
+                "ScaleX": 0.5,
+                "ScaleY": 0.5
+              },
+              "Position": {
+                "X": 640,
+                "Y": 360
+              },
+              "Scale": {
+                "ScaleX": 1,
+                "ScaleY": 1
+              },
+              "CColor": {},
+              "IconVisible": false,
+              "PositionPercentXEnabled": true,
+              "PositionPercentYEnabled": true,
+              "PrePosition": {
+                "X": 0.5,
+                "Y": 0.5
+              },
+              "PreSize": {
+                "X": 0.7188,
+                "Y": 0.5833
+              },
+              "LeftMargin": 180,
+              "RightMargin": 180,
+              "TopMargin": 150,
+              "BottomMargin": 150,
+              "Tag": 74,
+              "Children": [
+                {
+                  "FileData": {
+                    "Type": "Normal",
+                    "Path": "Main/spWood.png",
+                    "Plist": ""
+                  },
+                  "BlendFunc": {
+                    "Src": 1,
+                    "Dst": 771
+                  },
+                  "AnchorPoint": {
+                    "ScaleX": 0.5,
+                    "ScaleY": 0.5
+                  },
+                  "Position": {
+                    "X": 460,
+                    "Y": 420
+                  },
+                  "Scale": {
+                    "ScaleX": 1,
+                    "ScaleY": 1
+                  },
+                  "CColor": {},
+                  "IconVisible": false,
+                  "PositionPercentXEnabled": true,
+                  "PositionPercentYEnabled": true,
+                  "PrePosition": {
+                    "X": 0.5,
+                    "Y": 1
+                  },
+                  "PreSize": {
+                    "X": 0.425,
+                    "Y": 0.2143
+                  },
+                  "LeftMargin": 264.5,
+                  "RightMargin": 264.5,
+                  "TopMargin": -45,
+                  "BottomMargin": 375,
+                  "Tag": 76,
+                  "Children": [
+                    {
+                      "FontSize": 50,
+                      "LabelText": "INSTRUCTION",
+                      "FontResource": {
+                        "Type": "Normal",
+                        "Path": "Fonts/UTMHelvetIns.ttf",
+                        "Plist": ""
+                      },
+                      "OutlineSize": 2,
+                      "OutlineColor": {
+                        "R": 129,
+                        "G": 84,
+                        "B": 0
+                      },
+                      "OutlineEnabled": true,
+                      "ShadowColor": {
+                        "R": 110,
+                        "G": 110,
+                        "B": 110
+                      },
+                      "ShadowOffsetX": 2,
+                      "ShadowOffsetY": -2,
+                      "AnchorPoint": {
+                        "ScaleX": 0.5,
+                        "ScaleY": 0.5
+                      },
+                      "Position": {
+                        "X": 195.5,
+                        "Y": 52.002
+                      },
+                      "Scale": {
+                        "ScaleX": 1,
+                        "ScaleY": 1
+                      },
+                      "CColor": {},
+                      "IconVisible": false,
+                      "PositionPercentXEnabled": true,
+                      "PositionPercentYEnabled": true,
+                      "PrePosition": {
+                        "X": 0.5,
+                        "Y": 0.5778
+                      },
+                      "PreSize": {
+                        "X": 0.7084,
+                        "Y": 0.8667
+                      },
+                      "LeftMargin": 57,
+                      "RightMargin": 57,
+                      "TopMargin": -1.002,
+                      "BottomMargin": 13.002,
+                      "Tag": 77,
+                      "ActionTag": -78643610,
+                      "Size": {
+                        "X": 277,
+                        "Y": 78
+                      },
+                      "Name": "text",
+                      "ctype": "TextObjectData"
+                    }
+                  ],
+                  "ActionTag": -1714816783,
+                  "Size": {
+                    "X": 391,
+                    "Y": 90
+                  },
+                  "Name": "spTitle",
+                  "ctype": "SpriteObjectData"
+                },
+                {
+                  "InnerNodeSize": {
+                    "Width": 1753,
+                    "Height": 320
+                  },
+                  "ScrollDirectionType": "Horizontal",
+                  "ClipAble": true,
+                  "BackColorAlpha": 102,
+                  "SingleColor": {
+                    "G": 150,
+                    "B": 100
+                  },
+                  "FirstColor": {
+                    "G": 150,
+                    "B": 100
+                  },
+                  "EndColor": {},
+                  "ColorVector": {
+                    "ScaleY": 1
+                  },
+                  "Scale9Width": 1,
+                  "Scale9Height": 1,
+                  "TouchEnable": true,
+                  "AnchorPoint": {
+                    "ScaleX": 0.5
+                  },
+                  "Position": {
+                    "X": 460,
+                    "Y": 39.0788
+                  },
+                  "Scale": {
+                    "ScaleX": 1,
+                    "ScaleY": 1
+                  },
+                  "CColor": {},
+                  "IconVisible": false,
+                  "PositionPercentXEnabled": true,
+                  "PrePosition": {
+                    "X": 0.5,
+                    "Y": 0.093
+                  },
+                  "PreSize": {
+                    "X": 0.9565,
+                    "Y": 0.7619
+                  },
+                  "LeftMargin": 20,
+                  "RightMargin": 20,
+                  "TopMargin": 60.9212,
+                  "BottomMargin": 39.0788,
+                  "Tag": 79,
+                  "Children": [
+                    {
+                      "FileData": {
+                        "Type": "Normal",
+                        "Path": "Main/spGuide.png",
+                        "Plist": ""
+                      },
+                      "BlendFunc": {
+                        "Src": 1,
+                        "Dst": 771
+                      },
+                      "AnchorPoint": {
+                        "ScaleY": 0.5
+                      },
+                      "Position": {
+                        "X": 0,
+                        "Y": 160
+                      },
+                      "Scale": {
+                        "ScaleX": 1,
+                        "ScaleY": 1
+                      },
+                      "CColor": {},
+                      "IconVisible": false,
+                      "PositionPercentYEnabled": true,
+                      "PrePosition": {
+                        "X": 0,
+                        "Y": 0.5
+                      },
+                      "PreSize": {
+                        "X": 1,
+                        "Y": 1
+                      },
+                      "Tag": 56,
+                      "ActionTag": 640996938,
+                      "Size": {
+                        "X": 1753,
+                        "Y": 320
+                      },
+                      "Name": "spGuide",
+                      "ctype": "SpriteObjectData"
+                    }
+                  ],
+                  "ActionTag": 1447554596,
+                  "Size": {
+                    "X": 880,
+                    "Y": 320
+                  },
+                  "Name": "scrollView",
+                  "ctype": "ScrollViewObjectData"
+                }
+              ],
+              "ActionTag": 466207994,
+              "Size": {
+                "X": 920,
+                "Y": 420
+              },
+              "Name": "pnlMain",
+              "ctype": "PanelObjectData"
+            }
+          ],
+          "Size": {
+            "X": 1280,
+            "Y": 720
+          },
+          "Name": "Layer",
+          "ctype": "LayerObjectData"
+        },
+        "UsedResources": [
+          "Buttons/btnBack.png",
+          "Fonts/UTMHelvetIns.ttf",
+          "ItemLogo.json",
+          "Main/bgBlank.png",
+          "Main/frame.png",
+          "Main/spGuide.png",
+          "Main/spWood.png"
+        ],
+        "ctype": "GameFileData"
+      }
+    },
+    "Type": "Layer"
+  }

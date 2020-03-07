@@ -743,42 +743,42 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    export var TEXT_ALIGNMENT_LEFT : number;
+    export const TEXT_ALIGNMENT_LEFT : number;
 
     /**
      * text alignment : center
      * @constant
      * @type Number
      */
-    export var TEXT_ALIGNMENT_CENTER : number;
+    export const TEXT_ALIGNMENT_CENTER : number;
 
     /**
      * text alignment : right
      * @constant
      * @type Number
      */
-    export var TEXT_ALIGNMENT_RIGHT : number;
+    export const TEXT_ALIGNMENT_RIGHT : number;
 
     /**
      * text alignment : top
      * @constant
      * @type Number
      */
-    export var VERTICAL_TEXT_ALIGNMENT_TOP : number;
+    export const VERTICAL_TEXT_ALIGNMENT_TOP : number;
 
     /**
      * text alignment : center
      * @constant
      * @type Number
      */
-    export var VERTICAL_TEXT_ALIGNMENT_CENTER : number;
+    export const VERTICAL_TEXT_ALIGNMENT_CENTER : number;
 
     /**
      * text alignment : bottom
      * @constant
      * @type Number
      */ 
-    export var VERTICAL_TEXT_ALIGNMENT_BOTTOM : number;
+    export const VERTICAL_TEXT_ALIGNMENT_BOTTOM : number;
 
     //+---------- Function definitions ----------+//
     /**

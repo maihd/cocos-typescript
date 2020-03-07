@@ -466,7 +466,7 @@ declare namespace cc {
          */
         public static readonly INDEX_NOT_INITIALIZED : number;
 
-        public constructor(fileName: string, rect?: Rect, rotated?: boolean);
+        public constructor(fileName?: string, rect?: Rect, rotated?: boolean);
 
         /**
          * Returns whether the texture have been loaded

@@ -71,7 +71,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
         glview = cocos2d::GLViewImpl::create("cocos-typescript");
 #else
-        glview = cocos2d::GLViewImpl::createWithRect("cocos-typescript", Rect(0,0,960,640));
+        glview = cocos2d::GLViewImpl::createWithRect("cocos-typescript", Rect(0, 0, 1280, 720));
 #endif
         director->setOpenGLView(glview);
 }
