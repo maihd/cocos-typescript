@@ -35,11 +35,6 @@ function __values(o)
     let classes = [
         "Node",
         "Scene",
-        "Sprite",
-        "ClippingNode",
-
-        "LabelTTF",
-
         "Layer",
         "LayerColor",
         "LayerGradient",
@@ -58,12 +53,6 @@ function __values(o)
     {
         let uiClasses = [
             "Widget",
-            "Text",
-            "Button",
-            "Layout",
-            "CheckBox",
-            "ListView",
-            "ImageView",
         ];
         uiClasses.forEach(function (name) {
             let result = extend(ccui[name], "ccui." + name);

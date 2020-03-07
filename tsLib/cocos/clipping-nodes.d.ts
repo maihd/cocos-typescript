@@ -9,7 +9,7 @@ declare namespace cc {
      * the value of stencil bits.
      * @type Number
      */
-    export const stencilBits:number;
+    export const stencilBits : number;
 
     /**
      *
@@ -29,23 +29,18 @@ declare namespace cc {
     export class ClippingNode extends Node {
         //alphaThreshold: 0,
         //inverted: false,
-        public alphaThreshold:number;
-        public inverted:boolean;
-        public stencil:Node;
+        public alphaThreshold: number;
+        public inverted: boolean;
+        public stencil: Node;
 
-        public constructor(stencil?:Node);
-        /**
-         * Constructor function, override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function.
-         * @param {cc.Node} [stencil=null]
-         */
-        public ctor(stencil?:Node):void;
+        public constructor(stencil?: Node);
 
         /**
          * Initialization of the node, please do not call this function by yourself, you should pass the parameters to constructor to initialize it .
          * @function
          * @param {cc.Node} [stencil=null]
          */
-        public init(stencil?:Node):boolean;
+        public init(stencil?: Node) : boolean;
 
         /**
          *
@@ -56,13 +51,13 @@ declare namespace cc {
          * </P>
          * @return {Number}
          */
-        public getAlphaThreshold():number;
+        public getAlphaThreshold() : number;
 
         /**
          * set alpha threshold.
          * @param {Number} alphaThreshold
          */
-        public setAlphaThreshold(alphaThreshold:number):void;
+        public setAlphaThreshold(alphaThreshold: number) : void;
 
         /**
          *
@@ -72,27 +67,27 @@ declare namespace cc {
          *
          * @return {Boolean}
          */
-        public isInverted():boolean;
+        public isInverted() : boolean;
 
         /**
          * set whether or not invert of stencil
          * @param {Boolean} inverted
          */
-        public setInverted(inverted:boolean):void;
+        public setInverted(inverted: boolean) : void;
 
         /**
          * The cc.Node to use as a stencil to do the clipping.
          * The stencil node will be retained. This default to nil.
          * @return {cc.Node}
          */
-        public getStencil():Node;
+        public getStencil() : Node;
 
         /**
          * Set stencil.
          * @function
          * @param {cc.Node} stencil
          */
-        public setStencil(stencil:Node):void;
+        public setStencil(stencil: Node) : void;
     }
 }
 

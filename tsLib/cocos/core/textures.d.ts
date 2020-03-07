@@ -1,16 +1,35 @@
 /// <reference path="../cocos-lib.d.ts" />
 
-// TODO: Figure out what's going on here. In lib.d.ts, this declaration exists:
-//          declare var Image: {new(width?: number, height?: number): HTMLImageElement; };
-//       What exactly does the declare var mean, and why it is not resolved below by TextureAtlas::get/setTexture?
-//       Does that mean the DefinitelyTyped file is set up improperly? Or am I somehow using it incorrectly?
-
-interface Image extends HTMLImageElement {}
-
 declare namespace cc {
     ////////////////////////////////////////////////////////////////////////////////
     // File: cocos2d/core/sprites/CCTexture2D.js
     ////////////////////////////////////////////////////////////////////////////////
+
+    export class Image extends Class {
+        constructor();
+
+        hasPremultipliedAlpha() : boolean;
+        getDataLen() : number;
+        saveToFile(path: string, isToRGB: boolean) : boolean;
+        hasAlpha() : boolean;
+        isCompressed() : boolean;
+        initWithImageFile(path: string) : boolean;
+        getBitPerPixel() : number;
+        getWidth() : number;
+        getHeight() : number;
+        getFileType() : number;
+        getFilePath() : string;
+        getNumberOfMipmaps() : number;
+        getRenderFormat() : number;
+        setPVRImagesHasPremultipliedAlpha(premultiplied: boolean) : void;
+        setPNGPremultipliedAlphaEnabled(premultiplied: boolean) : void;
+        
+        // NOT SUPPORTED
+        //getData() : Uint8Array;
+        //getMipmaps() : Uint8Array;
+        //initWithRawData() : 
+    }
+
 //CONSTANTS:
 
     /**
@@ -18,68 +37,68 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    const ALIGN_CENTER:number;
+    export const ALIGN_CENTER : number;
 
     /**
      * Horizontal center and vertical top.
      * @constant
      * @type Number
      */
-    const ALIGN_TOP:number;
+    export const ALIGN_TOP : number;
 
     /**
      * Horizontal right and vertical top.
      * @constant
      * @type Number
      */
-    const ALIGN_TOP_RIGHT:number;
+    export const ALIGN_TOP_RIGHT : number;
 
     /**
      * Horizontal right and vertical center.
      * @constant
      * @type Number
      */
-    const ALIGN_RIGHT:number;
+    export const ALIGN_RIGHT : number;
 
     /**
      * Horizontal right and vertical bottom.
      * @constant
      * @type Number
      */
-    const ALIGN_BOTTOM_RIGHT:number;
+    export const ALIGN_BOTTOM_RIGHT : number;
 
     /**
      * Horizontal center and vertical bottom.
      * @constant
      * @type Number
      */
-    const ALIGN_BOTTOM:number;
+    export const ALIGN_BOTTOM : number;
 
     /**
      * Horizontal left and vertical bottom.
      * @constant
      * @type Number
      */
-    const ALIGN_BOTTOM_LEFT:number;
+    export const ALIGN_BOTTOM_LEFT : number;
 
     /**
      * Horizontal left and vertical center.
      * @constant
      * @type Number
      */
-    const ALIGN_LEFT:number;
+    export const ALIGN_LEFT : number;
 
     /**
      * Horizontal left and vertical top.
      * @constant
      * @type Number
      */
-    const ALIGN_TOP_LEFT:number;
+    export const ALIGN_TOP_LEFT : number;
 //----------------------Possible texture pixel formats----------------------------
 
 
 // By default PVR images are treated as if they don't have the alpha channel premultiplied
-    const PVRHaveAlphaPremultiplied_: boolean;
+export const PVRHaveAlphaPremultiplied_ : boolean;
 
 //cc.Texture2DWebGL move to TextureWebGL.js
 
@@ -601,7 +620,7 @@ declare namespace cc {
     //});
 
     export class Texture2D extends Class {
-        public isLoaded(): boolean;
+        public isLoaded() : boolean;
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -631,9 +650,9 @@ declare namespace cc {
         //public get capacity(): number;
         //public get quads(): V3F_C4B_T2F_Quad[];
         //public set quads(quads:V3F_C4B_T2F_Quad[]);
-        public totalQuads:number;
-        public capacity:number;
-        public quads:V3F_C4B_T2F_Quad[];
+        public totalQuads : number;
+        public capacity : number;
+        public quads : V3F_C4B_T2F_Quad[];
         //public quads(quads:V3F_C4B_T2F_Quad[]);
 
         /**
@@ -651,60 +670,60 @@ declare namespace cc {
          * var texture = cc.textureCache.addImage("hello.png");
          * var textureAtlas = new cc.TextureAtlas(texture, 3);
          */
-        public constructor(fileName:string, capacity:number);
-        public constructor(fileName:Texture2D, capacity:number);
+        public constructor(fileName: string, capacity: number);
+        public constructor(fileName: Texture2D, capacity: number);
 
         /**
          * Quantity of quads that are going to be drawn.
          * @return {Number}
          */
-        public getTotalQuads():number;
+        public getTotalQuads() : number;
 
         /**
          * Quantity of quads that can be stored with the current texture atlas size
          * @return {Number}
          */
-        public getCapacity():number;
+        public getCapacity() : number;
 
         /**
          * Texture of the texture atlas
          * @return {Image}
          */
-        public getTexture():Image;
+        public getTexture() : Image;
 
         /**
          * @param {Image} texture
          */
-        public setTexture(texture:Image):void;
+        public setTexture(texture: Image) : void;
 
         /**
          * specify if the array buffer of the VBO needs to be updated
          * @param {Boolean} dirty
          */
-        public setDirty(dirty:boolean):void;
+        public setDirty(dirty: boolean) : void;
 
         /**
          * whether or not the array buffer of the VBO needs to be updated
          * @returns {boolean}
          */
-        public isDirty():boolean;
+        public isDirty() : boolean;
 
         /**
          * Quads that are going to be rendered
          * @return {Array}
          */
-        public getQuads():V3F_C4B_T2F_Quad[];
+        public getQuads() : V3F_C4B_T2F_Quad[];
 
         /**
          * @param {Array} quads
          */
-        public setQuads(quads:V3F_C4B_T2F_Quad[]):void;
+        public setQuads(quads: V3F_C4B_T2F_Quad[]) : void;
 
         /**
          * Description
          * @return {String}
          */
-        description():string;
+        description() : string;
 
         /**
          * Initializes a TextureAtlas with a filename and with a certain capacity for Quads.
@@ -718,7 +737,7 @@ declare namespace cc {
          * var textureAtlas = new cc.TextureAtlas();
          * textureAtlas.initWithTexture("hello.png", 3);
          */
-        public initWithFile(file:string, capacity:number):boolean;
+        public initWithFile(file: string, capacity: number) : boolean;
 
         /**
          * Initializes a TextureAtlas with a previously initialized Texture2D object, and
@@ -734,7 +753,7 @@ declare namespace cc {
          * var textureAtlas = new cc.TextureAtlas();
          * textureAtlas.initWithTexture(texture, 3);
          */
-        public initWithTexture(texture:Image, capacity:number):boolean;
+        public initWithTexture(texture: Image, capacity: number) : boolean;
 
         /**
          * Updates a Quad (texture, vertex and color) at a certain index
@@ -742,7 +761,7 @@ declare namespace cc {
          * @param {cc.V3F_C4B_T2F_Quad} quad
          * @param {Number} index
          */
-        public updateQuad(quad:V3F_C4B_T2F_Quad, index:number):void;
+        public updateQuad(quad: V3F_C4B_T2F_Quad, index: number) : void;
 
         /**
          * Inserts a Quad (texture, vertex and color) at a certain index
@@ -750,7 +769,7 @@ declare namespace cc {
          * @param {cc.V3F_C4B_T2F_Quad} quad
          * @param {Number} index
          */
-        public insertQuad(quad:V3F_C4B_T2F_Quad, index:number):void;
+        public insertQuad(quad: V3F_C4B_T2F_Quad, index: number) : void;
 
         /**
          *
@@ -762,7 +781,7 @@ declare namespace cc {
          * @param {Number} index
          * @param {Number} amount
          */
-        public insertQuads(quads:V3F_C4B_T2F_Quad[], index:number, amount:number):void;
+        public insertQuads(quads: V3F_C4B_T2F_Quad[], index: number, amount: number) : void;
 
         /**
          * Removes the quad that is located at a certain index and inserts it at a new index
@@ -770,28 +789,28 @@ declare namespace cc {
          * @param {Number} fromIndex
          * @param {Number} newIndex
          */
-        public insertQuadFromIndex(fromIndex:number, newIndex:number):void;
+        public insertQuadFromIndex(fromIndex: number, newIndex: number) : void;
 
         /**
          * Removes a quad at a given index number.
          * The capacity remains the same, but the total number of quads to be drawn is reduced in 1
          * @param {Number} index
          */
-        public removeQuadAtIndex(index:number):void;
+        public removeQuadAtIndex(index: number) : void;
 
         /**
          * Removes a given number of quads at a given index
          * @param {Number} index
          * @param {Number} amount
          */
-        public removeQuadsAtIndex(index:number, amount:number):void;
+        public removeQuadsAtIndex(index: number, amount: number) : void;
 
         /**
          * Removes all Quads.
          * The TextureAtlas capacity remains untouched. No memory is freed.
          * The total number of quads to be drawn will be 0
          */
-        removeAllQuads():void;
+        removeAllQuads() : void;
 
         /**
          * Resize the capacity of the CCTextureAtlas.
@@ -802,14 +821,14 @@ declare namespace cc {
          * @param {Number} newCapacity
          * @return {Boolean}
          */
-        public resizeCapacity(newCapacity:number):boolean;
+        public resizeCapacity(newCapacity: number) : boolean;
 
         /**
          * Used internally by CCParticleBatchNode                                    
          * don't use this unless you know what you're doing
          * @param {Number} amount
          */
-        public increaseTotalQuadsWith(amount:number):void;
+        public increaseTotalQuadsWith(amount: number) : void;
 
         /**
          * Moves an amount of quads from oldIndex at newIndex
@@ -817,7 +836,7 @@ declare namespace cc {
          * @param {Number} amount
          * @param {Number} newIndex
          */
-        public moveQuadsFromIndex(oldIndex:number, amount:number, newIndex:number):void;
+        public moveQuadsFromIndex(oldIndex: number, amount: number, newIndex: number) : void;
 
         /**
          * Ensures that after a realloc quads are still empty                                
@@ -825,13 +844,13 @@ declare namespace cc {
          * @param {Number} index
          * @param {Number} amount
          */
-        public fillWithEmptyQuadsFromIndex(index:number, amount:number):void;
+        public fillWithEmptyQuadsFromIndex(index: number, amount: number) : void;
 
         // TextureAtlas - Drawing
 
         /**
          * Draws all the Atlas's Quads
          */
-        public drawQuads():void;
+        public drawQuads() : void;
     }
 }

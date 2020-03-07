@@ -16,64 +16,64 @@ declare namespace cc {
          * @constant
          * @type {number}
          */
-        public static TOUCH:number;
+        public static readonly TOUCH : number;
 
         /**
          * The type code of Keyboard event.
          * @constant
          * @type {number}
          */
-        public static KEYBOARD:number;
+        public static readonly KEYBOARD : number;
 
         /**
          * The type code of Acceleration event.
          * @constant
          * @type {number}
          */
-        public static ACCELERATION:number;
+        public static readonly ACCELERATION : number;
 
         /**
          * The type code of Mouse event.
          * @constant
          * @type {number}
          */
-        public static MOUSE:number;
+        public static readonly MOUSE : number;
 
         /**
          * The type code of UI focus event.
          * @constant
          * @type {number}
          */
-        public static FOCUS:number;
+        public static readonly FOCUS : number;
 
         /**
          * The type code of Custom event.
          * @constant
          * @type {number}
          */
-        public static CUSTOM:number;
+        public static readonly CUSTOM : number;
 
-        public constructor(type:number);
+        public constructor(type: number);
 
         /**
          * Gets the event type
          * @function
          * @returns {Number}
          */
-        public getType():number;
+        public getType() : number;
 
         /**
          * Stops propagation for current event
          * @function
          */
-        public stopPropagation():void;
+        public stopPropagation() : void;
 
         /**
          * Checks whether the event has been stopped
          * @function
          * @returns {boolean}
          */
-        public isStopped():boolean;
+        public isStopped() : boolean;
 
         /**
          * 
@@ -84,7 +84,7 @@ declare namespace cc {
          * @function
          * @returns {cc.Node}  The target with which the event associates.
          */
-        public getCurrentTarget():Node;
+        public getCurrentTarget() : Node;
     }
 
 

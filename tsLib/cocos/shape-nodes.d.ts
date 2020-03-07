@@ -11,25 +11,25 @@ declare namespace cc {
      * Renamed and added some changes for cocos2d
      *
      */
-    export function v2fzero():Point;
+    export function v2fzero() : Point;
 
-    export function v2f(x:number, y:number):Point;
+    export function v2f(x: number, y: number) : Point;
 
-    export function v2fadd(v0:number, v1:number):Point;
+    export function v2fadd(v0: number, v1: number) : Point;
 
-    export function v2fsub(v0:number, v1:number):Point;
+    export function v2fsub(v0: number, v1: number) : Point;
 
-    export function v2fmult(v:number, s:number):Point;
+    export function v2fmult(v: number, s: number) : Point;
 
-    export function v2fperp(p0:number):Point;
+    export function v2fperp(p0: number) : Point;
 
-    export function v2fneg(p0:number):Point;
+    export function v2fneg(p0: number) : Point;
 
-    export function v2fdot(p0:number, p1:number):Point;
+    export function v2fdot(p0: number, p1: number) : Point;
 
-    export function v2fforangle(a:number):Point;
+    export function v2fforangle(a: number) : Point;
 
-    export function v2fnormalize(p:Point):Point;
+    export function v2fnormalize(p: Point) : Point;
 
     //export function __v2f(v:Point):Point;
     //
@@ -44,46 +44,47 @@ declare namespace cc {
      * @extends cc.Node
      */
     export class DrawNode extends Node {
-        public static TYPE_DOT:number;
-        public static TYPE_SEGMENT:number;
-        public static TYPE_POLY:number;
+        public static readonly TYPE_DOT : number;
+        public static readonly TYPE_SEGMENT : number;
+        public static readonly TYPE_POLY : number;
 
         /**
          * Gets the blend func
          * @returns {Object}
          */
-        public getBlendFunc():BlendFunc;
+        public getBlendFunc() : BlendFunc;
 
         /**
          * Set the blend func
          * @param blendFunc
          * @param dst
          */
-        public setBlendFunc(blendFunc:BlendFunc|number, dst?:number):void;
+        public setBlendFunc(blendFunc: BlendFunc) : void;
+        public setBlendFunc(src: number, dst: number) : void;
 
         /**
          * line width setter
          * @param {Number} width
          */
-        public setLineWidth(width:number):void;
+        public setLineWidth(width: number) : void;
 
         /**
          * line width getter
          * @returns {Number}
          */
-        public getLineWidth():number;
+        public getLineWidth() : number;
 
         /**
          * draw color setter
          * @param {cc.Color} color
          */
-        public setDrawColor(color:Color):void;
+        public setDrawColor(color: Color) : void;
 
         /**
          * draw color getter
          * @returns {cc.Color}
          */
-        public getDrawColor():Color;
+        public getDrawColor() : Color;
 
         /**
          * draws a rectangle given the origin and destination point measured in points.
@@ -93,7 +94,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} lineColor
          */
-        public drawRect(origin:Point, destination:Point, fillColor?:Color, lineWidth?:number, lineColor?:Color):void;
+        public drawRect(origin: Point, destination: Point, fillColor?: Color, lineWidth?: number, lineColor?: Color) : void;
 
         /**
          * draws a circle given the center, radius and number of segments.
@@ -106,8 +107,8 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCircle(center:Point, radius:number, angle:number, segments:number,
-                          drawLineToCenter?:boolean, lineWidth?:number, color?:Color):void;
+        public drawCircle(center: Point, radius: number, angle: number, segments: number,
+                          drawLineToCenter?: boolean, lineWidth?: number, color?: Color) : void;
 
         /**
          * draws a quad bezier path
@@ -119,8 +120,8 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawQuadBezier(origin:Point, control:Point, destination:Point, segments:number,
-                              lineWidth?:number, color?:Color):void;
+        public drawQuadBezier(origin: Point, control: Point, destination: Point, segments: number,
+                              lineWidth?: number, color?: Color) : void;
 
         /**
          * draws a cubic bezier path
@@ -133,8 +134,8 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCubicBezier(origin:Point, control1:Point, control2:Point, destination:Point,
-                               segments:number, lineWidth?:number, color?:Color):void;
+        public drawCubicBezier(origin: Point, control1: Point, control2: Point, destination : Point,
+                               segments: number, lineWidth?: number, color?: Color) : void;
 
         /**
          * draw a CatmullRom curve
@@ -144,7 +145,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCatmullRom(points:Point[], segments:number, lineWidth?:number, color?:Color):void;
+        public drawCatmullRom(points: Point[], segments: number, lineWidth?: number, color?: Color) : void;
 
         /**
          * draw a cardinal spline path
@@ -155,8 +156,8 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawCardinalSpline(config:Point[], tension:number, segments:number,
-                                  lineWidth?:number, color?:Color):void;
+        public drawCardinalSpline(config: Point[], tension: number, segments: number,
+                                  lineWidth?: number, color?: Color) : void;
 
         /**
          * draw a dot at a position, with a given radius and color
@@ -164,7 +165,7 @@ declare namespace cc {
          * @param {Number} radius
          * @param {cc.Color} color
          */
-        public drawDot(pos:Point, radius:number, color?:Color):void;
+        public drawDot(pos: Point, radius: number, color?: Color) : void;
 
         /**
          * draws an array of points.
@@ -173,7 +174,7 @@ declare namespace cc {
          * @param {Number} radius
          * @param {cc.Color} color
          */
-        public drawDots(points:Point[], radius:number, color?:Color):void;
+        public drawDots(points: Point[], radius: number, color?: Color) : void;
 
         /**
          * draw a segment with a radius and color
@@ -182,7 +183,7 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawSegment(from:Point, to:Point, lineWidth?:number, color?:Color):void;
+        public drawSegment(from: Point, to: Point, lineWidth?: number, color?: Color) : void;
 
         /**
          * draw a polygon with a fill color and line color, copying the vertex list
@@ -191,11 +192,11 @@ declare namespace cc {
          * @param {Number} lineWidth
          * @param {cc.Color} color
          */
-        public drawPoly(verts:Point[], fillColor?:Color, lineWidth?:number, color?:Color):void;
+        public drawPoly(verts: Point[], fillColor?: Color, lineWidth?: number, color?: Color) : void;
 
         /**
          * Clear the geometry in the node's buffer.
          */
-        public clear():void;
+        public clear() : void;
     }
 }

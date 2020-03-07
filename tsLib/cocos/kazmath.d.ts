@@ -43,15 +43,15 @@ declare namespace cc.math {
 
 //cc.kmPIUnder180 = 57.295779;     please use cc.DEG
 
-    export const EPSILON:number;         //cc.kmEpsilon
+    export const EPSILON : number;         //cc.kmEpsilon
 
     /**
      * Returns the square of s (e.g. s*s)
      * @param {Number} s
      */
-    export function square(s:number):number;
+    export function square(s: number) : number;
 
-    export function almostEqual(lhs:number, rhs:number):void;
+    export function almostEqual(lhs: number, rhs: number) : void;
 
 
 // +--------------------------------------------------------------------------------

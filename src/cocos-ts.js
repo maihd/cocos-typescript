@@ -27,9 +27,6 @@ function __values(o) {
     var classes = [
         "Node",
         "Scene",
-        "Sprite",
-        "ClippingNode",
-        "LabelTTF",
         "Layer",
         "LayerColor",
         "LayerGradient",
@@ -44,12 +41,6 @@ function __values(o) {
     if (typeof ccui === "object") {
         var uiClasses = [
             "Widget",
-            "Text",
-            "Button",
-            "Layout",
-            "CheckBox",
-            "ListView",
-            "ImageView",
         ];
         uiClasses.forEach(function (name) {
             var result = extend(ccui[name], "ccui." + name);

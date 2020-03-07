@@ -26,14 +26,14 @@ declare namespace cc {
      * @returns {AnimationFrame}
      */
     export class AnimationFrame extends Class {
-        public ctor():void;
-        public ctor(spriteFrame:SpriteFrame, delayUnits:number, userInfo:any):void;
+        public constructor();
+        public constructor(spriteFrame: SpriteFrame, delayUnits: number, userInfo: any);
 
         /**
          * Create a new animation frame and copy all contents into it
          * @returns {AnimationFrame}
          */
-        public clone():AnimationFrame;
+        public clone() : AnimationFrame;
 
         ///**
         // * Create a new animation frame and copy all contents into it
@@ -45,7 +45,7 @@ declare namespace cc {
          * Create a new animation frame and copy all contents into it
          * @returns {AnimationFrame}
          */
-        public copy():AnimationFrame;
+        public copy() : AnimationFrame;
 
         /**
          * initializes the animation frame with a spriteframe, number of delay units and a notification user info
@@ -53,43 +53,43 @@ declare namespace cc {
          * @param {Number} delayUnits
          * @param {object} userInfo
          */
-        public initWithSpriteFrame(spriteFrame:SpriteFrame, delayUnits:number, userInfo:any):boolean;
+        public initWithSpriteFrame(spriteFrame: SpriteFrame, delayUnits: number, userInfo: any) : boolean;
 
         /**
          * Returns sprite frame to be used
          * @return {cc.SpriteFrame}
          */
-        public getSpriteFrame():SpriteFrame;
+        public getSpriteFrame() : SpriteFrame;
 
         /**
          * Sets sprite frame to be used
          * @param {cc.SpriteFrame} spriteFrame
          */
-        public setSpriteFrame(spriteFrame:SpriteFrame):void;
+        public setSpriteFrame(spriteFrame: SpriteFrame) : void;
 
         /**
          * Returns how many units of time the frame takes getter
          * @return {Number}
          */
-        public getDelayUnits():number;
+        public getDelayUnits() : number;
 
         /**
          * Sets how many units of time the frame takes setter
          * @param delayUnits
          */
-        public setDelayUnits(delayUnits:number):void;
+        public setDelayUnits(delayUnits: number) : void;
 
         /**
          * Returns the user custom information
          * @return {object}
          */
-        public getUserInfo():any;
+        public getUserInfo() : any;
 
         /**
          * Sets the user custom information
          * @param {object} userInfo
          */
-        public setUserInfo(userInfo:any):void;
+        public setUserInfo(userInfo: any) : void;
     }
 
     /**
@@ -132,39 +132,39 @@ declare namespace cc {
      * sprite.runAction(action);
      */
     export class Animation extends Class {
-        public ctor():void;
-        public ctor(frames:SpriteFrame[], delay:number, loops:number):void;
+        public constructor();
+        public constructor(frames: SpriteFrame[], delay: number, loops: number);
 
         /**
          * Returns the array of animation frames
          * @return {Array}
          */
-        public getFrames():SpriteFrame[];
+        public getFrames() : SpriteFrame[];
 
         /**
          * Sets array of animation frames
          * @param {Array} frames
          */
-        public setFrames(frames:SpriteFrame[]):void;
+        public setFrames(frames: SpriteFrame[]) : void;
 
         /**
          * Adds a frame to a cc.Animation, the frame will be added with one "delay unit".
          * @param {cc.SpriteFrame} frame
          */
-        public addSpriteFrame(frame:SpriteFrame):void;
+        public addSpriteFrame(frame: SpriteFrame) : void;
 
         /**
          * Adds a frame with an image filename. Internally it will create a cc.SpriteFrame and it will add it. The frame will be added with one "delay unit".
          * @param {String} fileName
          */
-        public addSpriteFrameWithFile(fileName:string):void;
+        public addSpriteFrameWithFile(fileName: string) : void;
 
         /**
          * Adds a frame with a texture and a rect. Internally it will create a cc.SpriteFrame and it will add it. The frame will be added with one "delay unit".
          * @param {cc.Texture2D} texture
          * @param {cc.Rect} rect
          */
-        public addSpriteFrameWithTexture(texture:Texture2D, rect:Rect):void;
+        public addSpriteFrameWithTexture(texture: Texture2D, rect: Rect) : void;
 
         /**
          * Initializes a cc.Animation with cc.AnimationFrame, do not call this method yourself, please pass parameters to constructor to initialize.
@@ -172,13 +172,13 @@ declare namespace cc {
          * @param {Number} delayPerUnit
          * @param {Number} [loops=1]
          */
-        public initWithAnimationFrames(arrayOfAnimationFrames:AnimationFrame[], delayPerUnit:number, loops?:number):boolean;
+        public initWithAnimationFrames(arrayOfAnimationFrames: AnimationFrame[], delayPerUnit: number, loops?: number) : boolean;
 
         /**
          * Clone the current animation
          * @return {cc.Animation}
          */
-        public clone():Animation;
+        public clone() : Animation;
 
         ///**
         // * Clone the current animation
@@ -195,55 +195,55 @@ declare namespace cc {
          * Clone the current animation
          * @returns {cc.Animation}
          */
-        public copy():Animation;
+        public copy() : Animation;
 
         /**
          * Returns how many times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ...
          * @return {Number}
          */
-        public getLoops():number;
+        public getLoops() : number;
 
         /**
          * Sets how many times the animation is going to loop. 0 means animation is not animated. 1, animation is executed one time, ...
          * @param {Number} value
          */
-        public setLoops(value:number):void;
+        public setLoops(value: number) : void;
 
         /**
          * Sets whether or not it shall restore the original frame when the animation finishes
          * @param {Boolean} restOrigFrame
          */
-        public setRestoreOriginalFrame(restOrigFrame:boolean):void;
+        public setRestoreOriginalFrame(restOrigFrame: boolean) : void;
 
         /**
          * Returns whether or not it shall restore the original frame when the animation finishes
          * @return {Boolean}
          */
-        public getRestoreOriginalFrame():boolean;
+        public getRestoreOriginalFrame() : boolean;
 
         /**
          * Returns duration in seconds of the whole animation. It is the result of totalDelayUnits * delayPerUnit
          * @return {Number}
          */
-        public getDuration():number;
+        public getDuration() : number;
 
         /**
          * Returns delay in seconds of the "delay unit"
          * @return {Number}
          */
-        public getDelayPerUnit():number;
+        public getDelayPerUnit() : number;
 
         /**
          * Sets delay in seconds of the "delay unit"
          * @param {Number} delayPerUnit
          */
-        public setDelayPerUnit(delayPerUnit:number):void;
+        public setDelayPerUnit(delayPerUnit: number) : void;
 
         /**
          * Returns total delay units of the cc.Animation.
          * @return {Number}
          */
-        public getTotalDelayUnits():number;
+        public getTotalDelayUnits() : number;
 
         /**
          * Initializes a cc.Animation with frames and a delay between frames, do not call this method yourself, please pass parameters to constructor to initialize.
@@ -251,7 +251,7 @@ declare namespace cc {
          * @param {Number} delay
          * @param {Number} [loops=1]
          */
-        public initWithSpriteFrames(frames:SpriteFrame[], delay:number, loops?:number):boolean;
+        public initWithSpriteFrames(frames: SpriteFrame[], delay: number, loops?: number) : boolean;
 
         /**
          * <p>Currently JavaScript Bindings (JSB), in some cases, needs to use retain and release. This is a bug in JSB,
@@ -266,7 +266,7 @@ declare namespace cc {
          * @function
          * @see cc.Animation#release
          */
-        public retain():void;
+        public retain() : void;
 
         /**
          * <p>Currently JavaScript Bindings (JSB), in some cases, needs to use retain and release. This is a bug in JSB,
@@ -281,7 +281,7 @@ declare namespace cc {
          * @function
          * @see cc.Animation#retain
          */
-        public release():void;
+        public release() : void;
     }
 
     // +--------------------------------------------------------------------------------
@@ -304,13 +304,13 @@ declare namespace cc {
          * @param {cc.Animation} animation
          * @param {String} name
          */
-        export function addAnimation(animation:Animation, name:string):void;
+        export function addAnimation(animation: Animation, name: string) : void;
 
         /**
          * Deletes a cc.Animation from the cache.
          * @param {String} name
          */
-        export function removeAnimation(name:string):void;
+        export function removeAnimation(name: string) : void;
 
         /**
          * <p>
@@ -321,7 +321,7 @@ declare namespace cc {
          * @param {String} name
          * @return {cc.Animation}
          */
-        export function getAnimation(name:string):Animation;
+        export function getAnimation(name: string) : Animation;
 
         /**
          * <p>
@@ -330,7 +330,7 @@ declare namespace cc {
          * </p>
          * @param {String} plist
          */
-        export function addAnimations(plist:string):void;
+        export function addAnimations(plist: string) : void;
     }
 
     // +--------------------------------------------------------------------------------
@@ -366,7 +366,7 @@ declare namespace cc {
      * @extend cc.Sprite
      */
     export class BakeSprite extends Sprite {
-        public ctor():void;
+        public constructor();
 
 
         // TODO: Figure out (and define if necessary) the proper return types for these methods
@@ -378,7 +378,7 @@ declare namespace cc {
          * @param {cc.Size|Number} sizeOrWidth  size or width
          * @param {Number} [height]
          */
-        public resetCanvasSize(sizeOrWidth:cc.Size|number, height?:number):void;
+        public resetCanvasSize(sizeOrWidth: Size | number, height?: number) : void;
     }
 
     // +--------------------------------------------------------------------------------
@@ -447,32 +447,32 @@ declare namespace cc {
      * @property {cc.V3F_C4B_T2F_Quad}  quad                - <@readonly> The quad (tex coords, vertex coords and color) information.
      */
     export class Sprite extends Node {
-        public dirty:boolean;
-        public flippedX:boolean;
-        public flippedY:boolean;
-        public offsetX:number;
-        public offsetY:number;
-        public atlasIndex:number;
-        public texture:Texture2D;
-        public textureRectRotated:boolean;
-        public textureAtlas:TextureAtlas;
-        public batchNode:SpriteBatchNode;
-        public quad:V3F_C4B_T2F_Quad;
+        public dirty: boolean;
+        public flippedX: boolean;
+        public flippedY: boolean;
+        public offsetX: number;
+        public offsetY: number;
+        public atlasIndex: number;
+        public texture: Texture2D;
+        public textureRectRotated: boolean;
+        public textureAtlas: TextureAtlas;
+        public batchNode: SpriteBatchNode;
+        public quad: V3F_C4B_T2F_Quad;
 
         /**
          * cc.Sprite invalid index on the cc.SpriteBatchNode
          * @constant
          * @type {Number}
          */
-        public static INDEX_NOT_INITIALIZED:number;
+        public static readonly INDEX_NOT_INITIALIZED : number;
 
-        public constructor(fileName:string, rect?:Rect, rotated?:boolean);
+        public constructor(fileName: string, rect?: Rect, rotated?: boolean);
 
         /**
          * Returns whether the texture have been loaded
          * @returns {boolean}
          */
-        public textureLoaded():boolean;
+        public textureLoaded() : boolean;
 
         /**
          * Add a event listener for texture loaded event.
@@ -485,62 +485,62 @@ declare namespace cc {
          * Returns whether or not the Sprite needs to be updated in the Atlas
          * @return {Boolean} True if the sprite needs to be updated in the Atlas, false otherwise.
          */
-        public isDirty():boolean;
+        public isDirty() : boolean;
 
         /**
          * Makes the sprite to be updated in the Atlas.
          * @param {Boolean} bDirty
          */
-        public setDirty(bDirty:boolean):void;
+        public setDirty(bDirty: boolean) : void;
 
         /**
          * Returns whether or not the texture rectangle is rotated.
          * @return {Boolean}
          */
-        public isTextureRectRotated():boolean;
+        public isTextureRectRotated() : boolean;
 
         /**
          * Returns the index used on the TextureAtlas.
          * @return {Number}
          */
-        public getAtlasIndex():number;
+        public getAtlasIndex() : number;
 
         /**
          * Sets the index used on the TextureAtlas.
          * @warning Don't modify this value unless you know what you are doing
          * @param {Number} atlasIndex
          */
-        public setAtlasIndex(atlasIndex:number):void;
+        public setAtlasIndex(atlasIndex: number) : void;
 
         /**
          * Returns the rect of the cc.Sprite in points
          * @return {cc.Rect}
          */
-        public getTextureRect():Rect;
+        public getTextureRect() : Rect;
 
         /**
          * Returns the weak reference of the cc.TextureAtlas when the sprite is rendered using via cc.SpriteBatchNode
          * @return {cc.TextureAtlas}
          */
-        public getTextureAtlas():TextureAtlas;
+        public getTextureAtlas() : TextureAtlas;
 
         /**
          * Sets the weak reference of the cc.TextureAtlas when the sprite is rendered using via cc.SpriteBatchNode
          * @param {cc.TextureAtlas} textureAtlas
          */
-        public setTextureAtlas(textureAtlas:TextureAtlas):void;
+        public setTextureAtlas(textureAtlas: TextureAtlas) : void;
 
         /**
          * Returns the offset position of the sprite. Calculated automatically by editors like Zwoptex.
          * @return {cc.Point}
          */
-        public getOffsetPosition():Point;
+        public getOffsetPosition() : Point;
 
         /**
          * Returns the blend function
          * @return {cc.BlendFunc}
          */
-        public getBlendFunc():BlendFunc;
+        public getBlendFunc() : BlendFunc;
 
         /**
          * Initializes a sprite with a SpriteFrame. The texture and rect in SpriteFrame will be applied on this sprite.
@@ -548,7 +548,7 @@ declare namespace cc {
          * @param {cc.SpriteFrame} spriteFrame A CCSpriteFrame object. It should includes a valid texture and a rect
          * @return {Boolean}  true if the sprite is initialized properly, false otherwise.
          */
-        public initWithSpriteFrame(spriteFrame:SpriteFrame):boolean;
+        public initWithSpriteFrame(spriteFrame: SpriteFrame) : boolean;
 
         /**
          * Initializes a sprite with a sprite frame name.
@@ -561,13 +561,13 @@ declare namespace cc {
          * var sprite = new cc.Sprite();
          * sprite.initWithSpriteFrameName("grossini_dance_01.png");
          */
-        public initWithSpriteFrameName(spriteFrameName:string):boolean;
+        public initWithSpriteFrameName(spriteFrameName: string) : boolean;
 
         /**
          * Tell the sprite to use batch node render.
          * @param {cc.SpriteBatchNode} batchNode
          */
-        public useBatchNode(batchNode:SpriteBatchNode):boolean;
+        public useBatchNode(batchNode: SpriteBatchNode) : boolean;
 
         /**
          *
@@ -579,19 +579,19 @@ declare namespace cc {
          *
          * @param {cc.Rect} rect
          */
-        public setVertexRect(rect:Rect):void;
+        public setVertexRect(rect: Rect) : void;
 
         /**
          * Sets whether the sprite should be flipped horizontally or not.
          * @param {Boolean} flippedX true if the sprite should be flipped horizontally, false otherwise.
          */
-        public setFlippedX(flippedX:boolean):void;
+        public setFlippedX(flippedX: boolean) : void;
 
         /**
          * Sets whether the sprite should be flipped vertically or not.
          * @param {Boolean} flippedY true if the sprite should be flipped vertically, false otherwise.
          */
-        public setFlippedY(flippedY:boolean):void;
+        public setFlippedY(flippedY: boolean) : void;
 
         /**
          *
@@ -603,7 +603,7 @@ declare namespace cc {
          *      sprite.setScaleX(sprite.getScaleX() * -1);
          * @return {Boolean} true if the sprite is flipped horizontally, false otherwise.
          */
-        public isFlippedX():boolean;
+        public isFlippedX() : boolean;
 
         /**
          *
@@ -615,7 +615,7 @@ declare namespace cc {
          *         sprite.setScaleY(sprite.getScaleY() * -1);
          * @return {Boolean} true if the sprite is flipped vertically, false otherwise.
          */
-        public isFlippedY():boolean;
+        public isFlippedY() : boolean;
 
         // Animation
 
@@ -625,26 +625,26 @@ declare namespace cc {
          * @param {String} animationName
          * @param {Number} frameIndex
          */
-        public setDisplayFrameWithAnimationName(animationName:string, frameIndex:number):void;
+        public setDisplayFrameWithAnimationName(animationName: string, frameIndex: number) : void;
 
         /**
          * Returns the batch node object if this sprite is rendered by cc.SpriteBatchNode
          * @returns {cc.SpriteBatchNode|null} The cc.SpriteBatchNode object if this sprite is rendered by cc.SpriteBatchNode, null if the sprite isn't used batch node.
          */
-        public getBatchNode():SpriteBatchNode;
+        public getBatchNode() : SpriteBatchNode;
 
         // CCTextureProtocol
         /**
          * Returns the texture of the sprite node
          * @returns {cc.Texture2D}
          */
-        public getTexture():Texture2D;
+        public getTexture() : Texture2D;
 
         /**
          * Returns the quad (tex coords, vertex coords and color) information.
          * @return {cc.V3F_C4B_T2F_Quad|null} Returns a cc.V3F_C4B_T2F_Quad object when render mode is WebGL, returns null when render mode is Canvas.
          */
-        public getQuad():V3F_C4B_T2F_Quad;
+        public getQuad() : V3F_C4B_T2F_Quad;
 
         /**
          * conforms to cc.TextureProtocol protocol
@@ -652,7 +652,7 @@ declare namespace cc {
          * @param {Number|cc.BlendFunc} src
          * @param {Number} dst
          */
-        public setBlendFunc(src:BlendFunc|number, dst?:number):void;
+        public setBlendFunc(src: BlendFunc | number, dst?: number) : void;
 
         /**
          *
@@ -667,7 +667,7 @@ declare namespace cc {
          * @param {cc.Rect} rect The rectangle assigned the content area from texture.
          * @return {Boolean} true if the sprite is initialized properly, false otherwise.
          */
-        public initWithFile(filename:string, rect:Rect):boolean;
+        public initWithFile(filename: string, rect: Rect) : boolean;
 
         /**
          * Initializes a sprite with a texture and a rect in points, optionally rotated.
@@ -680,9 +680,9 @@ declare namespace cc {
          * @param {Boolean} [counterclockwise=true] Whether or not the texture rectangle rotation is counterclockwise (texture package is counterclockwise, spine is clockwise).
          * @return {Boolean} true if the sprite is initialized properly, false otherwise.
          */
-        public initWithTexture(texture:HTMLCanvasElement, rect?:Rect, rotated?:boolean, counterclockwise?:boolean):boolean;
-        public initWithTexture(texture:HTMLImageElement, rect?:Rect, rotated?:boolean, counterclockwise?:boolean):boolean;
-        public initWithTexture(texture:Texture2D, rect?:Rect, rotated?:boolean, counterclockwise?:boolean):boolean;
+        public initWithTexture(texture: HTMLCanvasElement, rect?: Rect, rotated?: boolean, counterclockwise?: boolean) : boolean;
+        public initWithTexture(texture: HTMLImageElement, rect?: Rect, rotated?: boolean, counterclockwise?: boolean) : boolean;
+        public initWithTexture(texture: Texture2D, rect?: Rect, rotated?: boolean, counterclockwise?: boolean) : boolean;
 
         /**
          * Updates the texture rect of the CCSprite in points.
@@ -692,7 +692,7 @@ declare namespace cc {
          * @param {cc.Size} [untrimmedSize] The original pixels size of the texture
          * @param {Boolean} [needConvert] contentScaleFactor switch
          */
-        public setTextureRect(rect:Rect, rotated?:boolean, untrimmedSize?:Size, needConvert?:boolean):boolean;
+        public setTextureRect(rect: Rect, rotated?: boolean, untrimmedSize?: Size, needConvert?: boolean) : boolean;
 
         // Frames
         /**
@@ -700,14 +700,14 @@ declare namespace cc {
          * @function
          * @param {cc.SpriteFrame|String} newFrame
          */
-        public setSpriteFrame(newFrame:string|SpriteFrame):void;
+        public setSpriteFrame(newFrame: string | SpriteFrame) : void;
 
         /**
          * Sets a new display frame to the sprite.
          * @param {cc.SpriteFrame|String} newFrame
          * @deprecated
          */
-        public setDisplayFrame(newFrame:string|SpriteFrame):SpriteFrame;
+        public setDisplayFrame(newFrame: string | SpriteFrame) : SpriteFrame;
 
         /**
          * Returns whether or not a cc.SpriteFrame is being displayed
@@ -715,13 +715,13 @@ declare namespace cc {
          * @param {cc.SpriteFrame} frame
          * @return {Boolean}
          */
-        public isFrameDisplayed(frame:SpriteFrame):boolean;
+        public isFrameDisplayed(frame: SpriteFrame) : boolean;
 
         /**
          * Returns the current displayed frame.
          * @return {cc.SpriteFrame}
          */
-        public getSpriteFrame():SpriteFrame;
+        public getSpriteFrame() : SpriteFrame;
 
         /**
          * Sets the batch node to sprite
@@ -733,7 +733,7 @@ declare namespace cc {
          *  batch.addChild(sprite);
          *  layer.addChild(batch);
          */
-        public setBatchNode(spriteBatchNode?:SpriteBatchNode):void;
+        public setBatchNode(spriteBatchNode?: SpriteBatchNode) : void;
 
         // CCTextureProtocol
         /**
@@ -741,7 +741,7 @@ declare namespace cc {
          * @function
          * @param {cc.Texture2D|String} texture
          */
-        public setTexture(texture:string|Texture2D):void;
+        public setTexture(texture: string | Texture2D) : void;
     }
 
     // +--------------------------------------------------------------------------------
@@ -783,11 +783,11 @@ declare namespace cc {
          * @constant
          * @type Number
          */
-        public static DEFAULT_CAPACITY:number;
-        public texture:Texture2D;
-        public textureAtlas:TextureAtlas;
+        public static readonly DEFAULT_CAPACITY: number;
+        public texture: Texture2D;
+        public textureAtlas: TextureAtlas;
 
-        public ctor(fileImage?:string|Texture2D, capacity?:number):void;
+        public constructor(fileImage?: string | Texture2D, capacity?: number);
 
         /**
          *
@@ -799,26 +799,26 @@ declare namespace cc {
          * @param {Number} aTag
          * @return {cc.SpriteBatchNode}
          */
-        public addSpriteWithoutQuad(child:Sprite, z:number, aTag:number):cc.SpriteBatchNode;
+        public addSpriteWithoutQuad(child: Sprite, z: number, aTag: number) : SpriteBatchNode;
 
         // property
         /**
          * Return TextureAtlas of cc.SpriteBatchNode
          * @return {cc.TextureAtlas}
          */
-        public getTextureAtlas():TextureAtlas;
+        public getTextureAtlas() : TextureAtlas;
 
         /**
          * TextureAtlas of cc.SpriteBatchNode setter
          * @param {cc.TextureAtlas} textureAtlas
          */
-        public setTextureAtlas(textureAtlas:TextureAtlas):void;
+        public setTextureAtlas(textureAtlas: TextureAtlas) : void;
 
         /**
          * Return Descendants of cc.SpriteBatchNode
          * @return {Array}
          */
-        public getDescendants():Sprite[];
+        public getDescendants() : Sprite[];
 
         /**
          *
@@ -831,7 +831,7 @@ declare namespace cc {
          * @param {Number} capacity
          * @return {Boolean}
          */
-        public initWithFile(fileImage:string, capacity:number):boolean;
+        public initWithFile(fileImage: string, capacity: number) : boolean;
 
         /**
          *
@@ -846,12 +846,12 @@ declare namespace cc {
          * @param {Number} [capacity]
          * @return {Boolean}
          */
-        init(fileImage?:string, capacity?:number):boolean;
+        init(fileImage?: string, capacity?: number) : boolean;
 
         /**
          * Increase Atlas Capacity
          */
-        public increaseAtlasCapacity():void;
+        public increaseAtlasCapacity() : void;
 
         /**
          * Removes a child given a certain index. It will also cleanup the running actions depending on the cleanup parameter.
@@ -859,7 +859,7 @@ declare namespace cc {
          * @param {Number} index
          * @param {Boolean} doCleanup
          */
-        public removeChildAtIndex(index:number, doCleanup?:boolean):void;
+        public removeChildAtIndex(index: number, doCleanup?: boolean) : void;
 
         /**
          * Rebuild index in order for child
@@ -867,21 +867,21 @@ declare namespace cc {
          * @param {Number} index
          * @return {Number}
          */
-        public rebuildIndexInOrder(pobParent:Sprite, index:number):number;
+        public rebuildIndexInOrder(pobParent: Sprite, index: number) : number;
 
         /**
          * Returns highest atlas index in child
          * @param {cc.Sprite} sprite
          * @return {Number}
          */
-        public highestAtlasIndexInChild(sprite:Sprite):number;
+        public highestAtlasIndexInChild(sprite: Sprite) : number;
 
         /**
          * Returns lowest atlas index in child
          * @param {cc.Sprite} sprite
          * @return {Number}
          */
-        public lowestAtlasIndexInChild(sprite:Sprite):number;
+        public lowestAtlasIndexInChild(sprite: Sprite) : number;
 
         /**
          * Returns atlas index for child
@@ -889,26 +889,26 @@ declare namespace cc {
          * @param {Number} nZ
          * @return {Number}
          */
-        public atlasIndexForChild(sprite:Sprite, nZ:number):number;
+        public atlasIndexForChild(sprite: Sprite, nZ: number) : number;
 
         /**
          * Sprites use this to start sortChildren, don't call this manually
          * @param {Boolean} reorder
          */
-        public reorderBatch(reorder:boolean):void;
+        public reorderBatch(reorder: boolean) : void;
 
         /**
          * Sets the source and destination blending function for the texture
          * @param {Number | cc.BlendFunc} src
          * @param {Number} dst
          */
-        public setBlendFunc(src:BlendFunc|number, dst?:number):void;
+        public setBlendFunc(src: BlendFunc | number, dst?: number) : void;
 
         /**
          * Returns the blending function used for the texture
          * @return {cc.BlendFunc}
          */
-        public getBlendFunc():BlendFunc;
+        public getBlendFunc() : BlendFunc;
 
         ///**
         // * Reorder children (override reorderChild of cc.Node)
@@ -936,7 +936,7 @@ declare namespace cc {
          * @param {cc.Sprite} sprite
          * @param {Number} index
          */
-        public updateQuadFromSprite(sprite:Sprite, index:number):void;
+        public updateQuadFromSprite(sprite: Sprite, index: number) : void;
 
         /**
          *
@@ -948,7 +948,7 @@ declare namespace cc {
          * @param {cc.Sprite} sprite
          * @param {Number} index
          */
-        public insertQuadFromSprite(sprite:Sprite, index:number):void;
+        public insertQuadFromSprite(sprite: Sprite, index: number) : void;
 
         /**
          *
@@ -961,28 +961,28 @@ declare namespace cc {
          * @param {Number} [capacity]
          * @return {Boolean}
          */
-        public initWithTexture(tex:Texture2D, capacity?:number):boolean;
+        public initWithTexture(tex: Texture2D, capacity?: number) : boolean;
 
         /**
          * Insert a child
          * @param {cc.Sprite} sprite The child sprite
          * @param {Number} index The insert index
          */
-        public insertChild(sprite:Sprite, index:number):void;
+        public insertChild(sprite: Sprite, index: number) : void;
 
         /**
          * Add child at the end, faster than insert child
          * @function
          * @param {cc.Sprite} sprite
          */
-        public appendChild(sprite:Sprite):void;
+        public appendChild(sprite: Sprite) : void;
 
         /**
          * Removes sprite from TextureAtlas
          * @function
          * @param {cc.Sprite} sprite
          */
-        public removeSpriteFromAtlas(sprite:Sprite):void;
+        public removeSpriteFromAtlas(sprite: Sprite) : void;
 
         // CCTextureProtocol
         /**
@@ -990,14 +990,14 @@ declare namespace cc {
          * @function
          * @return {cc.Texture2D}
          */
-        public getTexture():Texture2D;
+        public getTexture() : Texture2D;
 
         /**
          * Sets the texture of the sprite batch node.
          * @function
          * @param {cc.Texture2D} texture
          */
-        public setTexture(texture:Texture2D):void;
+        public setTexture(texture: Texture2D) : void;
 
     }
 
@@ -1033,116 +1033,116 @@ declare namespace cc {
      * var frame2 = new cc.SpriteFrame(texture, cc.rect(0,0,90,128),false,0,cc.size(90,128));
      */
     export class SpriteFrame {
-        public constructor(filename:string|Texture2D, rect:Rect, rotated:boolean, offset:Point, originalSize:Size);
+        public constructor(filename: string | Texture2D, rect: Rect, rotated: boolean, offset: Point, originalSize: Size);
 
         /**
          * Returns whether the texture have been loaded
          * @returns {boolean}
          */
-        public textureLoaded():boolean;
+        public textureLoaded() : boolean;
 
 
         /**
          * Gets the rect of the frame in the texture
          * @return {cc.Rect}
          */
-        public getRectInPixels():Rect;
+        public getRectInPixels() : Rect;
 
         /**
          * Sets the rect of the frame in the texture
          * @param {cc.Rect} rectInPixels
          */
-        public setRectInPixels(rectInPixels:Rect):void;
+        public setRectInPixels(rectInPixels: Rect) : void;
 
         /**
          * Returns whether the sprite frame is rotated in the texture.
          * @return {Boolean}
          */
-        public isRotated():boolean;
+        public isRotated() : boolean;
 
         /**
          * Set whether the sprite frame is rotated in the texture.
          * @param {Boolean} bRotated
          */
-        public setRotated(bRotated:boolean):void;
+        public setRotated(bRotated: boolean) : void;
 
         /**
          * Returns the rect of the sprite frame in the texture
          * @return {cc.Rect}
          */
-        public getRect():Rect;
+        public getRect() : Rect;
 
         /**
          * Sets the rect of the sprite frame in the texture
          * @param {cc.Rect} rect
          */
-        public setRect(rect:Rect):void;
+        public setRect(rect: Rect) : void;
 
         /**
          * Returns the offset of the sprite frame in the texture in pixel
          * @return {cc.Point}
          */
-        public getOffsetInPixels():Point;
+        public getOffsetInPixels() : Point;
 
         /**
          * Sets the offset of the sprite frame in the texture in pixel
          * @param {cc.Point} offsetInPixels
          */
-        public setOffsetInPixels(offsetInPixels:Point):void;
+        public setOffsetInPixels(offsetInPixels: Point) : void;
 
         /**
          * Returns the original size of the trimmed image
          * @return {cc.Size}
          */
-        public getOriginalSizeInPixels():Size;
+        public getOriginalSizeInPixels() : Size;
 
         /**
          * Sets the original size of the trimmed image
          * @param {cc.Size} sizeInPixels
          */
-        public setOriginalSizeInPixels(sizeInPixels:Size):void;
+        public setOriginalSizeInPixels(sizeInPixels: Size) : void;
 
         /**
          * Returns the original size of the trimmed image
          * @return {cc.Size}
          */
-        public getOriginalSize():Size;
+        public getOriginalSize() : Size;
 
         /**
          * Sets the original size of the trimmed image
          * @param {cc.Size} sizeInPixels
          */
-        public setOriginalSize(sizeInPixels:Size):void;
+        public setOriginalSize(sizeInPixels: Size) : void;
 
         /**
          * Returns the texture of the frame
          * @return {cc.Texture2D}
          */
-        public getTexture():Texture2D;
+        public getTexture() : Texture2D;
 
         /**
          * Sets the texture of the frame, the texture is retained automatically
          * @param {cc.Texture2D} texture
          */
-        public setTexture(texture:Texture2D):void;
+        public setTexture(texture: Texture2D) : void;
 
         /**
          * Returns the offset of the frame in the texture
          * @return {cc.Point}
          */
-        public getOffset():Point;
+        public getOffset() : Point;
 
         /**
          * Sets the offset of the frame in the texture
          * @param {cc.Point} offset
          */
-        public setOffset(offset:Point):void;
+        public setOffset(offset: Point) : void;
 
         /**
          * Clone the sprite frame
          * @returns {SpriteFrame}
          */
-        public clone:SpriteFrame;
+        public clone() : SpriteFrame;
 
         ///**
         // * TODO: Figure out if this is even needed, it seems like some strange Obj-C artifact that shouldn't exist
@@ -1169,11 +1169,11 @@ declare namespace cc {
          * @return {Boolean}
          */
         //initWithTexture:function (texture, rect, rotated, offset, originalSize) {
-        public initWithTexture(texture:string|Texture2D,
-                               rect:Rect,
-                               rotated:boolean,
-                               offset:Point,
-                               originalSize:Size):boolean;
+        public initWithTexture(texture: string | Texture2D,
+                               rect: Rect,
+                               rotated: boolean,
+                               offset: Point,
+                               originalSize: Size) : boolean;
     }
 
     // +--------------------------------------------------------------------------------
@@ -1199,13 +1199,13 @@ declare namespace cc {
          *   If you want to use another texture, you should use the addSpriteFrames:texture method.
          *
          * @param {String} url file path
-         * @param {HTMLImageElement|cc.Texture2D|string} texture
+         * @param {cc.Texture2D|string} texture
          * @example
          * // add SpriteFrames to SpriteFrameCache With File
          * cc.spriteFrameCache.addSpriteFrames(s_grossiniPlist);
          * cc.spriteFrameCache.addSpriteFrames(s_grossiniJson);
          */
-        export function addSpriteFrames(url:string, texture:HTMLImageElement|Texture2D|string):void;
+        export function addSpriteFrames(url: string, texture: Texture2D | string) : void;
 
         /**
          *
@@ -1215,7 +1215,7 @@ declare namespace cc {
          * @param {cc.SpriteFrame} frame
          * @param {String} frameName
          */
-        export function addSpriteFrame(frame:SpriteFrame, frameName:string):void;
+        export function addSpriteFrame(frame: SpriteFrame, frameName: string) : void;
 
         /**
          *
@@ -1226,13 +1226,13 @@ declare namespace cc {
          *   In the long term: it will be the same.
          *
          */
-        export function removeSpriteFrames():void;
+        export function removeSpriteFrames() : void;
 
         /**
          * Deletes an sprite frame from the sprite frame cache.
          * @param {String} name
          */
-        export function removeSpriteFrameByName(name:string):void;
+        export function removeSpriteFrameByName(name: string) : void;
 
         /**
          *
@@ -1242,16 +1242,16 @@ declare namespace cc {
          *
          * @param {String} url Plist filename
          */
-        export function removeSpriteFramesFromFile(url:string):void;
+        export function removeSpriteFramesFromFile(url: string) : void;
 
         /**
          *
          *    Removes all Sprite Frames associated with the specified textures.
          *    It is convenient to call this method when a specific texture needs to be removed.
          *
-         * @param {HTMLImageElement|HTMLCanvasElement|cc.Texture2D} texture
+         * @param {cc.Texture2D} texture
          */
-        export function removeSpriteFramesFromTexture(texture:HTMLImageElement|HTMLCanvasElement|Texture2D):void;
+        export function removeSpriteFramesFromTexture(texture: Texture2D) : void;
 
         /**
          *
@@ -1265,6 +1265,6 @@ declare namespace cc {
          * //get a SpriteFrame by name
          * var frame = cc.spriteFrameCache.getSpriteFrame("grossini_dance_01.png");
          */
-        export function getSpriteFrame(name:string):SpriteFrame;
+        export function getSpriteFrame(name: string) : SpriteFrame;
     }
 }

@@ -17,16 +17,17 @@ declare namespace cc {
      * @param {String}   getterName Name of getter function for the property
      * @param {String}   setterName Name of setter function for the property
      */
-    export function defineGetterSetter(proto:object, prop:string, getter:any, setter:any, getterName:string, setterName:string): void;
+    // DONOT USE IN TYPESCRIPT
+    //export function defineGetterSetter(proto: object, prop: string, getter: any, setter: any, getterName: string, setterName: string) : void;
 
     // TODO: Can restrict clone() to overloaded declarations that take a cc.Class and and Array, instead of an Any?
     /**
      * Create a new object and copy all properties in an exist object to the new object
      * @function
-     * @param {object|Array} obj The source object
+     * @param {} obj The source object
      * @return {Array|object} The created object
      */
-    export function clone(obj: any): any;
+    export function clone<T>(value: T) : T;
 
     // TODO: Can restrict inject() to overloaded declarations that take a cc.Class and and Array, instead of an Any?
     // TODO: Fill these comments in with a descrition of what the function does
@@ -39,7 +40,7 @@ declare namespace cc {
      * @param {object|Array} destPrototype The destination object
      * @return {Array|object} The modified object
      */
-    export function inject(srcPrototype: any, destPrototype: any): any;
+    export function inject(srcPrototype: any, destPrototype: any) : any;
 
     //+---------- Class definitions ----------+//
 
@@ -48,8 +49,7 @@ declare namespace cc {
      * MIT Licensed.
      */
     export class Class {
-        public ctor():void;
-        public description():string;
+        public description() : string;
 
         public static extend<T>(prototype : T) : any;
     }
@@ -63,45 +63,45 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    export const INVALID_INDEX:number;
+    export const INVALID_INDEX : number;
 
     /**
      * PI is the ratio of a circle's circumference to its diameter.
      * @constant
      * @type Number
      */
-    export const PI:number;
+    export const PI : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const FLT_MAX:number;
+    export const FLT_MAX : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const FLT_MIN:number;
+    export const FLT_MIN : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const RAD:number;
+    export const RAD : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const DEG:number;
+    export const DEG : number;
 
     /**
      * maximum unsigned int value
      * @constant
      * @type Number
      */
-    export const UINT_MAX:number;
+    export const UINT_MAX : number;
 
     /**
      * 
@@ -115,28 +115,28 @@ declare namespace cc {
      * cc.lerp(2,10,0.5)//returns 6
      * cc.lerp(2,10,0.2)//returns 3.6
      */
-    export function lerp(a:number, b:number, r:number):number;
+    export function lerp(a: number, b: number, r: number) : number;
 
     /**
      * get a random number from 0 to 0xffffff
      * @function
      * @returns {number}
      */
-    export function rand():number;
+    export function rand() : number;
 
     /**
      * returns a random float between -1 and 1
      * @return {Number}
      * @function
      */
-    export function randomMinus1To1():number;
+    export function randomMinus1To1() : number;
 
     /**
      * returns a random float between 0 and 1
      * @return {Number}
      * @function
      */
-    export function random0To1():number;
+    export function random0To1() : number;
 
     /**
      * converts degrees to radians
@@ -144,7 +144,7 @@ declare namespace cc {
      * @return {Number}
      * @function
      */
-    export function degreesToRadians(angle:number):number;
+    export function degreesToRadians(angle: number) : number;
 
     /**
      * converts radians to degrees
@@ -152,7 +152,7 @@ declare namespace cc {
      * @return {Number}
      * @function
      */
-    export function radiansToDegrees(angle:number):number;
+    export function radiansToDegrees(angle: number) : number;
 
     /**
      * converts radians to degrees
@@ -160,20 +160,20 @@ declare namespace cc {
      * @return {Number}
      * @function
      */
-    export function radiansToDegress(angle:number):number;
+    export function radiansToDegress(angle: number) : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const REPEAT_FOREVER:number;
+    export const REPEAT_FOREVER : number;
 
     /**
      * Helpful macro that setups the GL server state, the correct GL program and sets the Model View Projection matrix
      * @param {cc.Node} node setup node
      * @function
      */
-    export function nodeDrawSetup(node:Node):void;
+    export function nodeDrawSetup(node: Node) : void;
 
     /**
      * 
@@ -185,7 +185,7 @@ declare namespace cc {
      * 
      * @function
      */
-    export function enableDefaultGLStates():void;
+    export function enableDefaultGLStates() : void;
 
     /**
      * 
@@ -196,7 +196,7 @@ declare namespace cc {
      * 
      * @function
      */
-    export function disableDefaultGLStates():void;
+    export function disableDefaultGLStates() : void;
 
     /**
      * 
@@ -206,13 +206,13 @@ declare namespace cc {
      * @param {Number} addNumber
      * @function
      */
-    export function incrementGLDraws(addNumber:number):void;
+    export function incrementGLDraws(addNumber: number) : void;
 
     /**
      * @constant
      * @type Number
      */
-    export const FLT_EPSILON:number;
+    export const FLT_EPSILON : number;
 
     /**
      * 
@@ -222,7 +222,7 @@ declare namespace cc {
      * @return {Number}
      * @function
      */
-    export function contentScaleFactor():number;
+    export function contentScaleFactor() : number;
 
     /**
      * Converts a Point in points to pixels
@@ -230,7 +230,7 @@ declare namespace cc {
      * @return {cc.Point}
      * @function
      */
-    export function pointPointsToPixels(points:Point):Point;
+    export function pointPointsToPixels(points: Point) : Point;
 
     /**
      * Converts a Point in pixels to points
@@ -238,7 +238,7 @@ declare namespace cc {
      * @return {cc.Point}
      * @function
      */
-    export function pointPixelsToPoints(pixels:Rect):Point;
+    export function pointPixelsToPoints(pixels: Rect) : Point;
 
     /**
      * Converts a Size in points to pixels
@@ -246,7 +246,7 @@ declare namespace cc {
      * @return {cc.Size}
      * @function
      */
-    export function sizePointsToPixels(sizeInPoints:Size):Size;
+    export function sizePointsToPixels(sizeInPoints: Size) : Size;
 
     /**
      * Converts a size in pixels to points
@@ -254,7 +254,7 @@ declare namespace cc {
      * @return {cc.Size}
      * @function
      */
-    export function sizePixelsToPoints(sizeInPixels:Size):Size;
+    export function sizePixelsToPoints(sizeInPixels: Size) : Size;
 
     /**
      * Converts a rect in pixels to points
@@ -262,7 +262,7 @@ declare namespace cc {
      * @return {cc.Rect}
      * @function
      */
-    export function rectPixelsToPoints(pixels:Rect):Rect;
+    export function rectPixelsToPoints(pixels: Rect) : Rect;
 
     /**
      * Converts a rect in points to pixels
@@ -270,114 +270,114 @@ declare namespace cc {
      * @return {cc.Rect}
      * @function
      */
-    export function rectPointsToPixels(point:Rect):Rect;
+    export function rectPointsToPixels(point: Rect) : Rect;
 
 //some gl constant variable
     /**
      * @constant
      * @type Number
      */
-    export const ONE:number;
+    export const ONE : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const ZERO:number;
+    export const ZERO : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const SRC_ALPHA:number;
+    export const SRC_ALPHA : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const SRC_ALPHA_SATURATE:number;
+    export const SRC_ALPHA_SATURATE : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const SRC_COLOR:number;
+    export const SRC_COLOR : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const DST_ALPHA:number;
+    export const DST_ALPHA : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const DST_COLOR:number;
+    export const DST_COLOR : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const ONE_MINUS_SRC_ALPHA:number;
+    export const ONE_MINUS_SRC_ALPHA : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const ONE_MINUS_SRC_COLOR:number;
+    export const ONE_MINUS_SRC_COLOR : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const ONE_MINUS_DST_ALPHA:number;
+    export const ONE_MINUS_DST_ALPHA : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const ONE_MINUS_DST_COLOR:number;
+    export const ONE_MINUS_DST_COLOR : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const ONE_MINUS_CONSTANT_ALPHA:number;
+    export const ONE_MINUS_CONSTANT_ALPHA : number;
 
     /**
      * @constant
      * @type Number
      */
-    export const ONE_MINUS_CONSTANT_COLOR:number;
+    export const ONE_MINUS_CONSTANT_COLOR : number;
 
     /**
      * the constant variable equals gl.LINEAR for texture
      * @constant
      * @type Number
      */
-    export const LINEAR:number;
+    export const LINEAR : number;
 
     /**
      * the constant variable equals gl.REPEAT for texture
      * @constant
      * @type Number
      */
-    export const REPEAT:number;
+    export const REPEAT : number;
 
     /**
      * the constant variable equals gl.CLAMP_TO_EDGE for texture
      * @constant
      * @type Number
      */
-    export const CLAMP_TO_EDGE:number;
+    export const CLAMP_TO_EDGE : number;
 
     /**
      * the constant variable equals gl.MIRRORED_REPEAT for texture
      * @constant
      * @type Number
      */
-    export const MIRRORED_REPEAT:number;
+    export const MIRRORED_REPEAT : number;
 
     /**
      * default gl blend src function. Compatible with premultiplied alpha images.
@@ -385,20 +385,20 @@ declare namespace cc {
      * @name export const BLEND_SRC
      * @type Number
      */
-    export const BLEND_SRC:number;
+    export const BLEND_SRC : number;
 
     /**
      * default gl blend dst function. Compatible with premultiplied alpha images.
      * @constant
      * @type Number
      */
-    export const BLEND_DST:number;
+    export const BLEND_DST : number;
 
     /**
      * Check webgl error.Error will be shown in console if exists.
      * @function
      */
-    export function checkGLErrorDebug():void;
+    export function checkGLErrorDebug() : void;
 
 //Possible device orientations
     /**
@@ -406,35 +406,35 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    export const DEVICE_ORIENTATION_PORTRAIT:number;
+    export const DEVICE_ORIENTATION_PORTRAIT : number;
 
     /**
      * Device oriented horizontally, home button on the right (UIDeviceOrientationLandscapeLeft)
      * @constant
      * @type Number
      */
-    export const DEVICE_ORIENTATION_LANDSCAPE_LEFT:number;
+    export const DEVICE_ORIENTATION_LANDSCAPE_LEFT : number;
 
     /**
      * Device oriented vertically, home button on the top (UIDeviceOrientationPortraitUpsideDown)
      * @constant
      * @type Number
      */
-    export const DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN:number;
+    export const DEVICE_ORIENTATION_PORTRAIT_UPSIDE_DOWN : number;
 
     /**
      * Device oriented horizontally, home button on the left (UIDeviceOrientationLandscapeRight)
      * @constant
      * @type Number
      */
-    export const DEVICE_ORIENTATION_LANDSCAPE_RIGHT:number;
+    export const DEVICE_ORIENTATION_LANDSCAPE_RIGHT : number;
 
     /**
      * In browsers, we only support 2 orientations by change window size.
      * @constant
      * @type Number
      */
-    export const DEVICE_MAX_ORIENTATIONS:number;
+    export const DEVICE_MAX_ORIENTATIONS : number;
 
 
 // ------------------- vertex attrib flags -----------------------------
@@ -442,209 +442,209 @@ declare namespace cc {
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_FLAG_NONE:number;
+    export const VERTEX_ATTRIB_FLAG_NONE : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_FLAG_POSITION:number;
+    export const VERTEX_ATTRIB_FLAG_POSITION : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_FLAG_COLOR:number;
+    export const VERTEX_ATTRIB_FLAG_COLOR : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_FLAG_TEX_COORDS:number;
+    export const VERTEX_ATTRIB_FLAG_TEX_COORDS : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_FLAG_POS_COLOR_TEX:number;
+    export const VERTEX_ATTRIB_FLAG_POS_COLOR_TEX : number;
 
     /**
      * GL server side states
      * @constant
      * @type {Number}
      */
-    export const GL_ALL:number;
+    export const GL_ALL : number;
 
 //-------------Vertex Attributes-----------
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_POSITION:number;
+    export const VERTEX_ATTRIB_POSITION : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_COLOR:number;
+    export const VERTEX_ATTRIB_COLOR : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_TEX_COORDS:number;
+    export const VERTEX_ATTRIB_TEX_COORDS : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const VERTEX_ATTRIB_MAX:number;
+    export const VERTEX_ATTRIB_MAX : number;
 
 //------------Uniforms------------------
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_PMATRIX:number;
+    export const UNIFORM_PMATRIX : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_MVMATRIX:number;
+    export const UNIFORM_MVMATRIX : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_MVPMATRIX:number;
+    export const UNIFORM_MVPMATRIX : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_TIME:number;
+    export const UNIFORM_TIME : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_SINTIME:number;
+    export const UNIFORM_SINTIME : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_COSTIME:number;
+    export const UNIFORM_COSTIME : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_RANDOM01:number;
+    export const UNIFORM_RANDOM01 : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_SAMPLER:number;
+    export const UNIFORM_SAMPLER : number;
     /**
      * @constant
      * @type {Number}
      */
-    export const UNIFORM_MAX:number;
+    export const UNIFORM_MAX : number;
 
 //------------Shader Name---------------
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_TEXTURECOLOR:string;
+    export const SHADER_POSITION_TEXTURECOLOR : string;
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_TEXTURECOLORALPHATEST:string;
+    export const SHADER_POSITION_TEXTURECOLORALPHATEST : string;
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_COLOR:string;
+    export const SHADER_POSITION_COLOR : string;
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_TEXTURE:string;
+    export const SHADER_POSITION_TEXTURE : string;
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_TEXTURE_UCOLOR:string;
+    export const SHADER_POSITION_TEXTURE_UCOLOR : string;
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_TEXTUREA8COLOR:string;
+    export const SHADER_POSITION_TEXTUREA8COLOR : string;
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_UCOLOR:string;
+    export const SHADER_POSITION_UCOLOR : string;
     /**
      * @constant
      * @type {String}
      */
-    export const SHADER_POSITION_LENGTHTEXTURECOLOR:string;
+    export const SHADER_POSITION_LENGTHTEXTURECOLOR : string;
 
 //------------uniform names----------------
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_PMATRIX_S:string;
+    export const UNIFORM_PMATRIX_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_MVMATRIX_S:string;
+    export const UNIFORM_MVMATRIX_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_MVPMATRIX_S:string;
+    export const UNIFORM_MVPMATRIX_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_TIME_S:string;
+    export const UNIFORM_TIME_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_SINTIME_S:string;
+    export const UNIFORM_SINTIME_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_COSTIME_S:string;
+    export const UNIFORM_COSTIME_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_RANDOM01_S:string;
+    export const UNIFORM_RANDOM01_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_SAMPLER_S:string;
+    export const UNIFORM_SAMPLER_S : string;
     /**
      * @constant
      * @type {String}
      */
-    export const UNIFORM_ALPHA_TEST_VALUE_S:string;
+    export const UNIFORM_ALPHA_TEST_VALUE_S : string;
 
 //------------Attribute names--------------
     /**
      * @constant
      * @type {String}
      */
-    export const ATTRIBUTE_NAME_COLOR:string;
+    export const ATTRIBUTE_NAME_COLOR : string;
     /**
      * @constant
      * @type {String}
      */
-    export const ATTRIBUTE_NAME_POSITION:string;
+    export const ATTRIBUTE_NAME_POSITION : string;
     /**
      * @constant
      * @type {String}
      */
-    export const ATTRIBUTE_NAME_TEX_COORD:string;
+    export const ATTRIBUTE_NAME_TEX_COORD : string;
 
 
     /**
@@ -652,40 +652,40 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    export const ITEM_SIZE:number;
+    export const ITEM_SIZE : number;
 
     /**
      * default tag for current item
      * @constant
      * @type Number
      */
-    export const CURRENT_ITEM:number;
+    export const CURRENT_ITEM : number;
     /**
      * default tag for zoom action tag
      * @constant
      * @type Number
      */
-    export const ZOOM_ACTION_TAG:number;
+    export const ZOOM_ACTION_TAG : number;
     /**
      * default tag for normal
      * @constant
      * @type Number
      */
-    export const NORMAL_TAG:number;
+    export const NORMAL_TAG : number;
 
     /**
      * default selected tag
      * @constant
      * @type Number
      */
-    export const SELECTED_TAG:number;
+    export const SELECTED_TAG : number;
 
     /**
      * default disabled tag
      * @constant
      * @type Number
      */
-    export const DISABLE_TAG:number;
+    export const DISABLE_TAG : number;
 
 
 // Array utils
@@ -697,7 +697,7 @@ declare namespace cc {
      * @return {Boolean}
      * @function
      */
-    export function arrayVerifyType(arr:any[], type:any):boolean;
+    export function arrayVerifyType(arr: any[], type: any) : boolean;
 
     /**
      * Searches for the first occurance of object and removes it. If object is not found the function has no effect.
@@ -705,7 +705,7 @@ declare namespace cc {
      * @param {Array} arr Source Array
      * @param {*} delObj  remove object
      */
-    export function arrayRemoveObject(arr:any[], delObj:any):void;
+    export function arrayRemoveObject(arr: any[], delObj: any) : void;
 
     /**
      * Removes from arr all values in minusArr. For each Value in minusArr, the first matching instance in arr will be removed.
@@ -713,7 +713,7 @@ declare namespace cc {
      * @param {Array} arr Source Array
      * @param {Array} minusArr minus Array
      */
-    export function arrayRemoveArray(arr:any[], minusArr:any[]):void;
+    export function arrayRemoveArray(arr: any[], minusArr: any[]) : void;
 
     /**
      * Inserts some objects at index
@@ -723,14 +723,14 @@ declare namespace cc {
      * @param {Number} index
      * @return {Array}
      */
-    export function arrayAppendObjectsToIndex(arr:any[], addObjs:any[], index:number):any[];
+    export function arrayAppendObjectsToIndex(arr: any[], addObjs: any[], index: number) : any[];
 
     /**
      * Copy an array's item to a new array (its performance is better than Array.slice)
      * @param {Array} arr
      * @return {Array}
      */
-    export function copyArray(arr:any[]):any[];
+    export function copyArray(arr: any[]) : any[];
 
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -743,49 +743,49 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    export var TEXT_ALIGNMENT_LEFT:number;
+    export var TEXT_ALIGNMENT_LEFT : number;
 
     /**
      * text alignment : center
      * @constant
      * @type Number
      */
-    export var TEXT_ALIGNMENT_CENTER:number;
+    export var TEXT_ALIGNMENT_CENTER : number;
 
     /**
      * text alignment : right
      * @constant
      * @type Number
      */
-    export var TEXT_ALIGNMENT_RIGHT:number;
+    export var TEXT_ALIGNMENT_RIGHT : number;
 
     /**
      * text alignment : top
      * @constant
      * @type Number
      */
-    export var VERTICAL_TEXT_ALIGNMENT_TOP:number;
+    export var VERTICAL_TEXT_ALIGNMENT_TOP : number;
 
     /**
      * text alignment : center
      * @constant
      * @type Number
      */
-    export var VERTICAL_TEXT_ALIGNMENT_CENTER:number;
+    export var VERTICAL_TEXT_ALIGNMENT_CENTER : number;
 
     /**
      * text alignment : bottom
      * @constant
      * @type Number
-     */
-    export var VERTICAL_TEXT_ALIGNMENT_BOTTOM:number;
+     */ 
+    export var VERTICAL_TEXT_ALIGNMENT_BOTTOM : number;
 
     //+---------- Function definitions ----------+//
     /**
      * @function
      * @returns {cc.BlendFunc}
      */
-    export function blendFuncDisable():BlendFunc;
+    export function blendFuncDisable() : BlendFunc;
 
     /**
      * Generate a color object based on multiple forms of parameters
@@ -805,7 +805,7 @@ declare namespace cc {
      * @param {String|cc.Color} color
      * @return {cc.Color}
      */
-    export function color(color:Color|string):Color;
+    export function color(color: Color | string) : Color;
 
     /**
      * Generate a color object based on multiple forms of parameters
@@ -828,7 +828,7 @@ declare namespace cc {
      * @param {Number} [alpha=255]
      * @return {cc.Color}
      */
-    export function color(red:number, green:number, blue:number, alpha?:number):Color;
+    export function color(red: number, green: number, blue: number, alpha?: number) : Color;
 
     /**
      * returns true if both ccColor3B are equal. Otherwise it returns false.
@@ -837,7 +837,7 @@ declare namespace cc {
      * @param {cc.Color} color2
      * @return {Boolean}  true if both ccColor3B are equal. Otherwise it returns false.
      */
-    export function colorEqual(color1:Color, color2:Color):boolean;
+    export function colorEqual(color1: Color, color2: Color) : boolean;
 
     /**
      * convert Color to a string of color for style.
@@ -846,7 +846,7 @@ declare namespace cc {
      * @param {cc.Color} color
      * @return {String}
      */
-    export function colorToHex(color:Color):string;
+    export function colorToHex(color: Color) : string;
 
     /**
      * convert a string of color for style to Color.
@@ -855,7 +855,7 @@ declare namespace cc {
      * @param {String} hex
      * @return {cc.Color}
      */
-    export function hexToColor(hex:string):Color;
+    export function hexToColor(hex: string) : Color;
 
     /**
      * Helper macro that creates an Tex2F type: A texcoord composed of 2 floats: u, y
@@ -864,7 +864,7 @@ declare namespace cc {
      * @param {Number} v
      * @return {cc.Tex2F}
      */
-    export function tex2(u:number, v:number):Tex2F;
+    export function tex2(u: number, v: number) : Tex2F;
 
     /**
      * Helper macro that creates an Vertex2F type composed of 2 floats: x, y
@@ -873,7 +873,7 @@ declare namespace cc {
      * @param {Number} y
      * @return {cc.Vertex2F}
      */
-    export function vertex2(x:number, y:number):Vertex2F;
+    export function vertex2(x: number, y: number) : Vertex2F;
 
     /**
      * Helper macro that creates an Vertex3F type composed of 3 floats: x, y, z
@@ -883,7 +883,7 @@ declare namespace cc {
      * @param {Number} z
      * @return {cc.Vertex3F}
      */
-    export function vertex3(x:number, y:number, z:number):Vertex3F;
+    export function vertex3(x: number, y: number, z: number) : Vertex3F;
 
     //+---------- Class definitions ----------+//
     /**
@@ -899,7 +899,7 @@ declare namespace cc {
          * @param {Number} z
          * @param {Number} timestamp
          */
-        constructor (x:number, y:number, z:number, timestamp:number);
+        constructor (x: number, y: number, z: number, timestamp: number);
     }
 
     /**
@@ -913,7 +913,7 @@ declare namespace cc {
          * @param {Number} src source blend function
          * @param {Number} dst destination blend function
          */
-        constructor(src:number, dst:number);
+        constructor(src: number, dst: number);
     }
 
     /**
@@ -921,23 +921,30 @@ declare namespace cc {
      * @class cc.Color
      * @see cc.color
      */
-    export class Color {
-        public r:number;
-        public g:number;
-        public b:number;
-        public a:number;
-
-        /**
-         * Color class, please use cc.color() to construct a color
-         * @class cc.Color
-         * @param {Number} red
-         * @param {Number} green
-         * @param {Number} blue
-         * @param {Number} alpha
-         * @see cc.color
-         */
-        constructor(red:number, green:number, blue:number, alpha:number);
+    export interface Color {
+        r: number;
+        g: number;
+        b: number;
+        a: number;
     }
+    // OLD Color
+    //export class Color {
+    //    public r: number;
+    //    public g: number;
+    //    public b: number;
+    //    public a: number;
+    //
+    //    /**
+    //     * Color class, please use cc.color() to construct a color
+    //     * @class cc.Color
+    //     * @param {Number} red
+    //     * @param {Number} green
+    //     * @param {Number} blue
+    //     * @param {Number} alpha
+    //     * @see cc.color
+    //     */
+    //    constructor(red: number, green: number, blue: number, alpha: number);
+    //}
 
     /**
      * TODO: Define type for properties arg in c'tor. Figure out what the structure for props is and make a class.
@@ -960,33 +967,33 @@ declare namespace cc {
      * @class cc.FontDefinition
      */
     export class FontDefinition {
-        public fontName:string;
-        public fontSize:number;
-        public textAlign:any;
-        public verticalAlign:any;
-        public fillStyle:any;
-        public boundingWidth:number;
-        public boundingHeight:number;
+        public fontName: string;
+        public fontSize: number;
+        public textAlign: any;
+        public verticalAlign: any;
+        public fillStyle: any;
+        public boundingWidth: number;
+        public boundingHeight: number;
 
-        public strokeEnabled:boolean;
-        public strokeStyle:any;
-        public lineWidth:number;
-        public lineHeight:number;
-        public fontStyle:any;
-        public fontWeight:any;
+        public strokeEnabled: boolean;
+        public strokeStyle: any;
+        public lineWidth: number;
+        public lineHeight: number;
+        public fontStyle: any;
+        public fontWeight: any;
 
-        public shadowEnabled:boolean;
-        public shadowOffsetX:number;
-        public shadowOffsetY:number;
-        public shadowBlur:any;
-        public shadowOpacity:number;
+        public shadowEnabled: boolean;
+        public shadowOffsetX: number;
+        public shadowOffsetY: number;
+        public shadowBlur: any;
+        public shadowOpacity: number;
 
         /**
          * TODO: Define type for properties arg in c'tor. Figure out what the structure for props is and make a class (or more likely, an interface).
          * @param {Object} properties - (OPTIONAL) Allow inline FontDefinition
          * @constructor
          */
-        constructor(properties:any);
+        constructor(properties: any);
     }
 
     /**
@@ -998,7 +1005,7 @@ declare namespace cc {
          * @param {Number} u
          * @param {Number} v
          */
-        constructor(u:number, v:number);
+        constructor(u: number, v: number);
     }
 
     /**
@@ -1010,7 +1017,7 @@ declare namespace cc {
          * @param {Number} x
          * @param {Number} y
          */
-        constructor(x:number, y:number);
+        constructor(x: number, y: number);
     }
 
     /**
@@ -1023,7 +1030,7 @@ declare namespace cc {
          * @param {Number} y
          * @param {Number} z
          */
-        constructor (x:number, y:number, z:number);
+        constructor (x: number, y: number, z: number);
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -1186,8 +1193,8 @@ declare namespace cc {
      * @constructor
      */
     export class Quad2 {
-        public static BYTES_PER_ELEMENT:number;
-        public constructor(tl:Vertex2F, tr:Vertex2F, bl:Vertex2F, br:Vertex2F, arrayBuffer:Quad2[], offset:number);
+        public static readonly BYTES_PER_ELEMENT : number;
+        public constructor(tl: Vertex2F, tr: Vertex2F, bl: Vertex2F, br: Vertex2F, arrayBuffer: Quad2[], offset: number);
     }
 
 
@@ -1201,7 +1208,7 @@ declare namespace cc {
      * @param {cc.Vertex3F} tr1
      */
     export class Quad3 {
-        public constructor(bl1:Vertex3F, br1:Vertex3F, tl1:Vertex3F, tr1:Vertex3F);
+        public constructor(bl1: Vertex3F, br1: Vertex3F, tl1: Vertex3F, tr1: Vertex3F);
     }
 
     //redefine cc.V3F_C4B_T2F
@@ -1215,8 +1222,8 @@ declare namespace cc {
      * @constructor
      */
     export class V3F_C4B_T2F {
-        public static BYTES_PER_ELEMENT:number;
-        public constructor (vertices:Vertex3F, colors:Color, texCoords:Tex2F, arrayBuffer:V3F_C4B_T2F[], offset:number);
+        public static readonly BYTES_PER_ELEMENT : number;
+        public constructor (vertices: Vertex3F, colors: Color, texCoords: Tex2F, arrayBuffer: V3F_C4B_T2F[], offset: number);
     }
 
     //redefine cc.V3F_C4B_T2F_Quad
@@ -1233,7 +1240,7 @@ declare namespace cc {
     export class V3F_C4B_T2F_Quad {
         public static BYTES_PER_ELEMENT:number;
 
-        public constructor(tl:V3F_C4B_T2F, bl:V3F_C4B_T2F, tr:V3F_C4B_T2F, br:V3F_C4B_T2F, arrayBuffer:V3F_C4B_T2F[], offset:number);
+        public constructor(tl: V3F_C4B_T2F, bl: V3F_C4B_T2F, tr: V3F_C4B_T2F, br: V3F_C4B_T2F, arrayBuffer: V3F_C4B_T2F[], offset: number);
     }
 
     /**
@@ -1247,14 +1254,14 @@ declare namespace cc {
      * @param {cc.V3F_C4B_T2F_Quad} sourceQuad
      * @return {cc.V3F_C4B_T2F_Quad}
      */
-    export function V3F_C4B_T2F_QuadCopy(sourceQuad:V3F_C4B_T2F_Quad): V3F_C4B_T2F_Quad;
+    export function V3F_C4B_T2F_QuadCopy(sourceQuad: V3F_C4B_T2F_Quad) : V3F_C4B_T2F_Quad;
 
     /**
      * @function
      * @param {Array} sourceQuads
      * @returns {Array}
      */
-    export function V3F_C4B_T2F_QuadsCopy(sourceQuads:V3F_C4B_T2F_Quad[]): V3F_C4B_T2F_Quad[];
+    export function V3F_C4B_T2F_QuadsCopy(sourceQuads: V3F_C4B_T2F_Quad[]) : V3F_C4B_T2F_Quad[];
 
     //redefine cc.V2F_C4B_T2F
     /**
@@ -1268,8 +1275,8 @@ declare namespace cc {
      */
         //cc.V2F_C4B_T2F = function (vertices, colors, texCoords, arrayBuffer, offset) {
     export class V2F_C4B_T2F {
-        public static BYTES_PER_ELEMENT:number;
-        public constructor(vertices:Vertex2F, colors:Color, texCoords:Tex2F, arrayBuffer:V2F_C4B_T2F[], offset:number);
+        public static readonly BYTES_PER_ELEMENT : number;
+        public constructor(vertices: Vertex2F, colors: Color, texCoords: Tex2F, arrayBuffer: V2F_C4B_T2F[], offset: number);
     }
 
     //redefine cc.V2F_C4B_T2F_Triangle
@@ -1283,8 +1290,8 @@ declare namespace cc {
      * @constructor
      */
     export class V2F_C4B_T2F_Triangle {
-        public static BYTES_PER_ELEMENT:number;
-        public constructor(a:V2F_C4B_T2F, b:V2F_C4B_T2F, c:V2F_C4B_T2F, arrayBuffer:V2F_C4B_T2F_Triangle[], offset:number);
+        public static readonly BYTES_PER_ELEMENT : number;
+        public constructor(a: V2F_C4B_T2F, b: V2F_C4B_T2F, c: V2F_C4B_T2F, arrayBuffer: V2F_C4B_T2F_Triangle[], offset: number);
     }
 
     ////////////////////////////////////////////////////////////////////////////////
@@ -1299,10 +1306,10 @@ declare namespace cc {
     //cc.Touches = [];
     //cc.TouchesIntergerDict = {};
 
-    export const DENSITYDPI_DEVICE:string;
-    export const DENSITYDPI_HIGH:string;
-    export const DENSITYDPI_MEDIUM:string;
-    export const DENSITYDPI_LOW:string;
+    export const DENSITYDPI_DEVICE : string;
+    export const DENSITYDPI_HIGH : string;
+    export const DENSITYDPI_MEDIUM : string;
+    export const DENSITYDPI_LOW : string;
 
     /**
      * cc.view is the singleton object which represents the game window.
@@ -1337,20 +1344,20 @@ declare namespace cc {
          * 
          * @param {String} densityDPI
          */
-        public setTargetDensityDPI(densityDPI:string):void;
+        public setTargetDensityDPI(densityDPI: string) : void;
 
         /**
          * Returns the current target-densitydpi value of cc.view.
          * @returns {String}
          */
-        public getTargetDensityDPI():string;
+        public getTargetDensityDPI() : string;
 
         /**
          * Sets whether resize canvas automatically when browser's size changed.
          * Useful only on web.
          * @param {Boolean} enabled Whether enable automatic resize with browser's resize event
          */
-        public resizeWithBrowserSize(enabled:boolean):void;
+        public resizeWithBrowserSize(enabled: boolean) : void;
 
         /**
          * Sets the callback function for cc.view's resize action,
@@ -1359,10 +1366,10 @@ declare namespace cc {
          * Useful only on web.
          * @param {Function|null} callback The callback function
          */
-        public setResizeCallback(callback?:()=>void):void;
+        public setResizeCallback(callback?: () => void) : void;
 
         // TODO: Shouldn't this return a boolean?!?
-        public initialize():void;
+        public initialize() : void;
 
         /**
          * Sets whether the engine modify the "viewport" meta in your web page.
@@ -1371,7 +1378,7 @@ declare namespace cc {
          * Only useful on web
          * @param {Boolean} enabled Enable automatic modification to "viewport" meta
          */
-        public adjustViewPort(enabled:boolean):void;
+        public adjustViewPort(enabled: boolean) : void;
 
         /**
          * Retina support is enabled by default for Apple device but disabled for other devices,
@@ -1379,14 +1386,14 @@ declare namespace cc {
          * Only useful on web
          * @param {Boolean} enabled  Enable or disable retina display
          */
-        public enableRetina(enabled:boolean):void;
+        public enableRetina(enabled: boolean) : void;
 
         /**
          * Check whether retina display is enabled.
          * Only useful on web
          * @return {Boolean}
          */
-        public isRetinaEnabled():boolean;
+        public isRetinaEnabled() : boolean;
 
         /**
          * If enabled, the application will try automatically to enter full screen mode on mobile devices
@@ -1394,57 +1401,57 @@ declare namespace cc {
          * Only useful on web
          * @param {Boolean} enabled  Enable or disable auto full screen on mobile devices
          */
-        public enableAutoFullScreen(enabled:boolean):void;
+        public enableAutoFullScreen(enabled: boolean) : void;
 
         /**
          * Check whether auto full screen is enabled.
          * Only useful on web
          * @return {Boolean} Auto full screen enabled or not
          */
-        public isAutoFullScreenEnabled():boolean;
+        public isAutoFullScreenEnabled() : boolean;
 
         /**
          * Force destroying EGL view, subclass must implement this method.
          */
-        public end():void;
+        public end() : void;
 
         /**
          * Get whether render system is ready(no matter opengl or canvas),
          * this name is for the compatibility with cocos2d-x, subclass must implement this method.
          * @return {Boolean}
          */
-        public isOpenGLReady():boolean;
+        public isOpenGLReady() : boolean;
 
         /*
          * Set zoom factor for frame. This method is for debugging big resolution (e.g.new ipad) app on desktop.
          * @param {Number} zoomFactor
          */
-        public setFrameZoomFactor(zoomFactor:number):void;
+        public setFrameZoomFactor(zoomFactor: number) : void;
 
         /**
          * Exchanges the front and back buffers, subclass must implement this method.
          */
-        public swapBuffers():void;
+        public swapBuffers() : void;
 
         /**
          * Open or close IME keyboard , subclass must implement this method.
          * @param {Boolean} isOpen
          */
-        public setIMEKeyboardState(isOpen:boolean):void;
+        public setIMEKeyboardState(isOpen: boolean) : void;
 
         /**
          * Sets the resolution translate on EGLView
          * @param {Number} offsetLeft
          * @param {Number} offsetTop
          */
-        public setContentTranslateLeftTop(offsetLeft:number, offsetTop:number):void;
+        public setContentTranslateLeftTop(offsetLeft: number, offsetTop: number) : void;
 
         /**
          * Returns the resolution translate on EGLView
          * @return {cc.Size|Object}
          */
         //public getContentTranslateLeftTop():any
-        public getContentTranslateLeftTop():Size;
+        public getContentTranslateLeftTop() : Size;
 
         /**
          * Returns the canvas size of the view.
@@ -1452,7 +1459,7 @@ declare namespace cc {
          * On web, it returns the size of the canvas element.
          * @return {cc.Size}
          */
-        public getCanvasSize():Size;
+        public getCanvasSize() : Size;
 
         /**
          * Returns the frame size of the view.
@@ -1460,7 +1467,7 @@ declare namespace cc {
          * On web, it returns the size of the canvas's outer DOM element.
          * @return {cc.Size}
          */
-        public getFrameSize():Size;
+        public getFrameSize() : Size;
 
         /**
          * On native, it sets the frame size of view.
@@ -1468,56 +1475,56 @@ declare namespace cc {
          * @param {Number} width
          * @param {Number} height
          */
-        public setFrameSize(width:number, height:number):void;
+        public setFrameSize(width: number, height: number) : void;
 
         /**
          * Empty function
          */
-        public centerWindow():void;
+        public centerWindow() : void;
 
         /**
          * Returns the visible area size of the view port.
          * @return {cc.Size}
          */
-        public getVisibleSize():Size;
+        public getVisibleSize() : Size;
 
         /**
          * Returns the visible area size of the view port.
          * @return {cc.Size}
          */
-        public getVisibleSizeInPixel():Size;
+        public getVisibleSizeInPixel() : Size;
 
         /**
          * Returns the visible origin of the view port.
          * @return {cc.Point}
          */
-        public getVisibleOrigin():Point;
+        public getVisibleOrigin() : Point;
 
         /**
          * Returns the visible origin of the view port.
          * @return {cc.Point}
          */
-        public getVisibleOriginInPixel():Point;
+        public getVisibleOriginInPixel() : Point;
 
         /**
          * Returns whether developer can set content's scale factor.
          * @return {Boolean}
          */
-        public canSetContentScaleFactor():boolean;
+        public canSetContentScaleFactor() : boolean;
 
         /**
          * Returns the current resolution policy
          * @see cc.ResolutionPolicy
          * @return {cc.ResolutionPolicy}
          */
-        public getResolutionPolicy():ResolutionPolicy;
+        public getResolutionPolicy() : ResolutionPolicy;
 
         /**
          * Sets the current resolution policy
          * @see cc.ResolutionPolicy
          * @param {cc.ResolutionPolicy|Number} resolutionPolicy
          */
-        public setResolutionPolicy(resolutionPolicy:number|ResolutionPolicy):void;
+        public setResolutionPolicy(resolutionPolicy: number | ResolutionPolicy) : void;
 
         /**
          * Sets the resolution policy with designed view size in points.
@@ -1532,14 +1539,14 @@ declare namespace cc {
          * @param {Number} height Design resolution height.
          * @param {cc.ResolutionPolicy|Number} resolutionPolicy The resolution policy desired
          */
-        public setDesignResolutionSize(width:number, height:number, resolutionPolicy:number|ResolutionPolicy):void;
+        public setDesignResolutionSize(width: number, height: number, resolutionPolicy: number | ResolutionPolicy) : void;
 
         /**
          * Returns the designed size for the view.
          * Default resolution size is the same as 'getFrameSize'.
          * @return {cc.Size}
          */
-        public getDesignResolutionSize():Size;
+        public getDesignResolutionSize() : Size;
 
         /**
          * Sets the document body to desired pixel resolution and fit the game content to it.
@@ -1555,7 +1562,7 @@ declare namespace cc {
          * @param {Number} height Design resolution height.
          * @param {cc.ResolutionPolicy|Number} resolutionPolicy The resolution policy desired
          */
-        public setRealPixelResolution(width:number, height:number, resolutionPolicy:number|ResolutionPolicy):void;
+        public setRealPixelResolution(width: number, height: number, resolutionPolicy: number | ResolutionPolicy) : void;
 
         /**
          * Sets view port rectangle with points.
@@ -1564,7 +1571,7 @@ declare namespace cc {
          * @param {Number} w width
          * @param {Number} h height
          */
-        public setViewPortInPoints(x:number, y:number, w:number, h:number):void;
+        public setViewPortInPoints(x: number, y: number, w: number, h: number) : void;
 
         /**
          * Sets Scissor rectangle with points.
@@ -1573,55 +1580,55 @@ declare namespace cc {
          * @param {Number} w
          * @param {Number} h
          */
-        public setScissorInPoints(x:number, y:number, w:number, h:number):void;
+        public setScissorInPoints(x: number, y: number, w: number, h: number) : void;
 
         /**
          * Returns whether GL_SCISSOR_TEST is enable
          * @return {Boolean}
          */
-        public isScissorEnabled():boolean;
+        public isScissorEnabled() : boolean;
 
         /**
          * Returns the current scissor rectangle
          * @return {cc.Rect}
          */
-        public getScissorRect():Rect;
+        public getScissorRect() : Rect;
 
         /**
          * Sets the name of the view
          * @param {String} viewName
          */
-        public setViewName(viewName:string):void;
+        public setViewName(viewName: string) : void;
 
         /**
          * Returns the name of the view
          * @return {String}
          */
-        public getViewName():string;
+        public getViewName() : string;
 
         /**
          * Returns the view port rectangle.
          * @return {cc.Rect}
          */
-        public getViewPortRect(rect:Rect):Rect;
+        public getViewPortRect(rect: Rect) : Rect;
 
         /**
          * Returns scale factor of the horizontal direction (X axis).
          * @return {Number}
          */
-        public getScaleX():number;
+        public getScaleX() : number;
 
         /**
          * Returns scale factor of the vertical direction (Y axis).
          * @return {Number}
          */
-        public getScaleY():number;
+        public getScaleY() : number;
 
         /**
          * Returns device pixel ratio for retina display.
          * @return {Number}
          */
-        public getDevicePixelRatio():number;
+        public getDevicePixelRatio() : number;
 
         /**
          * Returns the real location in view for a translation based on a related position
@@ -1631,7 +1638,7 @@ declare namespace cc {
          * @return {cc.Point}
          */
         // TODO: Figure out wtf this relatedPos object is
-        public convertToLocationInView(tx:number, ty:number, relatedPos:any):Point;
+        public convertToLocationInView(tx: number, ty: number, relatedPos: any) : Point;
     }
 
     /**
@@ -1646,20 +1653,20 @@ declare namespace cc {
          * Manipulation before appling the strategy
          * @param {cc.view} view The target view
          */
-        public preApply(view:View):void;
+        public preApply(view: View) : void;
 
         /**
          * Function to apply this strategy
          * @param {cc.view} view
          * @param {cc.Size} designedResolution
          */
-        public apply(view:View, designedResolution:Size):void;
+        public apply(view: View, designedResolution: Size) : void;
 
         /**
          * Manipulation after applying the strategy
          * @param {cc.view} view  The target view
          */
-        public postApply(view:View):void;
+        public postApply(view: View) : void;
     }
 
     /**
@@ -1674,7 +1681,7 @@ declare namespace cc {
          * Manipulation before applying the strategy
          * @param {cc.view} view The target view
          */
-        public preApply(view:View):void;
+        public preApply(view: View) : void;
 
         /**
          * Function to apply this strategy
@@ -1685,13 +1692,13 @@ declare namespace cc {
          * @return {object} scaleAndViewportRect
          */
         // TODO: Figure out what return value is
-        public apply(view:View, designedResolution:Size):any;
+        public apply(view: View, designedResolution: Size) : any;
 
         /**
          * Manipulation after applying the strategy
          * @param {cc.view} view The target view
          */
-        public postApply(view:View):void;
+        public postApply(view: View) : void;
     }
 
 // Container scale strategies
@@ -1700,7 +1707,7 @@ declare namespace cc {
      * @extends cc.ContainerStrategy
      */
     export class EqualToFrame extends ContainerStrategy {
-        public apply(view:View, designedResolution?:Size):void;
+        public apply(view: View, designedResolution?: Size) : void;
     }
 
     /**
@@ -1708,7 +1715,7 @@ declare namespace cc {
      * @extends cc.ContainerStrategy
      */
     export class ProportionalToFrame extends ContainerStrategy {
-        public apply(view:View, designedResolution:Size):void;
+        public apply(view: View, designedResolution: Size) : void;
     }
 
     /**
@@ -1716,8 +1723,8 @@ declare namespace cc {
      * @extends EqualToFrame
      */
     export class EqualToWindow extends EqualToFrame {
-        public preApply(view:View):void;
-        public apply(view:View, designedResolution:Size):any;
+        public preApply(view: View) : void;
+        public apply(view: View, designedResolution: Size) : any;
     }
 
     /**
@@ -1725,9 +1732,9 @@ declare namespace cc {
      * @extends ProportionalToFrame
      */
     export class ProportionalToWindow extends ProportionalToFrame {
-        public preApply(view:View):void;
+        public preApply(view: View) : void;
 
-        public apply(view:View, designedResolution:Size):any;
+        public apply(view: View, designedResolution: Size) : any;
     }
 
     /**
@@ -1735,7 +1742,7 @@ declare namespace cc {
      * @extends cc.ContainerStrategy
      */
     export class OriginalContainer extends ContainerStrategy {
-        public apply(view:View, designedResolution:Size):any;
+        public apply(view: View, designedResolution: Size) : any;
     }
 
 
@@ -1753,25 +1760,25 @@ declare namespace cc {
 
 // Content scale strategies
     export class ExactFit extends ContainerStrategy {
-        public apply(view:View, designedResolution:Size):any;
+        public apply(view: View, designedResolution: Size) : any;
     }
 
     export class ShowAll extends ContainerStrategy {
-        public apply(view:View, designedResolution:Size):any;
+        public apply(view: View, designedResolution: Size) : any;
     }
 
     export class NoBorder extends ContainerStrategy {
-        public apply(view:View, designedResolution:Size):any;
+        public apply(view: View, designedResolution: Size) : any;
     }
 
     export class FixedHeight extends ContainerStrategy {
-        public apply(view:View, designedResolution:Size):any;
-        public postApply(view:View):void;
+        public apply(view: View, designedResolution: Size) : any;
+        public postApply(view: View) : void;
     }
 
     export class FixedWidth extends ContainerStrategy {
-        public apply(view:View, designedResolution:Size):any;
-        public postApply(view:View):void;
+        public apply(view: View, designedResolution: Size) : any;
+        public postApply(view: View) : void;
     }
 
 //// Alias: Strategy to scale the content's size to container's size, non proportional
@@ -1806,7 +1813,7 @@ declare namespace cc {
          * The entire application is visible in the specified area without trying to preserve the original aspect ratio.
          * Distortion can occur, and the application may appear stretched or compressed.
          */
-        public static EXACT_FIT:number;
+        public static readonly EXACT_FIT : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1817,7 +1824,7 @@ declare namespace cc {
          * The entire application fills the specified area, without distortion but possibly with some cropping,
          * while maintaining the original aspect ratio of the application.
          */
-        public static NO_BORDER:number;
+        public static readonly NO_BORDER : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1828,7 +1835,7 @@ declare namespace cc {
          * The entire application is visible in the specified area without distortion while maintaining the original
          * aspect ratio of the application. Borders can appear on two sides of the application.
          */
-        public static SHOW_ALL:number;
+        public static readonly SHOW_ALL : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1841,7 +1848,7 @@ declare namespace cc {
          * no distortion will occur however you must make sure your application works on different
          * aspect ratios
          */
-        public static FIXED_HEIGHT:number;
+        public static readonly FIXED_HEIGHT : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1854,7 +1861,7 @@ declare namespace cc {
          * no distortion will occur however you must make sure your application works on different
          * aspect ratios
          */
-        public static FIXED_WIDTH:number;
+        public static readonly FIXED_WIDTH : number;
 
         /**
          * @memberOf cc.ResolutionPolicy#
@@ -1864,20 +1871,20 @@ declare namespace cc {
          * @static
          * Unknow policy
          */
-        public static UNKNOWN:number;
+        public static readonly UNKNOWN : number;
 
         /**
          * Constructor of cc.ResolutionPolicy
          * @param {cc.ContainerStrategy} containerStg
          * @param {cc.ContentStrategy} contentStg
          */
-        public constructor(containerStg:ContainerStrategy, contentStg:ContainerStrategy);
+        public constructor(containerStg: ContainerStrategy, contentStg: ContainerStrategy);
 
         /**
          * Manipulation before applying the resolution policy
          * @param {cc.view} view The target view
          */
-        public preApply(view:View):void;
+        public preApply(view: View) : void;
 
         /**
          * Function to apply this resolution policy
@@ -1887,24 +1894,24 @@ declare namespace cc {
          * @param {cc.Size} designedResolution The user defined design resolution
          * @return {object} An object contains the scale X/Y values and the viewport rect
          */
-        public apply(view:View, designedResolution:Size):any;
+        public apply(view: View, designedResolution: Size) : any;
 
         /**
          * Manipulation after appyling the strategy
          * @param {cc.view} view The target view
          */
-        public postApply(view:View):void;
+        public postApply(view: View) : void;
 
         /**
          * Setup the container's scale strategy
          * @param {cc.ContainerStrategy} containerStg
          */
-        public setContainerStrategy(containerStg:ContainerStrategy):void;
+        public setContainerStrategy(containerStg: ContainerStrategy) : void;
 
         /**
          * Setup the content's scale strategy
          * @param {cc.ContentStrategy} contentStg
          */
-        public setContentStrategy(contentStg:ContainerStrategy):void;
+        public setContentStrategy(contentStg: ContainerStrategy) : void;
     }
 }

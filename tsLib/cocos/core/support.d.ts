@@ -19,14 +19,14 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    const POINT_EPSILON:number;
+    const POINT_EPSILON : number;
 
     /**
      * Returns opposite of point.
      * @param {cc.Point} point
      * @return {cc.Point}
      */
-    export function pNeg(point:Point): Point;
+    export function pNeg(point: Point) : Point;
 
     /**
      * Calculates sum of two points.
@@ -34,7 +34,7 @@ declare namespace cc {
      * @param {cc.Point} v2
      * @return {cc.Point}
      */
-    export function pAdd(v1:Point, v2:Point): Point;
+    export function pAdd(v1: Point, v2: Point) : Point;
 
     /**
      * Calculates difference of two points.
@@ -45,7 +45,7 @@ declare namespace cc {
     //cc.pSub = function (v1, v2) {
     //    return cc.p(v1.x - v2.x, v1.y - v2.y);
     //};
-    export function pSub(v1:Point, v2:Point): Point;
+    export function pSub(v1: Point, v2: Point) : Point;
 
     /**
      * Returns point multiplied by given factor.
@@ -56,7 +56,7 @@ declare namespace cc {
     //cc.pMult = function (point, floatVar) {
     //    return cc.p(point.x * floatVar, point.y * floatVar);
     //};
-    export function pMult(point:Point, factor:number): Point;
+    export function pMult(point: Point, factor: number) : Point;
 
     /**
      * Calculates midpoint between two points.
@@ -67,7 +67,7 @@ declare namespace cc {
     //cc.pMidpoint = function (v1, v2) {
     //    return cc.pMult(cc.pAdd(v1, v2), 0.5);
     //};
-    export function pMidpoint(v1:Point, v2:Point): Point;
+    export function pMidpoint(v1: Point, v2: Point) : Point;
 
     /**
      * Calculates dot product of two points.
@@ -78,7 +78,7 @@ declare namespace cc {
     //cc.pDot = function (v1, v2) {
     //    return v1.x * v2.x + v1.y * v2.y;
     //};
-    export function pDot(v1:Point, v2:Point): number;
+    export function pDot(v1: Point, v2: Point) : number;
 
     /**
      * Calculates cross product of two points.
@@ -89,7 +89,7 @@ declare namespace cc {
     //cc.pCross = function (v1, v2) {
     //    return v1.x * v2.y - v1.y * v2.x;
     //};
-    export function pCross(v1:Point, v2:Point): number;
+    export function pCross(v1: Point, v2: Point) : number;
 
     /**
      * Calculates perpendicular of v, rotated 90 degrees counter-clockwise -- cross(v, perp(v)) >= 0
@@ -99,7 +99,7 @@ declare namespace cc {
     //cc.pPerp = function (point) {
     //    return cc.p(-point.y, point.x);
     //};
-    export function pPerp(point:Point): Point;
+    export function pPerp(point: Point) : Point;
 
     /**
      * Calculates perpendicular of v, rotated 90 degrees clockwise -- cross(v, rperp(v)) <= 0
@@ -109,7 +109,7 @@ declare namespace cc {
     //cc.pRPerp = function (point) {
     //    return cc.p(point.y, -point.x);
     //};
-    export function pRPerp(point:Point): Point;
+    export function pRPerp(point: Point) : Point;
 
     /**
      * Calculates the projection of v1 over v2.
@@ -120,7 +120,7 @@ declare namespace cc {
     //cc.pProject = function (v1, v2) {
     //    return cc.pMult(v2, cc.pDot(v1, v2) / cc.pDot(v2, v2));
     //};
-    export function pProject(v1:Point, v2:Point): Point;
+    export function pProject(v1: Point, v2: Point): Point;
 
     /**
      * Rotates two points.
@@ -131,7 +131,7 @@ declare namespace cc {
     //cc.pRotate = function (v1, v2) {
     //    return cc.p(v1.x * v2.x - v1.y * v2.y, v1.x * v2.y + v1.y * v2.x);
     //};
-    export function pRotate(v1:Point, v2:Point): Point;
+    export function pRotate(v1: Point, v2: Point) : Point;
 
     /**
      * Unrotates two points.
@@ -142,7 +142,7 @@ declare namespace cc {
     //cc.pUnrotate = function (v1, v2) {
     //    return cc.p(v1.x * v2.x + v1.y * v2.y, v1.y * v2.x - v1.x * v2.y);
     //};
-    export function pUnrotate(v1:Point, v2:Point): Point;
+    export function pUnrotate(v1: Point, v2: Point) : Point;
 
     /**
      * Calculates the square length of a cc.Point (not calling sqrt() )
@@ -152,7 +152,7 @@ declare namespace cc {
     //cc.pLengthSQ = function (v) {
     //    return cc.pDot(v, v);
     //};
-    export function pLengthSQ(point:Point): number;
+    export function pLengthSQ(point: Point) : number;
 
     /**
      * Calculates the square distance between two points (not calling sqrt() )
@@ -163,7 +163,7 @@ declare namespace cc {
     //cc.pDistanceSQ = function (point1, point2) {
     //    return cc.pLengthSQ(cc.pSub(point1, point2));
     //};
-    export function pDistanceSQ(point1:Point, point2:Point): number;
+    export function pDistanceSQ(point1: Point, point2: Point) : number;
 
     /**
      * Calculates distance between point an origin
@@ -173,7 +173,7 @@ declare namespace cc {
     //cc.pLength = function (v) {
     //    return Math.sqrt(cc.pLengthSQ(v));
     //};
-    export function pLength(point:Point): number;
+    export function pLength(point: Point) : number;
 
     /**
      * Calculates the distance between two points
@@ -184,7 +184,7 @@ declare namespace cc {
     //cc.pDistance = function (v1, v2) {
     //    return cc.pLength(cc.pSub(v1, v2));
     //};
-    export function pDistance(point1:Point, point2:Point): number;
+    export function pDistance(point1: Point, point2: Point) : number;
 
     /**
      * Returns point multiplied to a length of 1.
@@ -195,7 +195,7 @@ declare namespace cc {
     //    var n = cc.pLength(v);
     //    return n === 0 ? cc.p(v) : cc.pMult(v, 1.0 / n);
     //};
-    export function pNormalize(point:Point): Point;
+    export function pNormalize(point: Point) : Point;
 
     /**
      * Converts radians to a normalized vector.
@@ -205,7 +205,7 @@ declare namespace cc {
     //cc.pForAngle = function (a) {
     //    return cc.p(Math.cos(a), Math.sin(a));
     //};
-    export function pForAngle(radians:number): Point;
+    export function pForAngle(radians: number) : Point;
 
     /**
      * Converts a vector to radians.
@@ -215,36 +215,36 @@ declare namespace cc {
     //cc.pToAngle = function (v) {
     //    return Math.atan2(v.y, v.x);
     //};
-    export function pToAngle(point:Point): number;
+    export function pToAngle(point: Point) : number;
 
     /**
      * Clamp a value between from and to.
      * @param {number} value
-     * @param {number} min_inclusive
-     * @param {number} max_inclusive
+     * @param {number} minInclusive
+     * @param {number} maxInclusive
      * @return {number}
      */
-    //cc.clampf = function (value, min_inclusive, max_inclusive) {
-    //    if (min_inclusive > max_inclusive) {
-    //        var temp = min_inclusive;
-    //        min_inclusive = max_inclusive;
-    //        max_inclusive = temp;
+    //cc.clampf = function (value, minInclusive, maxInclusive) {
+    //    if (minInclusive > maxInclusive) {
+    //        var temp = minInclusive;
+    //        minInclusive = maxInclusive;
+    //        maxInclusive = temp;
     //    }
-    //    return value < min_inclusive ? min_inclusive : value < max_inclusive ? value : max_inclusive;
+    //    return value < minInclusive ? minInclusive : value < maxInclusive ? value : maxInclusive;
     //};
-    export function clampf(value:number, min_inclusive:number, max_inclusive:number): number;
+    export function clampf(value: number, minInclusive: number, maxInclusive: number) : number;
 
     /**
      * Clamp a point between from and to.
      * @param {Point} point
-     * @param {Point} min_inclusive
-     * @param {Point} max_inclusive
+     * @param {Point} minInclusive
+     * @param {Point} maxInclusive
      * @return {cc.Point}
      */
-    //cc.pClamp = function (p, min_inclusive, max_inclusive) {
-    //    return cc.p(cc.clampf(p.x, min_inclusive.x, max_inclusive.x), cc.clampf(p.y, min_inclusive.y, max_inclusive.y));
+    //cc.pClamp = function (p, minInclusive, maxInclusive) {
+    //    return cc.p(cc.clampf(p.x, minInclusive.x, maxInclusive.x), cc.clampf(p.y, minInclusive.y, maxInclusive.y));
     //};
-    export function pClamp(point:Point, min_inclusive:Point, max_inclusive:Point): Point;
+    export function pClamp(point: Point, minInclusive: Point, maxInclusive: Point) : Point;
 
     /**
      * Quickly convert cc.Size to a cc.Point
@@ -254,7 +254,7 @@ declare namespace cc {
     //cc.pFromSize = function (s) {
     //    return cc.p(s.width, s.height);
     //};
-    export function pFromSize(size:Size): Point;
+    export function pFromSize(size: Size) : Point;
 
     /**
      * Run a math operation function on each point component
@@ -269,7 +269,7 @@ declare namespace cc {
     //cc.pCompOp = function (p, opFunc) {
     //    return cc.p(opFunc(p.x), opFunc(p.y));
     //};
-    export function pCompOp(point:Point, opFunc:(arg:number) => number): Point;
+    export function pCompOp(point: Point, opFunc: (arg: number) => number) : Point;
 
     /**
      * Linear Interpolation between two points a and b
@@ -284,7 +284,7 @@ declare namespace cc {
     //cc.pLerp = function (a, b, alpha) {
     //    return cc.pAdd(cc.pMult(a, 1 - alpha), cc.pMult(b, alpha));
     //};
-    export function pLerp(point1:Point, point2:Point, alpha:number): Point;
+    export function pLerp(point1: Point, point2: Point, alpha: number) : Point;
 
     /**
      * @param {cc.Point} point1
@@ -299,7 +299,7 @@ declare namespace cc {
     //    }
     //    return false;
     //};
-    export function pFuzzyEqual(point1:Point, point2:Point, variance:number): boolean;
+    export function pFuzzyEqual(point1: Point, point2: Point, variance: number) : boolean;
 
     /**
      * Multiplies a and b components, a.x*b.x, a.y*b.y
@@ -310,7 +310,7 @@ declare namespace cc {
     //cc.pCompMult = function (a, b) {
     //    return cc.p(a.x * b.x, a.y * b.y);
     //};
-    export function pCompMult(point1:Point, point2:Point): Point;
+    export function pCompMult(point1: Point, point2: Point) : Point;
 
     /**
      * @param {cc.Point} point1
@@ -325,7 +325,7 @@ declare namespace cc {
     //        return 0.0;
     //    return angle;
     //};
-    export function pAngleSigned(point1:Point, point2:Point): number;
+    export function pAngleSigned(point1: Point, point2: Point) : number;
 
     /**
      * @param {cc.Point} point1
@@ -337,7 +337,7 @@ declare namespace cc {
     //    if (Math.abs(angle) < cc.POINT_EPSILON) return 0.0;
     //    return angle;
     //};
-    export function pAngle(point1:Point, point2:Point): number;
+    export function pAngle(point1: Point, point2: Point) : number;
 
     /**
      * Rotates a point counter clockwise by the angle around a pivot
@@ -354,7 +354,7 @@ declare namespace cc {
     //    r.y = t * sina + r.y * cosa + pivot.y;
     //    return r;
     //};
-    export function pRotateByAngle(point:Point, pivot:Point, radians:number): Point;
+    export function pRotateByAngle(point: Point, pivot: Point, radians: number) : Point;
 
     /**
      * A general line-line intersection test
@@ -401,7 +401,7 @@ declare namespace cc {
     //
     //    return true;
     //};
-    export function pLineIntersect(a:Point, b:Point, c:Point, d:Point, retP:Point): boolean;
+    export function pLineIntersect(a: Point, b: Point, c: Point, d: Point, retP: Point) : boolean;
 
     /**
      * ccpSegmentIntersect return YES if Segment A-B intersects with segment C-D.
@@ -418,7 +418,7 @@ declare namespace cc {
     //            return true;
     //    return false;
     //};
-    export function pSegmentIntersect(a:Point, b:Point, c:Point, d:Point): boolean;
+    export function pSegmentIntersect(a: Point, b: Point, c: Point, d: Point) : boolean;
 
     /**
      * ccpIntersectPoint return the intersection point of line A-B, C-D
@@ -441,7 +441,7 @@ declare namespace cc {
     //
     //    return cc.p(0, 0);
     //};
-    export function pIntersectPoint(a:Point, b:Point, c:Point, d:Point): Point;
+    export function pIntersectPoint(a: Point, b: Point, c: Point, d: Point) : Point;
 
     /**
      * check to see if both points are equal
@@ -455,7 +455,7 @@ declare namespace cc {
     //    }
     //    return false;
     //};
-    export function pIntersectPoint(a:Point, b:Point): boolean;
+    export function pIntersectPoint(a: Point, b: Point) : boolean;
 
 
     // High Perfomance In Place Operationrs ---------------------------------------
@@ -468,7 +468,7 @@ declare namespace cc {
     //    v.x = 0;
     //    v.y = 0;
     //};
-    export function pZeroIn(point:Point): void;
+    export function pZeroIn(point: Point) : void;
 
     /**
      * copies the position of one point to another
@@ -479,7 +479,7 @@ declare namespace cc {
     //    v1.x = v2.x;
     //    v1.y = v2.y;
     //};
-    export function pIn(point1:Point, point2:Point): void;
+    export function pIn(point1: Point, point2: Point) : void;
 
     /**
      * multiplies the point with the given factor (inplace)
@@ -490,7 +490,7 @@ declare namespace cc {
     //    point.x *= floatVar;
     //    point.y *= floatVar;
     //};
-    export function pMultIn(point:Point, factor:number): void;
+    export function pMultIn(point: Point, factor: number) : void;
 
     /**
      * subtracts one point from another (inplace)
@@ -501,7 +501,7 @@ declare namespace cc {
     //    v1.x -= v2.x;
     //    v1.y -= v2.y;
     //};
-    export function pSubIn(point1:Point, point2:Point): void;
+    export function pSubIn(point1: Point, point2: Point) : void;
 
     /**
      * adds one point to another (inplace)
@@ -512,7 +512,7 @@ declare namespace cc {
     //    v1.x += v2.x;
     //    v1.y += v2.y;
     //};
-    export function pAddIn(point1:Point, point2:Point): void;
+    export function pAddIn(point1: Point, point2: Point) : void;
 
     /**
      * normalizes the point (inplace)
@@ -521,6 +521,6 @@ declare namespace cc {
     //cc.pNormalizeIn = function (v) {
     //    cc.pMultIn(v, 1.0 / Math.sqrt(v.x * v.x + v.y * v.y));
     //};
-    export function pNormalizeIn(point:Point): void;
+    export function pNormalizeIn(point: Point) : void;
 
 }

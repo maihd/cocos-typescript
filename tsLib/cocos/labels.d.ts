@@ -40,7 +40,7 @@ declare namespace cc {
 
         //public opacity:number;
         //public color:Color;
-        public string:string;
+        public string: string;
 
         /**
          * <p>
@@ -56,11 +56,11 @@ declare namespace cc {
          * @param {Number} [itemHeight=0]
          * @param {Number} [startCharMap=""]
          */
-        public constructor(strText:string,
-                           charMapFile:string,
-                           itemWidth?:number,
-                           itemHeight?:number,
-                           startCharMap?:number);
+        public constructor(strText: string,
+                           charMapFile: string,
+                           itemWidth?: number,
+                           itemHeight?: number,
+                           startCharMap?: number);
         //public ctor(strText?:string, charMapFile?:string, itemWidth?:number, itemHeight?:number, startCharMap?:number):void;
 
 
@@ -79,30 +79,30 @@ declare namespace cc {
          * @param {Number} [startCharMap=""]
          * @return {Boolean} returns true on success
          */
-        public initWithString(strText:string,
-                              charMapFile:string|Texture2D,
-                              itemWidth?:number,
-                              itemHeight?:number,
-                              startCharMap?:number):void;
+        public initWithString(strText: string,
+                              charMapFile: string | Texture2D,
+                              itemWidth?: number,
+                              itemHeight?: number,
+                              startCharMap?: number) : void;
 
         /**
          * Return  texture is loaded.
          * @returns {boolean}
          */
-        public textureLoaded():boolean;
+        public textureLoaded() : boolean;
 
         /**
          * return the text of this label
          * @return {String}
          */
-        public getString():string;
+        public getString() : string;
 
         /**
          * set the display string
          * @function
          * @param {String} label
          */
-        public setString(label:string):void;
+        public setString(label: string) : void;
     }
 
     // +--------------------------------------------------------------------------------
@@ -112,7 +112,7 @@ declare namespace cc {
      * @constant
      * @type Number
      */
-    export const LABEL_AUTOMATIC_WIDTH:number;
+    export const LABEL_AUTOMATIC_WIDTH : number;
 
     /**
      * <p>cc.LabelBMFont is a subclass of cc.SpriteBatchNode.</p>
@@ -165,9 +165,9 @@ declare namespace cc {
      * var label3 = new cc.LabelBMFont("This is a \n test case", "test.fnt", 200, cc.TEXT_ALIGNMENT_LEFT, cc.p(0,0));
      */
     export class LabelBMFont extends SpriteBatchNode implements Label {
-        public string:string;
-        public boundingWidth:number;
-        public textAlign:number;
+        public string: string;
+        public boundingWidth: number;
+        public textAlign: number;
 
         /**
          * Constructor function, override it to extend the construction behavior, remember to call "this._super()" in the extended "ctor" function. <br />
@@ -179,7 +179,7 @@ declare namespace cc {
          * @param {cc.Point} [imageOffset=cc.p(0,0)]
          */
         //public ctor(fileImage?:string|Texture2D, capacity?:number);
-        public constructor(str:string, fntFile:string, width?:number, alignment?:number, imageOffset?:Point);
+        public constructor(str: string, fntFile: string, width?: number, alignment?: number, imageOffset?: Point);
         //public ctor(str?:string, fntFile?:string, width?:number, alignment?:number, imageOffset?:Point):void;
 
         /**
@@ -191,77 +191,77 @@ declare namespace cc {
          * @param {cc.Point} [imageOffset=cc.p(0,0)]
          * @return {Boolean}
          */
-        public initWithString(str:string, fntFile:string, width?:number, alignment?:number, imageOffset?:Point):void;
+        public initWithString(str: string, fntFile: string, width?: number, alignment?: number, imageOffset?: Point) : void;
 
         /**
          * return  texture is loaded
          * @returns {boolean}
          */
-        public textureLoaded():boolean;
+        public textureLoaded() : boolean;
 
         /**
          * updates the font chars based on the string to render
          */
-        public createFontChars():void;
+        public createFontChars() : void;
 
         /**
          * Update String. <br />
          * Only update this label display string.
          * @param {Boolean} fromUpdate
          */
-        public updateString(fromUpdate:boolean):void;
+        public updateString(fromUpdate: boolean) : void;
 
         /**
          * Gets the text of this label
          * @return {String}
          */
-        public getString():string;
+        public getString() : string;
 
         /**
          * Set the text
          * @param {String} newString
          * @param {Boolean|null} needUpdateLabel
          */
-        public setString(newString:string, needUpdateLabel?:boolean):void;
+        public setString(newString: string, needUpdateLabel?: boolean) : void;
 
         /**
          * Update Label. <br />
          * Update this Label display string and more...
          */
-        public updateLabel():void;
+        public updateLabel() : void;
 
         /**
          * Set text alignment.
          * @param {Number} alignment
          */
-        public setAlignment(alignment:number):void;
+        public setAlignment(alignment: number) : void;
 
         /**
          * Set the bounding width. <br />
          * max with display width. The exceeding string will be wrapping.
          * @param {Number} width
          */
-        public setBoundingWidth(width:number):void;
+        public setBoundingWidth(width: number) : void;
 
         /**
          * Set the param to change English word warp according to whether the space. <br />
          * default is false.
          * @param {Boolean}  breakWithoutSpace
          */
-        public setLineBreakWithoutSpace(breakWithoutSpace:boolean):void;
+        public setLineBreakWithoutSpace(breakWithoutSpace: boolean) : void;
 
         /**
          * set fnt file path. <br />
          * Change the fnt file path.
          * @param {String} fntFile
          */
-        public setFntFile(fntFile:string):void;
+        public setFntFile(fntFile: string) : void;
 
         /**
          * Return the fnt file path.
          * @return {String}
          */
-        public getFntFile():string;
+        public getFntFile() : string;
 
     }
 
@@ -273,7 +273,7 @@ declare namespace cc {
          * @returns {{}}
          */
         // TODO: I'm not exactly sure what this returns, it might be a FontDefinition. Maybe I should just mark the return property as "any" and be done with this ...?
-        export function parseFnt(fntStr:string, url:string):FontDefinition;
+        export function parseFnt(fntStr: string, url: string) : FontDefinition;
 
         /**
          * load the fnt
@@ -283,7 +283,7 @@ declare namespace cc {
          * @param cb
          */
         // TODO: I have zero clue what actual types are for these arguments
-        export function load(realUrl:string, url:string, res:string, cb:()=>void):void;
+        export function load(realUrl: string, url: string, res: string, cb: () => void) : void;
     }
 }
 
