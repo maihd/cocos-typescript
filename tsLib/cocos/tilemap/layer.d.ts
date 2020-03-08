@@ -41,19 +41,19 @@ declare namespace cc {
          * Pointer to the map of tiles
          * @member {cc.Sprite[]} tiles
          */
-        tiles: Sprite[];
+        tiles : Sprite[];
 
         /**
          * Tile set information for the layer
          * @member {cc.TMXTilesetInfo} tileset
          */
-        tileset: TMXTilesetInfo;
+        tileset : TMXTilesetInfo;
             
         /**
          * Layer orientation, which is the same as the map orientation
          * @member {number} layerOrientation
          */
-        layerOrientation: number;
+        layerOrientation : number;
         
         /**
          * properties from the layer. They can be added using Tiled
@@ -65,37 +65,37 @@ declare namespace cc {
          * The layer name
          * @member {string} layerName
          */
-        layerName: string;
+        layerName : string;
         
         /**
          * Texture of cc.SpriteBatchNode
          * @member {cc.Texture2D} texture
          */
-        texture: Texture2D;
+        texture : Texture2D;
 
         /**
          * Width of the layer
          * @member {number} layerWidth
          */
-        layerWidth: number;
+        layerWidth : number;
 
         /**
          * Height of the layer
          * @member {number} layerHeight
          */
-        layerHeight: number;
+        layerHeight : number;
 
         /**
          * Width of a tile
          * @member {number} tileWidth
          */
-        tileWidth: number;
+        tileWidth : number;
 
         /**
          * Height of a tile
          * @member {number} tileHeight
          */
-        tileHeight: number;
+        tileHeight : number;
 
         /**
          * Creates a cc.TMXLayer with an tile set info, a layer info and a map info   <br/>

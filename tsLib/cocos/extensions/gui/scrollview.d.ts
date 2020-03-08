@@ -23,7 +23,7 @@ declare namespace cc {
 
     export function convertDistanceFromPointToInch(pointDis: number) : number;
 
-    export interface ScrollViewDelegate extends Class {
+    export interface ScrollViewDelegate {
         scrollViewDidScroll(view: ScrollView) : void;
         scrollViewDidZoom(view: ScrollView) : void;
     }
@@ -203,7 +203,7 @@ declare namespace cc {
      * @class
      * @extends cc.Class
      */
-    export class SortableObject extends Class {
+    export class SortableObject {
         setObjectID(objectId: number) : void;
         getObjectID() : number;
     }
@@ -224,7 +224,7 @@ declare namespace cc {
      * @class
      * @extend cc.Class
      */
-    export class ArrayForObjectSorting extends Class {
+    export class ArrayForObjectSorting {
         constructor();
 
         /**
@@ -396,7 +396,7 @@ declare namespace cc {
     /**
      * Data source that governs table backend data.
      */
-    export class TableViewDataSource extends Class {
+    export class TableViewDataSource {
         /**
          * cell size for a given index
          * @param {cc.TableView} table table to hold the instances of Class

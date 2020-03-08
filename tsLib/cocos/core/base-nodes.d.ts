@@ -99,7 +99,7 @@ declare namespace cc
      * @property {cc.GLProgram}         shaderProgram       - The shader program currently used for this node
      * @property {Number}               glServerState       - The state of OpenGL server side
      */
-    export class Node extends Class 
+    export class Node
     {
         // TODO: Properly declare these things below, they are unknown or as-yet undeclared types:
         //grid:GridBase;

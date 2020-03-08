@@ -19,7 +19,7 @@ declare namespace cc {
      * @example
      * var mgr = new cc.ActionManager();
      */
-    export class ActionManager extends Class {
+    export class ActionManager {
         constructor();
 
         /** Adds an action with a target.
@@ -135,7 +135,7 @@ declare namespace cc {
      * @example
      * var element = new cc.HashElement();
      */
-    export class HashElement extends Class {}
+    export class HashElement {}
 
     ////////////////////////////////////////////////////////////////////////////////
     // File: cocos2d/core/CCDirector.js
@@ -190,7 +190,7 @@ declare namespace cc {
      * @class
      * @name cc.Director
      */
-    export class Director extends Class {
+    export class Director {
         /**
          * The event after draw of cc.Director
          * @constant
@@ -659,10 +659,8 @@ declare namespace cc {
      * @param {Array} hh
      * @see cc.HashTimerEntry;
      */
-    export function hashSelectorEntry(timers: any[], target: Class, timerIndex: number, currentTimer: Timer,
+    export function hashSelectorEntry(timers: any[], target: object, timerIndex: number, currentTimer: Timer,
                                       currentTimerSalvaged: boolean, paused: boolean, hh: any[]) : HashTimerEntry;
-
-    // Class Definitions
 
     /**
      * Hash Element used for "selectors with interval"
@@ -676,7 +674,7 @@ declare namespace cc {
      * @param {Array} hh
      */
     export class HashTimerEntry {
-        constructor(timers: any[], target: Class, timerIndex: number, currentTimer: Timer,
+        constructor(timers: any[], target: object, timerIndex: number, currentTimer: Timer,
                     currentTimerSalvaged: boolean, paused: boolean, hh: any[]);
     }
 
@@ -693,7 +691,7 @@ declare namespace cc {
      * TODO: What kind of arrays for the list and hh params, can we specify a type here?
      */
     export class HashUpdateEntry {
-        constructor(list: any[], entry: ListEntry, target: Class, callback: (arg?: any) => void, hh: any[]);
+        constructor(list: any[], entry: ListEntry, target: object, callback: (arg?: any) => void, hh: any[]);
     }
 
     /**
@@ -711,7 +709,7 @@ declare namespace cc {
      * TODO: What's the signature for the callback param, can we specify a type here?
      */
     export class ListEntry {
-        constructor(prev: ListEntry, next: ListEntry, callback: (arg?:any) => void, target: Class,
+        constructor(prev: ListEntry, next: ListEntry, callback: (arg?:any) => void, target: object,
                     priority: number, paused: boolean, markedForDeletion: boolean);
     }
 
@@ -733,7 +731,7 @@ declare namespace cc {
      * //register a schedule to scheduler
      * cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
      */
-    export class Scheduler extends Class {
+    export class Scheduler {
         /**
          * Priority level reserved for system services.
          * @constant
@@ -755,14 +753,14 @@ declare namespace cc {
          * @param {any} key ???
          * @param {Class} target
          */
-        isScheduled(key: any, target: Class) : void;
+        isScheduled(key: any, target: object) : void;
 
         /**
          * Returns whether or not the target is paused
          * @param {cc.Class} target
          * @return {Boolean}
          */
-        isTargetPaused(target: Class) : boolean;
+        isTargetPaused(target: object) : boolean;
 
         /**
          * <p>
@@ -787,7 +785,7 @@ declare namespace cc {
          * </p>
          * @param {cc.Class} target
          */
-        pauseTarget(target: Class) : void;
+        pauseTarget(target: object) : void;
 
         /**
          * Resumes the target.<br/>
@@ -795,14 +793,14 @@ declare namespace cc {
          * If the target is not present, nothing happens.
          * @param {cc.Class} target
          */
-        resumeTarget(target: Class) : void;
+        resumeTarget(target: object) : void;
 
         /**
          * Resume selectors on a set of targets.<br/>
          * This can be useful for undoing a call to pauseAllCallbacks.
          * @param {Array} targetsToResume
          */
-        resumeTargets(targetsToResume: Class[]) : void;
+        resumeTargets(targetsToResume: object[]) : void;
 
         /**
          * TODO: Put an explanation here for this method's purpose/functionality.
@@ -817,7 +815,7 @@ declare namespace cc {
          * @param {any} key
          * @example
          */
-        schedule(callback: (arg?: any) => void, target: Class,
+        schedule(callback: (arg?: any) => void, target: object,
                  interval: number, repeat: number, delay: number, paused: boolean, key: any) : void;
 
         /**
@@ -840,7 +838,7 @@ declare namespace cc {
          * //register a schedule to scheduler
          * cc.director.getScheduler().scheduleCallbackForTarget(this, function, interval, repeat, delay, !this._isRunning );
          */
-        scheduleCallbackForTarget(target: Class, callback_fn: (arg?: any) => void,
+        scheduleCallbackForTarget(target: object, callback_fn: (arg?: any) => void,
                                   interval: number, repeat: number, delay: number, paused: boolean) : void;
 
         /**
@@ -852,7 +850,7 @@ declare namespace cc {
          * @param {Boolean} paused
          * @example
          */
-        scheduleUpdate(target: Class, priority: number, paused: boolean) : void;
+        scheduleUpdate(target: object, priority: number, paused: boolean) : void;
 
         /**
          * <p>
@@ -868,7 +866,7 @@ declare namespace cc {
          * //register this object to scheduler
          * cc.director.getScheduler().scheduleUpdateForTarget(this, priority, !this._isRunning );
          */
-        scheduleUpdateForTarget(target: Class, priority: number, paused: boolean) : void;
+        scheduleUpdateForTarget(target: object, priority: number, paused: boolean) : void;
 
         /**
          * <p>
@@ -888,7 +886,7 @@ declare namespace cc {
          * @param {any} key ???
          * @param {Class} target
          */
-        unschedule(key: any, target: Class) : void;
+        unschedule(key: any, target: object) : void;
 
         /**
          * TODO: Put an explanation here for this method's purpose/functionality.
@@ -909,7 +907,7 @@ declare namespace cc {
          * @deprecated since v3.4 please use .unscheduleAll
          * @param {cc.Class} target
          */
-        unscheduleAllCallbacksForTarget(target: Class) : void;
+        unscheduleAllCallbacksForTarget(target: object) : void;
 
         /**
          * <p>
@@ -925,7 +923,7 @@ declare namespace cc {
          * TODO: Put an explanation here for this method's purpose/functionality.
          * @param {Class} target
          */
-        unscheduleAllForTarget(target: Class) : void;
+        unscheduleAllForTarget(target: object) : void;
 
         /**
          * TODO: Put an explanation here for this method's purpose/functionality.
@@ -945,13 +943,13 @@ declare namespace cc {
          * //unschedule a callback of target
          * cc.director.getScheduler().unscheduleCallbackForTarget(function, this);
          */
-        unscheduleCallbackForTarget(target: Class, callback: (arg?: any) => void) : void;
+        unscheduleCallbackForTarget(target: object, callback: (arg?: any) => void) : void;
 
         /**
          * TODO: Put an explanation here for this method's purpose/functionality.
          * @param {Class} target
          */
-        unscheduleUpdate(target: Class) : void;
+        unscheduleUpdate(target: object) : void;
 
         /**
          * Unschedules the update callback function for a given target
@@ -961,7 +959,7 @@ declare namespace cc {
          * //unschedules the "update" method.
          * cc.director.getScheduler().unscheduleUpdateForTarget(this);
          */
-        unscheduleUpdateForTarget(target: Class) : void;
+        unscheduleUpdateForTarget(target: object) : void;
 
         /**
          * 'update' the scheduler. (You should NEVER call this method, unless you know what you are doing.)
@@ -975,7 +973,7 @@ declare namespace cc {
      * @class
      * @extends cc.Class
      */
-    export class Timer extends Class {
+    export class Timer {
         constructor();
 
         /**
@@ -1047,7 +1045,7 @@ declare namespace cc {
          * @param {Number} delay ???
          * @return {boolean} ???
          */
-        initWithCallback(scheduler: Scheduler, callback: (arg?: any) => void, target: Class,
+        initWithCallback(scheduler: Scheduler, callback: (arg?: any) => void, target: any,
                          key: any, seconds: number, repeat: boolean, delay: number) : boolean;
 
         getCallback(): ((arg?: any) => void);
@@ -1091,7 +1089,7 @@ declare namespace cc {
          * @param {Number} delay ???
          * @return {boolean} ???
          */
-        initWithSelector(scheduler: Scheduler, selector: (arg?: any) => void, target: Class,
+        initWithSelector(scheduler: Scheduler, selector: (arg?: any) => void, target: object,
                          seconds: number, repeat: boolean, delay: number) : boolean;
 
         /**

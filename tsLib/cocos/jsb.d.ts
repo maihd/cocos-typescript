@@ -259,7 +259,7 @@ declare namespace jsb {
      * @class
      */
     //jsb.EventAssetsManager = cc.Class.extend(/** @lends jsb.EventAssetsManager# */{
-    export class EventAssetsManager extends cc.Class {
+    export class EventAssetsManager {
         /**
          * @function EventAssetsManager
          * @constructor
@@ -337,7 +337,7 @@ declare namespace jsb {
     /**
      * @class
      */
-    export class EventListenerAssetsManager extends cc.Class {
+    export class EventListenerAssetsManager {
         /**
          * @function init
          * @param {AssetsManager} assetsmanager
@@ -361,7 +361,7 @@ declare namespace jsb {
      * please refer to this document to know how to use it: http://www.cocos2d-x.org/docs/manual/framework/html5/v3/assets-manager/en
      * Only available in JSB
      */
-    export class AssetsManager extends cc.Class {
+    export class AssetsManager {
         /**
          * @function AssetsManager
          * @constructor
@@ -414,7 +414,7 @@ declare namespace jsb {
     /**
      * @class
      */
-    export class Manifest extends cc.Class {
+    export class Manifest {
         /**
          * @function getManifestFileUrl
          * @return {String}

@@ -44,18 +44,6 @@ declare namespace cc {
     export function inject(srcPrototype: object, destPrototype: object) : object;
     export function inject<T>(srcPrototype: T[], destPrototype: T[]) : T[];
 
-    //+---------- Class definitions ----------+//
-
-    /* Managed JavaScript Inheritance
-     * Based on John Resig's Simple JavaScript Inheritance http://ejohn.org/blog/simple-javascript-inheritance/
-     * MIT Licensed.
-     */
-    export class Class {
-        public description() : string;
-
-        public static extend<T>(prototype : T) : any;
-    }
-
     // +---------------------------------------------------------------------------
     // File: cocos2d/core/platform/CCMacro.js
     // +---------------------------------------------------------------------------
@@ -1300,7 +1288,7 @@ declare namespace cc {
     // File: cocos2d/core/platform/CCEGLView.js
     ////////////////////////////////////////////////////////////////////////////////
     // TODO: Figure out where the fuck the cc.View class is defined
-    export interface View extends Class {}
+    export interface View {}
 
     /**
      * @ignore
@@ -1328,7 +1316,7 @@ declare namespace cc {
      * @name cc.view
      * @extend cc.Class
      */
-    export class EGLView extends Class implements View {
+    export class EGLView implements View {
         /**
          * Constructor of cc.EGLView
          */
@@ -1650,7 +1638,7 @@ declare namespace cc {
      * @class
      * @extends cc.Class
      */
-    export class ContainerStrategy extends Class {
+    export class ContainerStrategy {
         /**
          * Manipulation before appling the strategy
          * @param {cc.view} view The target view
@@ -1678,7 +1666,7 @@ declare namespace cc {
      * @class
      * @extends cc.Class
      */
-    export class ContentStrategy extends Class {
+    export class ContentStrategy {
         /**
          * Manipulation before applying the strategy
          * @param {cc.view} view The target view
@@ -1805,7 +1793,7 @@ declare namespace cc {
      * @param {cc.ContainerStrategy} containerStg The container strategy
      * @param {cc.ContentStrategy} contentStg The content strategy
      */
-    export class ResolutionPolicy extends Class {
+    export class ResolutionPolicy {
         /**
          * @memberOf cc.ResolutionPolicy#
          * @name EXACT_FIT

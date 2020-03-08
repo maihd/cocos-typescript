@@ -10,7 +10,7 @@ declare namespace cc {
      * @class
      * @extends cc.Class
      */
-    export class Event extends Class {
+    export class Event {
         /**
          * The type code of Touch event.
          * @constant
@@ -379,7 +379,7 @@ declare namespace cc {
     // File: cocos2d/core/event-manager/CCEventHelper.js
     ////////////////////////////////////////////////////////////////////////////////
 // The event helper
-    export class EventHelper extends Class {
+    export class EventHelper {
         apply(object:any):void;
 
         //addEventListener(type:string, listener:EventListener, target:Node):void;
@@ -436,7 +436,7 @@ declare namespace cc {
      * @class
      * @extends cc.Class
      */
-    export class EventListener extends Class {
+    export class EventListener {
         // event listener type
         /**
          * The type code of unknown event listener.
@@ -600,26 +600,26 @@ declare namespace cc {
      * @class
      * @name cc.eventManager
      */
-    export class EventManager extends Class {
+    export class EventManager {
         //Priority dirty flag
-        static DIRTY_NONE:number;
-        static DIRTY_FIXED_PRIORITY:number;
-        static DIRTY_SCENE_GRAPH_PRIORITY:number;
-        static DIRTY_ALL:number;
+        static readonly DIRTY_NONE : number;
+        static readonly DIRTY_FIXED_PRIORITY : number;
+        static readonly DIRTY_SCENE_GRAPH_PRIORITY : number;
+        static readonly DIRTY_ALL : number;
 
         /**
          * Pauses all listeners which are associated the specified target.
          * @param {cc.Node} node
          * @param {Boolean} [recursive=false]
          */
-        pauseTarget(node:Node, recursive:boolean):void;
+        pauseTarget(node: Node, recursive: boolean) : void;
 
         /**
          * Resumes all listeners which are associated the specified target.
          * @param {cc.Node} node
          * @param {Boolean} [recursive=false]
          */
-        resumeTarget(node:Node, recursive:boolean):void;
+        resumeTarget(node: Node, recursive: boolean) : void;
 
         /**
          * 
@@ -635,7 +635,7 @@ declare namespace cc {
          *         except calls removeAllListeners().
          * @return {cc.EventListener} Return the listener. Needed in order to remove the event from the dispatcher.
          */
-        addListener(listener:EventListener, nodeOrPriority:Node|number):EventListener;
+        addListener(listener: EventListener, nodeOrPriority: Node | number) : EventListener;
 
         /**
          * Adds a Custom event listener. It will use a fixed priority of 1.
@@ -643,26 +643,26 @@ declare namespace cc {
          * @param {function} callback
          * @return {cc.EventListener} the generated event. Needed in order to remove the event from the dispatcher
          */
-        addCustomListener(eventName:string, callback:()=>void):void;
+        addCustomListener(eventName: string, callback: () => void) : void;
 
         /**
          * Remove a listener
          * @param {cc.EventListener} listener an event listener or a registered node target
          */
-        removeListener(listener:EventListener):void;
+        removeListener(listener: EventListener) : void;
 
         /**
          * Removes all listeners with the same event listener type or removes all listeners of a node
          * @param {Number|cc.Node} listenerType listenerType or a node
          * @param {Boolean} [recursive=false]
          */
-        removeListeners(listenerType:Node|number, recursive?:boolean):void;
+        removeListeners(listenerType: Node | number, recursive?: boolean) : void;
 
         /**
          * Removes all custom listeners with the same event name
          * @param {string} customEventName
          */
-        removeCustomListeners(customEventName:string):void;
+        removeCustomListeners(customEventName: string) : void;
 
         /**
          * Removes all listeners
@@ -674,35 +674,35 @@ declare namespace cc {
          * @param {cc.EventListener} listener
          * @param {Number} fixedPriority
          */
-        setPriority(listener:EventListener, fixedPriority:number):void;
+        setPriority(listener: EventListener, fixedPriority: number) : void;
 
         /**
          * Whether to enable dispatching events
          * @param {boolean} enabled
          */
-        setEnabled(enabled:boolean):void;
+        setEnabled(enabled: boolean) : void;
 
         /**
          * Checks whether dispatching events is enabled
          * @returns {boolean}
          */
-        isEnabled():boolean;
+        isEnabled() : boolean;
 
         /**
          * Dispatches the event, also removes all EventListeners marked for deletion from the event dispatcher list.
          * @param {cc.Event} event
          */
-        dispatchEvent(event:Event):void;
+        dispatchEvent(event: Event) : void;
 
         /**
          * Dispatches a Custom Event with a event name an optional user data
          * @param {string} eventName
          * @param {*} optionalUserData
          */
-        dispatchCustomEvent(eventName:string, optionalUserData:any):void;
+        dispatchCustomEvent(eventName: string, optionalUserData: any) : void;
     }
 
-    export const eventManager:EventManager;
+    export const eventManager : EventManager;
 
     ////////////////////////////////////////////////////////////////////////////////
     // File: cocos2d/core/event-manager/CCTouch.js
@@ -717,68 +717,68 @@ declare namespace cc {
      * @param {Number} y
      * @param {Number} id
      */
-    export class Touch extends Class {
-        constructor(x:number, y:number, id:number);
+    export class Touch {
+        constructor(x: number, y: number, id: number);
 
         /**
          * Returns the current touch location in OpenGL coordinates
          * @return {cc.Point}
          */
-        getLocation():Point;
+        getLocation() : Point;
 
         /**
          * Returns X axis location value
          * @returns {number}
          */
-        getLocationX():number;
+        getLocationX() : number;
 
         /**
          * Returns Y axis location value
          * @returns {number}
          */
-        getLocationY():number;
+        getLocationY() : number;
 
         /**
          * Returns the previous touch location in OpenGL coordinates
          * @return {cc.Point}
          */
-        getPreviousLocation():Point;
+        getPreviousLocation() : Point;
 
         /**
          * Returns the start touch location in OpenGL coordinates
          * @returns {cc.Point}
          */
-        getStartLocation():Point;
+        getStartLocation() : Point;
 
         /**
          * Returns the delta distance from the previous touche to the current one in screen coordinates
          * @return {cc.Point}
          */
-        getDelta():Point;
+        getDelta() : Point;
 
         /**
          * Returns the current touch location in screen coordinates
          * @return {cc.Point}
          */
-        getLocationInView():Point;
+        getLocationInView() : Point;
 
         /**
          * Returns the previous touch location in screen coordinates
          * @return {cc.Point}
          */
-        getPreviousLocationInView():Point;
+        getPreviousLocationInView() : Point;
 
         /**
          * Returns the start touch location in screen coordinates
          * @return {cc.Point}
          */
-        getStartLocationInView():Point;
+        getStartLocationInView() : Point;
 
         /**
          * Returns the id of cc.Touch
          * @return {Number}
          */
-        getID():number;
+        getID() : number;
 
         /**
          * Sets information to touch
@@ -786,6 +786,6 @@ declare namespace cc {
          * @param  {Number} x
          * @param  {Number} y
          */
-        setTouchInfo(id:number, x:number, y:number):void;
+        setTouchInfo(id: number, x: number, y: number) : void;
     }
 }

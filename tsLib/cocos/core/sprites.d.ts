@@ -25,7 +25,7 @@ declare namespace cc {
      * @param userInfo
      * @returns {AnimationFrame}
      */
-    export class AnimationFrame extends Class {
+    export class AnimationFrame {
         constructor();
         constructor(spriteFrame: SpriteFrame, delayUnits: number, userInfo: any);
 
@@ -131,7 +131,7 @@ declare namespace cc {
      * //run animate
      * sprite.runAction(action);
      */
-    export class Animation extends Class {
+    export class Animation {
         constructor();
         constructor(frames: SpriteFrame[], delay: number, loops: number);
 

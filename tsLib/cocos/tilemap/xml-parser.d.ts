@@ -8,57 +8,57 @@ declare namespace cc {
   /**
    * @const {number} TMX_PROPERTY_NONE
    */
-  export const TMX_PROPERTY_NONE: number
+  export const TMX_PROPERTY_NONE : number;
 
   /**
    * @const {number} TMX_PROPERTY_MAP
    */
-  export const TMX_PROPERTY_MAP: number
+  export const TMX_PROPERTY_MAP : number;
 
   /**
    * @const {number} TMX_PROPERTY_LAYER
    */
-  export const TMX_PROPERTY_LAYER: number
+  export const TMX_PROPERTY_LAYER : number;
 
   /**
    * @const {number} TMX_PROPERTY_OBJECTGROUP
    */
-  export const TMX_PROPERTY_OBJECTGROUP: number
+  export const TMX_PROPERTY_OBJECTGROUP : number;
 
   /**
    * @const {number} TMX_PROPERTY_OBJECT
    */
-  export const TMX_PROPERTY_OBJECT: number
+  export const TMX_PROPERTY_OBJECT : number;
 
   /**
    * @const {number} TMX_PROPERTY_TILE
    */
-  export const TMX_PROPERTY_TILE: number
+  export const TMX_PROPERTY_TILE : number;
 
   /**
    * @const {number} TMX_TILE_HORIZONTAL_FLAG
    */
-  export const TMX_TILE_HORIZONTAL_FLAG: number
+  export const TMX_TILE_HORIZONTAL_FLAG : number;
 
   /**
    * @const {number} TMX_TILE_VERTICAL_FLAG
    */
-  export const TMX_TILE_VERTICAL_FLAG: number
+  export const TMX_TILE_VERTICAL_FLAG : number;
 
   /**
    * @const {number} TMX_TILE_DIAGONAL_FLAG
    */
-  export const TMX_TILE_DIAGONAL_FLAG: number
+  export const TMX_TILE_DIAGONAL_FLAG : number;
 
   /**
    * @const {number} TMX_TILE_FLIPPED_ALL
    */
-  export const TMX_TILE_FLIPPED_ALL: number
+  export const TMX_TILE_FLIPPED_ALL : number;
 
   /**
    * @const {number} TMX_TILE_FLIPPED_MASK
    */
-  export const TMX_TILE_FLIPPED_MASK: number
+  export const TMX_TILE_FLIPPED_MASK : number;
 
   /**
    * <p>cc.TMXLayerInfo contains the information about the layers like: <br />
@@ -73,48 +73,48 @@ declare namespace cc {
    *
    * @property {any[]}    properties  - Properties of the layer info.
    */
-  export class TMXLayerInfo extends cc.Class {
+  export class TMXLayerInfo {
     /**
      * The Properties.
      * @member {any[]} properties
      */
-    properties: any[]
+    properties : any[];
 
     /**
      * @member {boolean} visible
      */
-    visible: boolean     
+    visible : boolean;     
      
     /**
      * @member {boolean} ownTiles
      */
-    ownTiles: boolean
+    ownTiles : boolean;
     
     /**
      * @member {number} offset
      */
-    offset: number
+    offset : number;
 
     constructor()
     
     /**
      * @const {number} ATTRIB_NONE
      */
-    static ATTRIB_NONE: number
+    static readonly ATTRIB_NONE : number;
     
     /**
      * @const {number} ATTRIB_BASE64
      */
-    static ATTRIB_BASE64: number
+    static readonly ATTRIB_BASE64 : number;
 
     /**
      * @const {number} ATTRIB_GZIP 
      */
-    static ATTRIB_GZIP: number
+    static readonly ATTRIB_GZIP : number;
     /**
      * @const {number} ATTRIB_ZLIB 
      */
-    static ATTRIB_ZLIB: number    
+    static readonly ATTRIB_ZLIB : number;    
   }
 
   /**
@@ -137,42 +137,42 @@ declare namespace cc {
    * @property {string} sourceImage - Filename containing the tiles (should be sprite sheet / texture atlas)
    * @property {cc.Size|null} imageSize - Size in pixels of the image
    */
-  export class TMXTilesetInfo extends Class {
+  export class TMXTilesetInfo {
     /**
      * Tileset name
      * @member {string} name
      */
-    name: string
+    name : string;
 
     /**
      * First gid
      * @member {number} firstGid
      */
-    firstGid: number
+    firstGid : number;
 
     /**
      * Spacing
      * @member {number} spacing
      */
-    spacing: number
+    spacing : number;
 
     /**
      * Margin
      * @member {number} margin
      */
-    margin: number
+    margin : number;
 
     /**
      * Filename containing the tiles (should be sprite sheet / texture atlas)
      * @member {string} sourceImage
      */
-    sourceImage: string
+    sourceImage : string;
 
     /**
      * Size in pixels of the image
      * @member {cc.Size|null} imageSize
      */
-    imageSize: Size
+    imageSize : Size;
 
     constructor()
 
@@ -232,49 +232,49 @@ declare namespace cc {
      * Properties of the map info.
      * @member {any[]} properties
      */
-    properties: any[]
+    properties : any[];
 
     /**
      * Map orientation.
      * @member {number} orientation
      */
-    orientation: number
+    orientation : number;
     
     /**
      * Parent element
      * @member {any} parentElement
      */
-    parentElement: any
+    parentElement : any;
     
     /**
      * Parent GID
      * @member {number} parentGID
      */
-    parentGID: number
+    parentGID : number;
     
     /**
      * Layer attributes.
      * @member {any} layerAttrs
      */
-    layerAttrs: any
+    layerAttrs : any;
     
     /**
      * Is reading storing characters stream.
      * @member {boolean} storingCharacters
      */
-    storingCharacters: boolean
+    storingCharacters : boolean;
     
     /**
      * TMX file name.
      * @member {string} tmxFileName
      */
-    tmxFileName: string
+    tmxFileName : string;
 
     /**
      * Current string stored from characters stream.
      * @member {string} currentString
      */
-    currentString: string
+    currentString : string;
 
     /**
      * Creates a TMX Format with a tmx file or content string                           <br/>
@@ -282,74 +282,74 @@ declare namespace cc {
      * @param {string} tmxFile fileName or content string
      * @param {string} resourcePath  If tmxFile is a file name ,it is not required.If tmxFile is content string ,it is must required.
      */
-    constructor(tmxFile: string, resourcePath: string)
+    constructor(tmxFile: string, resourcePath: string);
     
     /**
      * Map width & height
      * @return {cc.Size}
      */
-    getMapSize(): Size
+    getMapSize() : Size;
 
     /**
      * Map width & height
      * @param {cc.Size} value
      */
-    setMapSize(value: Size): void
+    setMapSize(value: Size) : void;
 
     /**
      * Tiles width & height
      * @return {cc.Size}
      */
-    getTileSize(): Size
+    getTileSize() : Size;
 
     /**
      * Tiles width & height
      * @param {cc.Size} value
      */
-    setTileSize(value: Size): void
+    setTileSize(value: Size): void;
 
     /**
      * Layers
      * @return {cc.TMXLayerInfo[]}
      */
-    getLayers(): TMXLayerInfo[]
+    getLayers() : TMXLayerInfo[];
 
     /**
      * Layers
      * @param {cc.TMXLayerInfo} value
      */
-    setLayers(value: TMXLayerInfo): void
+    setLayers(value: TMXLayerInfo) : void;
 
     /**
      * tilesets
      * @return {cc.TMXTilesetInfo[]}
      */
-    getTilesets(): TMXTilesetInfo[]
+    getTilesets() : TMXTilesetInfo[];
 
     /**
      * tilesets
      * @param {cc.TMXTilesetInfo} value
      */
-    setTilesets(value: TMXTilesetInfo): void
+    setTilesets(value: TMXTilesetInfo) : void;
 
     /**
      * ObjectGroups
      * @return {cc.TMXObjectGroup[]}
      */
-    getObjectGroups(): TMXObjectGroup[]
+    getObjectGroups() : TMXObjectGroup[];
 
     /**
      * ObjectGroups
      * @param {cc.TMXObjectGroup} value
      */
-    setObjectGroups(value: TMXObjectGroup): void
+    setObjectGroups(value: TMXObjectGroup) : void;
 
     /**
      * Initializes a TMX format with a  tmx file
      * @param {string} tmxFile
      * @return {Element}
      */
-    initWithTMXFile(tmxFile: string): Element
+    initWithTMXFile(tmxFile: string) : Element;
 
     /**
      * initializes a TMX format with an XML string and a TMX resource path
@@ -357,21 +357,21 @@ declare namespace cc {
      * @param {string} resourcePath
      * @return {boolean}
      */
-    initWithXML(tmxString: string, resourcePath: string): boolean
+    initWithXML(tmxString: string, resourcePath: string) : boolean;
 
     /** Initalises parsing of an XML file, either a tmx (Map) file or tsx (Tileset) file
      * @param {string} tmxFile
      * @param {boolean} [isXmlString=false]
      * @return {Element}
      */
-    parseXMLFile(tmxFile: string, isXmlString: boolean): Element
+    parseXMLFile(tmxFile: string, isXmlString: boolean) : Element;
 
     /**
      * initializes parsing of an XML string, either a tmx (Map) string or tsx (Tileset) string
      * @param {string} xmlString
      * @return {boolean}
      */
-    parseXMLString(xmlString: string): boolean
+    parseXMLString(xmlString: string) : boolean;
 
     /**
      * Gets the tile properties.
@@ -383,30 +383,30 @@ declare namespace cc {
      * Set the tile properties.
      * @param {any} tileProperties
      */
-    setTileProperties(tileProperties: any): void
+    setTileProperties(tileProperties: any) : void;
 
     /**
      * Width of the map
      * @member {number} mapWidth
      */
-    mapWidth: number             
+    mapWidth : number;             
 
     /**
      * Height of the map
      * @member {number} mapHeight
      */
-    mapHeight: number             
+    mapHeight : number;             
 
     /**
      * Width of a tile
      * @member {number} tileWidth
      */
-    tileWidth: number             
+    tileWidth : number;             
 
     /**
      * Height of a tile
      * @member {number} tileHeight
      */
-    tileHeight: number             
+    tileHeight : number;             
   }
 }

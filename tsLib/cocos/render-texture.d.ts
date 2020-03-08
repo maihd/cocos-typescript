@@ -201,12 +201,12 @@ declare namespace cc {
      * Listen "come to background" message, and save render texture. It only has effect on Android.
      * @param {cc.Class} obj
      */
-    listenToBackground(obj: Class) : void
+    listenToBackground(obj: object) : void
 
     /**
      * Listen "come to foreground" message and restore the frame buffer object. It only has effect on Android.
      * @param {cc.Class} obj
      */
-    listenToForeground(obj: Class) : void
+    listenToForeground(obj: object) : void
   }
 }

@@ -27,7 +27,7 @@ declare namespace cc {
                cc.director.runScene(new HelloWorldScene());
            }, this);
          */
-        static preload(resources: any[], cb: (target: Class) => void, target: Class) : LoaderScene;
+        static preload(resources: any[], cb: (target: object) => void, target: object) : LoaderScene;
 
         /**
          * init with resources
@@ -35,7 +35,7 @@ declare namespace cc {
          * @param {Function|String} cb
          * @param {Object} target
          */
-        initWithResources(resources: any[], cb: (target: Class) => void | string, target: Class) : boolean;
+        initWithResources(resources: any[], cb: (target: object) => void | string, target: object) : boolean;
     }
 
     ////////////////////////////////////////////////////////////////////////////////

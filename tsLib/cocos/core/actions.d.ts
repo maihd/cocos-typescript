@@ -24,7 +24,7 @@ declare namespace cc {
      * @property {cc.Node}  originalTarget  - The original target of the action.
      * @property {Number}   tag             - The tag of the action, can be used to find the action.
      */
-    export class Action extends Class {
+    export class Action {
         originalTarget: Node;
         target: Node;
         tag: number;
@@ -4758,7 +4758,7 @@ declare namespace cc {
      * @class
      * @extends cc.Class
      */
-    export class ActionTweenDelegate extends Class {
+    export class ActionTweenDelegate {
         /**
          * Update Tween Action.
          * @param value

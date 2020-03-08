@@ -5,7 +5,7 @@ declare namespace cc {
     // File: cocos2d/core/sprites/CCTexture2D.js
     ////////////////////////////////////////////////////////////////////////////////
 
-    export class Image extends Class {
+    export class Image {
         constructor();
 
         hasPremultipliedAlpha() : boolean;
@@ -619,7 +619,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
     //    delete cc._tmp.PrototypeTexture2D;
     //});
 
-    export class Texture2D extends Class {
+    export class Texture2D {
         isLoaded() : boolean;
     }
 
@@ -645,7 +645,7 @@ export const PVRHaveAlphaPremultiplied_ : boolean;
      * @property {Array}    quads           - <@readonly> Quads that are going to be rendered
      */
     //cc.TextureAtlas = cc.Class.extend(/** @lends cc.TextureAtlas# */{  //WebGL only
-    export class TextureAtlas extends Class {
+    export class TextureAtlas {
         //get totalQuads(): number;
         //get capacity(): number;
         //get quads(): V3F_C4B_T2F_Quad[];

@@ -15,10 +15,7 @@
  */
 
 declare namespace cc {
-    /**
-     * Encapsulate DOM and webAudio
-     */
-    export class Audio extends Class {
+    export class Audio {
         volume: number;
         loop: boolean;
         src: any;

@@ -48,7 +48,7 @@ declare namespace cc {
          * @param {cc.Class} objClass
          * @returns {boolean} if this kind of obj is already in pool return true,else return false;
          */
-        function hasObject(objClass: Class) : boolean
+        function hasObject(objClass: object) : boolean
         
         /**
          * Remove the obj if you want to delete it;
@@ -62,7 +62,7 @@ declare namespace cc {
          * @param {any[]} args
          * @returns {any} call the reuse function an return the obj
          */
-        function getFromPool(objClass: Class, ...args: any[]) : any
+        function getFromPool(objClass: object, ...args: any[]) : any
         
         /**
          * remove all objs in pool and reset the pool

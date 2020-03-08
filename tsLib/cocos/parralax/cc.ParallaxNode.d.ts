@@ -5,7 +5,7 @@
  * @extends cc.Class
  */
 declare namespace cc {
-    export class PointObject extends Class /** @lends cc.PointObject# */ {
+    export class PointObject {
         constructor(ratio: Point, offset: Point);
 
         /**
