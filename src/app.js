@@ -3,7 +3,7 @@ define(["require", "exports", "./game/scenes/SplashScene"], function (require, e
     exports.__esModule = true;
     function startGame() {
         cc.log("START GAME ENTRY");
-        cc.director.runScene(new SplashScene_1.SplashScene());
+        cc.director.runScene(new SplashScene_1["default"]());
     }
     exports.startGame = startGame;
 });

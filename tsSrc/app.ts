@@ -1,4 +1,4 @@
-import { SplashScene } from "./game/scenes/SplashScene";
+import SplashScene from "./game/scenes/SplashScene";
 
 export function startGame() : void {
     cc.log("START GAME ENTRY");

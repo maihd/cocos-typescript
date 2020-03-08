@@ -1,7 +1,9 @@
-import { IMG_BACKGROUND_SPLASH, IMG_LOGO } from "../data/ResFiles";
+import { IMG_BACKGROUND_SPLASH, IMG_LOGO, PNG_TEXTURE, PLIST_TEXTURE } from "../data/ResFiles";
 import { LayerOrders } from "../data/LayerOrders";
+import MainScene from "./MainScene";
 
-export class SplashScene extends cc.Scene {
+export default
+class SplashScene extends cc.Scene {
     constructor() {
         super();
 
@@ -28,6 +30,8 @@ export class SplashScene extends cc.Scene {
         this.loadAudioConfig();
         this.loadLevelConfig();
         this.loadAdsConfig();
+
+        this.startLoading();
     }
 
     onExit() {
@@ -45,5 +49,17 @@ export class SplashScene extends cc.Scene {
 
     loadAdsConfig() {
 
+    }
+    
+    startLoading() {
+        cc.textureCache.addImageAsync(PNG_TEXTURE, (texture) => {
+            cc.spriteFrameCache.addSpriteFrames(PLIST_TEXTURE, texture);
+
+            this.enterMainScene();
+        });
+    }
+
+    enterMainScene() {
+        cc.director.runScene(new cc.TransitionFade(0.5, new MainScene()));
     }
 }

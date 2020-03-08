@@ -1,4 +1,4 @@
-define(["require", "exports", "../data/ResFiles", "../data/LayerOrders"], function (require, exports, ResFiles_1, LayerOrders_1) {
+define(["require", "exports", "../data/ResFiles", "../data/LayerOrders", "./MainScene"], function (require, exports, ResFiles_1, LayerOrders_1, MainScene_1) {
     "use strict";
     exports.__esModule = true;
     var SplashScene = (function (_super) {
@@ -21,6 +21,7 @@ define(["require", "exports", "../data/ResFiles", "../data/LayerOrders"], functi
             this.loadAudioConfig();
             this.loadLevelConfig();
             this.loadAdsConfig();
+            this.startLoading();
         };
         SplashScene.prototype.onExit = function () {
             _super.prototype.onExit.call(this);
@@ -33,7 +34,17 @@ define(["require", "exports", "../data/ResFiles", "../data/LayerOrders"], functi
         };
         SplashScene.prototype.loadAdsConfig = function () {
         };
+        SplashScene.prototype.startLoading = function () {
+            var _this = this;
+            cc.textureCache.addImageAsync(ResFiles_1.PNG_TEXTURE, function (texture) {
+                cc.spriteFrameCache.addSpriteFrames(ResFiles_1.PLIST_TEXTURE, texture);
+                _this.enterMainScene();
+            });
+        };
+        SplashScene.prototype.enterMainScene = function () {
+            cc.director.runScene(new cc.TransitionFade(0.5, new MainScene_1["default"]()));
+        };
         return SplashScene;
     }(cc.Scene));
-    exports.SplashScene = SplashScene;
+    exports["default"] = SplashScene;
 });
