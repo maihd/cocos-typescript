@@ -2,6 +2,7 @@
 
 function __extends(Derive, Base) 
 {
+    // Copy static functions
     for (let key in Base)
     {
         if (Base.hasOwnProperty(key))
@@ -10,12 +11,8 @@ function __extends(Derive, Base)
         }
     }
 
-    function Prototype()
-    {
-        this.constructor = Derive;
-    }
-
-    Derive.prototype = Base === null ? Object.create(Base) : (Prototype.prototype = Base.prototype, new Prototype());
+    // Copy prototype
+    Derive.prototype = Object.create(Base.prototype);
 }
 
 function __values(o) 
@@ -76,11 +73,6 @@ function __values(o)
         };
 
         __extends(Derive, Base);
-        Object.defineProperty(Derive, "className", { 
-            writable: false, 
-            value: className
-        });
-
         defineNodeProperties(Derive.prototype, className);
 
         return Derive;

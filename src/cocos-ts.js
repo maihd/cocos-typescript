@@ -5,10 +5,7 @@ function __extends(Derive, Base) {
             Derive[key] = Base[key];
         }
     }
-    function Prototype() {
-        this.constructor = Derive;
-    }
-    Derive.prototype = Base === null ? Object.create(Base) : (Prototype.prototype = Base.prototype, new Prototype());
+    Derive.prototype = Object.create(Base.prototype);
 }
 function __values(o) {
     var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
@@ -58,10 +55,6 @@ function __values(o) {
             return this;
         };
         __extends(Derive, Base);
-        Object.defineProperty(Derive, "className", {
-            writable: false,
-            value: className
-        });
         defineNodeProperties(Derive.prototype, className);
         return Derive;
     }

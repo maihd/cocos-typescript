@@ -12,6 +12,6 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
-        "src/require.js"
+        "src/module.js"
     ]
 }

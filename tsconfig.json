@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "module": "amd",
         //"noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
@@ -9,6 +8,9 @@
         "sourceMap": false,
         "inlineSourceMap": false,
         "noEmitHelpers": true,
+
+        "module": "AMD",
+        "moduleResolution": "Node",
     },
 
     "include": [
